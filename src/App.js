@@ -7,6 +7,7 @@ import Transferforward from '../src/components/transferservice/tranferforward';
 import Rentluxuryforward from '../src/components/rentluxury/rentforward';
 import Conceirgebooking from '../src/pages/conceirgebooking';
 import Luggagetransferform from '../src/components/luggagetransferform/luggagetransferform'
+import Aboutpage from '../src/pages/aboutus'
 import { Route, Routes } from 'react-router-dom';
 
 import './styles/style.css'
@@ -25,6 +26,8 @@ import './styles/faqmobile.css'
 import './styles/faq.css'
 import './styles/luggage.css'
 import './styles/luggage1.css'
+import './styles/aboutus.css'
+import './styles/aboutusmobile.css'
 import './styles/responsive/layout.css'
 import './styles/responsive/transferluxury.css'
 import './styles/transferservice/transferservice.css'
@@ -58,6 +61,7 @@ function App() {
             <Route path="/rentluxuryforward" element={<Layout><Rentluxuryforward /></Layout>} /> {/* Define the route for HomePage */}
             <Route path="/conceirgebooking" element={<Layout><Conceirgebooking /></Layout>} /> {/* Define the route for HomePage */}
             <Route path="/luggagetransferform" element={<Layout><Luggagetransferform /></Layout>} /> {/* Define the route for HomePage */}
+            <Route path="/aboutus" element={<Layout><Aboutpage /></Layout>} /> {/* Define the route for HomePage */}
             
 </Routes>
        

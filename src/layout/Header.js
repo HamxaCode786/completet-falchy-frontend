@@ -43,7 +43,7 @@ const Header = () => {
           </li>
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/services" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>About</strong></Link>
+              <Link to="/aboutus" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>About</strong></Link>
             </p>
           </li>
           

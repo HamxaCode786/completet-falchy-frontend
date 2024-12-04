@@ -1,6 +1,6 @@
 .driver_car_div {
 
-min-height: 500px;
+min-height: 450px;
 background-color: #05021f;
 display: flex;
 flex-direction: column;
@@ -176,7 +176,7 @@ padding-bottom: 40px !important;
 
 .driver_car_div {
 
-  min-height: 350px  !important;
+  min-height: 350px !important;
   background-color: #05021f;
   display: flex;
   flex-direction: column;
