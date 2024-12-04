@@ -1,0 +1,62 @@
+.diagonal-image-container {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: auto; /* Auto height */
+  overflow: hidden; /* Hide any overflowing content */
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: -1rem !important; /* Include padding in width/height calculations */
+}
+
+.diagonal-image_sg {
+  display: block; /* Remove default inline spacing for SVGs */
+  width: 100%; /* Make the SVG width 100% of the container */
+  height: auto;
+  margin-top: -2rem !important; /* Maintain aspect ratio */
+}
+
+.landing-content1 {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: left !important;
+width: 35%;
+gap: 10px;
+
+
+}
+
+.landing-content1 h2 {
+
+  font-size: 52px;
+  font-weight: 700;
+  color: rgba(30, 30, 30, 1);
+  
+  }
+  .landing-content1 h4 {
+
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(30, 30, 30, 1);
+    
+    }
+
+
+    .landing-content1 button {
+
+      
+background-color: rgba(52, 71, 104, 1);
+padding: 10px;
+color: white;
+font-size: 16px;
+width: 150px;
+margin-top: 20px;
+border: none;
+box-shadow: none;
+
+      }
+    
+    
+
+

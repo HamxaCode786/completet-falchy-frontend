@@ -1,0 +1,101 @@
+.tailored_container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;;
+    gap: 20px;
+    padding: 20px;
+    min-height: 800px !important;
+    height: auto;
+}
+
+
+.second_row1 {
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+
+
+
+}
+
+.first_row1 {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    
+    
+    }
+
+.image_button_div {
+
+background: transparent;
+color: white;
+font-size: 16px !important;
+font-weight: 400;
+border: none;
+
+
+
+}
+
+
+
+
+
+
+.image_hover_done:hover h2{
+    color: #e4b749 !important;
+    
+    transition: all 0.3s ease;
+}
+
+.image_hover_done:hover button{
+    color: #e4b749 !important; 
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    .first_row1 {
+      display: grid !important;
+      grid-template-rows:1fr 1fr !important;
+      grid-template-columns: none;
+    }
+  
+    .second_row1 {
+      display: grid !important;
+      grid-template-rows:1fr 1fr !important;
+      grid-template-columns: none;
+    }
+  
+  .footer_main_data {
+      display: grid;
+      grid-template-rows: 0.8fr 1fr;
+      grid-template-columns: none;
+      align-items: center;
+      padding-top: 3%;
+  } 
+
+
+
+
+  .custom_image {
+
+gap: 30px;
+
+  }
+  
+
+
+
+} 
+
+
+
+.luggage_transfer_and_deposit {
+
+padding-bottom: 30px;
+
+}
+

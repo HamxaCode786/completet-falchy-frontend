@@ -1,0 +1,87 @@
+.luggage-section {
+    background-color: #05021F;
+    padding-top: 5%;
+    padding-bottom: 3%;
+
+    text-align: center;
+}
+
+.luggage-heading {
+    font-weight: bold;
+    font-size: 60px;
+    color: rgba(255,255,255,0.95);
+    padding-bottom: 20px;
+    
+}
+
+.form-layout {
+    margin:0 auto;
+    padding:0 20%;
+    display: flex;
+    flex-direction: column;
+    gap:17px;
+    width: 100%;
+    margin-bottom:44px;
+}
+
+.input-wrapper {
+    display: flex;
+    gap:15px;
+    width: 100%;
+    margin: 0 auto !important;
+}
+
+.input-wrapper input {
+    width:100%;
+}
+
+.luggage-section input, .luggage-section select {
+    cursor:pointer;
+    border:none;
+    border-radius: 2px;
+    padding:16px;
+    background-color: rgba(255,255,255,0.95);
+}
+
+.luggage-section input::placeholder {
+    color:#000000;
+    opacity: 0.85;
+}
+
+.buttonWrapper {
+    margin:0 auto;
+    padding:0 20%;
+    width: 100%;
+}
+
+.luggage-section button { 
+
+
+    
+    padding: 16px;
+    background: linear-gradient(
+        180deg, /* Adjust the angle if needed */
+        #F9E391 0%, 
+        #EDC34A 55%, 
+        #E9BD49 70%, 
+        #E4B649 90%, 
+        #D4A041 100%
+      );
+
+      width:100%;
+      color: #05021F;
+      font-size: 16px;
+      font-weight: 600;
+ }
+
+
+@media (max-width: 480px) {
+    
+    .luggage-section input, .luggage-section select {
+        
+         padding: 10px !important;
+        
+    }
+
+
+}

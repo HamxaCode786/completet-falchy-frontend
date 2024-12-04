@@ -1,0 +1,254 @@
+.header_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: transparent !important;
+    box-shadow: 0px 4px 25px 25px rgba(0, 0, 0, 0.1); /* Adjust values as needed */ /* Adjust values as needed */
+    
+    /* Card-like bottom border */
+    
+    /* Shadow effect on the bottom */
+    
+  }
+  
+
+.custom_header_1 {
+
+margin-left: 90px !important;
+
+
+}
+
+
+.logo_div {
+
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-left: 15%;
+}
+
+
+.list_right_side {
+
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 8% !important;
+z-index: 9999999999999999999 !important;
+
+}
+
+
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  /* Sliding Menu */
+/* Sliding Menu */
+@media (max-width: 1200px) {
+  /* Initial state of the menu */
+  .list_right_side {
+    display: none; /* Hide menu by default */
+    position: fixed;
+    top: 0;
+    left: -100%; /* Menu starts off-screen to the left */
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: left 0.3s ease-in-out; /* Smooth transition when closing */
+  }
+
+  /* Active class to show the menu and slide it in */
+  .list_right_side.active {
+    display: flex; /* Make menu a flex container */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    left: 0; /* Slide the menu in */
+    animation: slideFromLeft 0.3s ease-in-out forwards; /* Apply animation when opening */
+  }
+
+  .list_right_side.active {
+    background-image: url('../assets/images/layout/Circle\ Upper\ Left.png'), url('../assets/images/layout/Circle\ Bottom\ Right\ \(1\).png');
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+    background-size: 100px;
+  }
+  
+  
+  
+  .custom_header_1 {
+  
+  
+  box-shadow: none;
+  
+  
+  }
+  
+
+
+  /* Slide-in animation for opening */
+  @keyframes slideFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100%); /* Start off-screen */
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0); /* Slide in to normal position */
+    }
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1020; /* Ensure it is on top of other content */
+  }
+
+  /* Hamburger icon should stay on top */
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    z-index: 1010;
+  }
+}
+
+
+
+  .list_second_styling:hover {
+    cursor: pointer;
+    font-weight: bold;
+  
+  }
+  
+.list_second_styling_last {
+
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.8s;
+    color: #0dc270;
+margin-left: 10%;
+border-radius: 20px;
+border-color: #0dc270;
+border: solid;
+border-width: 2px;
+padding: clamp(4px, 0.2%, 10px);
+padding-right: clamp(8px, 1%, 20px);
+padding-left: clamp(8px, 1%, 20px);
+font-size: 13px;
+
+
+
+}
+
+.list_second_styling {
+
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.8s;
+    font-size: 13px;
+    
+}
+
+.list_second_styling p {
+
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+.list_second_styling p strong {
+  color: black !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+
+.list_second_styling p strong {
+  transition: color 0.3s ease, font-size 0.3s ease; /* Apply transition for color and font-size */
+}
+
+.list_second_styling p strong:hover {
+  color: #e4b747 !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+
+
+
+
+a {
+
+
+  text-decoration: none !important;
+
+}
+
+
+
+
+.main_logo {
+
+height: auto;
+width: 120px;
+
+
+}
+
+.custom_header_1 {
+  margin-left: 5% !important;
+  background-color: #05021F;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  color: #e0e0e0 !important;
+
+  /* Box shadow for bottom and right */
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25); /* x, y, blur, spread, color */ /* Horizontal, Vertical, Blur, Color */
+}
+
+
+.custom_header_1 p strong {
+
+  
+  color: rgba(255, 255, 255, 1) !important;
+  
+  
+  }
+  
+
+
+

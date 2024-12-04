@@ -1,0 +1,51 @@
+
+.about-us-section {
+    text-align: left;
+    padding: 2%;
+}
+
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0 55px;
+    gap:10%;
+    
+}
+
+.about-us-image {
+    
+    flex-shrink: 1;
+}
+
+.about-us-heading {
+    font-weight: bold;
+    font-size: 48px;
+    color: #000B1D;
+    margin-bottom: 35px;
+}
+
+.about-us-text {
+    color:rgba(30,30,30, 0.85);
+    margin-bottom: 35px;
+}
+
+.about-us-info {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:39px;
+}
+
+.info-bold {
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 0px;
+    color:  #000B1D;
+}
+
+.info-lower-text {
+    font-size: 24px;
+    color:  #000B1D;
+
+}

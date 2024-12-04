@@ -1,0 +1,210 @@
+.transfer_service_heading1 {
+
+text-align: center;
+padding-top: 60px;
+padding-bottom: 30px;
+font-size: 52px;
+font-weight: 700;
+color: rgba(0, 11, 29, 1);
+
+}
+
+.cards_div_transfer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    height: auto;
+    
+    padding-bottom: 40PX;
+    max-width: 1250px;
+    justify-items: center !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-top: 30px;
+}
+
+.card_transfer12 {
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+height: 600px;
+min-width: 350px;
+max-width: 420px;
+border-radius: 10px;
+padding-top: 30px;
+box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+
+}
+.card_transfer1_img1 {
+
+width: 300px;
+height: 200px;
+padding-right: 10px;
+padding-left: 10px;
+
+}
+
+.cards_grey_buttons {
+    display: flex
+;
+    flex-direction: rows;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12%;
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 100%;
+}
+
+.grey_button_1_d {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+text-align: center;
+background-color: #f6f6f6;
+width: 80%;
+border-radius: 10px;
+height: 80px;
+vertical-align: middle;
+color: #555555;
+font-weight: 300;
+height: 75px;
+
+
+}
+.grey_button_1_d p {
+
+   margin: 0; 
+   color: Hourly Rate;
+   font-weight: 400;
+   font-size: 14px;
+   
+
+    }
+
+ .first_text1 {
+
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: rgba(85, 85, 85, 1)!important;
+
+
+ }   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+ .card_specs_div {
+    display: flex;
+    flex-direction: row; /* Corrected from 'rows' */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15%;
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: -1.5rem;
+    /* Needed for the pseudo-element to position correctly */
+}
+
+.card_specs_div::before {
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0; /* Position at the top of the div */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: 80%; /* Line width relative to the div */
+    height: 1px; /* Line thickness */
+    background-color: rgba(237, 237, 237, 1); /* Line color */
+}
+
+.icon_specs_div {
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 80%;
+}
+
+
+.last_rent_now_div {
+    width: 100%;
+    height: 115px;
+    background-color: #05021f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.4);
+    clip-path: ellipse(58% 66% at 50% 91%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+  .last_rent_now_div h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    padding-top: 35px;
+  }
+  
+
+.card_specs_p1 {
+
+
+margin:0;
+text-align: left !important;
+
+
+}
+
+.testing_123 {
+
+display: flex !important;
+justify-content: left !important;
+align-items: center !important;
+padding-left: 40px;
+
+
+
+}
+.last_rent_now_div:hover h4 {
+    
+    color: #e9bd49;
+
+}
+.last_rent_now_div:hover {
+    
+    color: #e9bd49;
+    cursor: pointer;
+
+}
+.eclipse_div {
+
+
+width: 100%;
+height: 50%;
+background-color: #05021f;
+
+
+}
+

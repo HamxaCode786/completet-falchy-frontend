@@ -1,0 +1,43 @@
+
+@media (max-width:815px){
+
+    .form-layout {
+        padding:0 10%;
+    }
+
+    .buttonWrapper {
+        padding:0 10%;
+    }
+}
+
+@media (max-width:500px){
+    .luggage-heading {
+        font-size: 42px;
+    }
+}
+
+@media (max-width:480px){
+    .luggage-section input, .luggage-section select {
+        padding:8px 16px;
+    }
+
+.input-wrapper {
+
+display: flex;
+flex-direction: column;
+gap: 15px;
+
+
+}
+
+
+    .luggage-section button {
+        padding:8px 16px;
+    }
+}
+
+@media(max-width:650px){
+    .luggage-section {
+        padding: 50px 0 60px;
+    }
+}
