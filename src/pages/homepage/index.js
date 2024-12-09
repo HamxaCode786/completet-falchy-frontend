@@ -9,7 +9,7 @@ import Accordion from '../../components/homepage/accordion'
 const Homepage = () => {
   return (
     <div>
-      {/* <Landing /> */}
+      <Landing /> 
       <Tailored />
       <Steps />
       <Aboutus />

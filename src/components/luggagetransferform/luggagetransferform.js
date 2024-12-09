@@ -40,20 +40,26 @@ export default function Luggageransferform() {
               />
 
               <div className="input-wrapper">
-                {/* Flatpickr for date 1 */}
                 <Flatpickr
                   value={date1}
                   onChange={(date) => setDate1(date)}
-                  options={{ dateFormat: 'Y-m-d' }}
+                  options={{
+                    dateFormat: 'Y-m-d',
+                    minDate: 'today'
+                  }}
                   placeholder="Pick Up Date"
                   name="pickup_date"
                   required
                 />
-                {/* Flatpickr for time 1 */}
                 <Flatpickr
                   value={time1}
                   onChange={(time) => setTime1(time)}
-                  options={{ noCalendar: true, enableTime: true, time_24hr: true }}
+                  options={{
+                    noCalendar: true,
+                    enableTime: true,
+                    dateFormat: "H:i",
+                    time_24hr: true
+                  }}
                   placeholder="Pick Up Time"
                   name="pickup_time"
                   required
@@ -61,20 +67,26 @@ export default function Luggageransferform() {
               </div>
 
               <div className="input-wrapper">
-                {/* Flatpickr for date 2 */}
                 <Flatpickr
                   value={date2}
                   onChange={(date) => setDate2(date)}
-                  options={{ dateFormat: 'Y-m-d' }}
+                  options={{
+                    dateFormat: 'Y-m-d',
+                    minDate: date1 || 'today'
+                  }}
                   placeholder="Drop Off Date"
                   name="dropoff_date"
                   required
                 />
-                {/* Flatpickr for time 2 */}
                 <Flatpickr
                   value={time2}
                   onChange={(time) => setTime2(time)}
-                  options={{ noCalendar: true, enableTime: true, time_24hr: true }}
+                  options={{
+                    noCalendar: true,
+                    enableTime: true,
+                    dateFormat: "H:i",
+                    time_24hr: true
+                  }}
                   placeholder="Drop Off Time"
                   name="dropoff_time"
                   required
@@ -90,7 +102,7 @@ export default function Luggageransferform() {
             </div>
 
             <div className='buttonWrapper'>
-            <button type="submit">Reserve Now</button>
+              <button type="submit">Reserve Now</button>
             </div>
             
           </form>

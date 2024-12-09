@@ -97,7 +97,7 @@ const Footer = () => {
       </div>
     </div>
     <div className="footer_copyright">
-<h3>Copyright © 2024 WHA Road Solution - All Rights Reserved.</h3>
+<h3>Copyright © 2024 FALCHY - All Rights Reserved.</h3>
 </div>
     </div>
   );

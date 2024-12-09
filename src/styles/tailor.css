@@ -5,6 +5,7 @@
     padding: 20px;
     min-height: 800px !important;
     height: auto;
+    margin-top: 0.5rem;
 }
 
 
@@ -52,3 +53,12 @@ border: none;
 }
 
 
+
+.custom_tailored_heading h3 {
+
+font-size: 48px;
+color: rgba(30, 30, 30, 1);
+
+
+
+}

@@ -27,6 +27,8 @@ import './styles/faq.css'
 import './styles/luggage.css'
 import './styles/luggage1.css'
 import './styles/aboutus.css'
+import './styles/aboutsection.css'
+
 import './styles/aboutusmobile.css'
 import './styles/responsive/layout.css'
 import './styles/responsive/transferluxury.css'

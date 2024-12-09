@@ -9,7 +9,10 @@ const Tailored = () => {
   const navigate = useNavigate();
 
   return (
+    <div className="custom_tailored_heading">
+      <h3>Tailored Solution For Every Need</h3>
     <div className="tailored_container">
+      
       <div className="first_row">
         <div
           className="image_hover_done"
@@ -178,6 +181,7 @@ const Tailored = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };
