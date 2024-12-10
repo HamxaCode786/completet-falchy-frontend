@@ -19,3 +19,13 @@ font-style: normal;
 
 /* CSS for fade-in animation */
 /* CSS for fade-in and scale-up animation */
+input::placeholder {
+    color: #575b62; /* Change this color as needed */
+    opacity: 1; /* Ensure the placeholder text color is visible */
+  }
+  input:focus {
+    border-color: #66afe9; /* Light blue color */
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Light blue shadow for focus effect */
+    outline: none; /* Remove default outline */
+  }
+    

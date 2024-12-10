@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { useLocation } from "react-router-dom";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_blue.css";
+import axios from 'axios'; // Import axios
 
 const Conceirgeform = () => {
   const location = useLocation();
@@ -12,8 +13,8 @@ const Conceirgeform = () => {
     fullName: "",
     email: "",
     contact: "",
-    preferredDate: "",
-    preferredTime: ""
+    description:"",
+    eventSelected: cardData.title, // Added eventSelected to formData
   });
 
   const handleChange = (e) => {
@@ -28,14 +29,31 @@ const Conceirgeform = () => {
     e.preventDefault();
 
     // Validate all fields are filled
-    const requiredFields = ['fullName', 'email', 'contact', 'preferredDate', 'preferredTime'];
+    const requiredFields = ['fullName', 'email', 'contact'];
     const emptyFields = requiredFields.filter(field => !formData[field]);
 
     if (emptyFields.length > 0) {
       Swal.fire({
         icon: 'error',
         title: 'Required Fields Missing',
-        text: 'Please fill in all required fields',
+        text: `Please fill in all required fields: ${emptyFields.join(', ')}`,
+        iconColor: '#05021f',
+        confirmButtonColor: '#05021f',
+        customClass: {
+          popup: 'swal-popup-custom',
+          confirmButton: 'swal-button-custom',
+        }
+      });
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(formData.email)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Email',
+        text: 'Please enter a valid email address',
         iconColor: '#05021f',
         confirmButtonColor: '#05021f',
         customClass: {
@@ -47,22 +65,11 @@ const Conceirgeform = () => {
     }
 
     try {
-      // Simulate an API call
-      const simulateApiCall = () => {
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve({
-              success: true,
-              message: 'Form submitted successfully'
-            });
-          }, 1000);
-        });
-      };
-
-      // Call simulated API
-      const response = await simulateApiCall();
-
-      if (response.success) {
+      // Simulate an API call using axios
+      const response = await axios.post('http://localhost:5000/api/usercontact', formData);
+    
+      // Correct the reference to 'success' field
+      if (response.data.data.success) {
         console.log('Form data submitted:', formData);
         
         Swal.fire({
@@ -80,12 +87,12 @@ const Conceirgeform = () => {
             fullName: "",
             email: "",
             contact: "",
-            preferredDate: "",
-            preferredTime: ""
+            description: "",
+            eventSelected: cardData.title, // Reset eventSelected to cardData.title
           });
         });
       }
-
+    
     } catch (error) {
       console.error('Error submitting form:', error);
       Swal.fire({
@@ -100,11 +107,11 @@ const Conceirgeform = () => {
         }
       });
     }
-  };
+  };    
 
   return (
     <div className="dinner_form">
-      <h3 className="conceirge_form_heading2">Book {cardData.title}</h3>
+      <h3 className="conceirge_form_heading2">{cardData.title2}</h3>
       <div className="payment_form2">
         <Form className="hamza" onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicFullName">
@@ -140,49 +147,16 @@ const Conceirgeform = () => {
             />
           </Form.Group>
 
-          <div className="last_div">
-            <Form.Group className="mb-3" controlId="formPreferredDate">
-              <Flatpickr
-                style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px', width: '100%' }}
-                className="form-control"
-                placeholder="Preferred Date"
-                value={formData.preferredDate}
-                onChange={date => {
-                  setFormData({
-                    ...formData,
-                    preferredDate: date[0]
-                  });
-                }}
-                options={{
-                  dateFormat: "Y-m-d",
-                  minDate: "today",
-                  disableMobile: true
-                }}
-              />
-            </Form.Group>
-            
-            <Form.Group className="mb-3" controlId="formPreferredTime">
-              <Flatpickr
-                style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px', width: '100%' }}
-                className="form-control"
-                placeholder="Preferred Time"
-                value={formData.preferredTime}
-                onChange={time => {
-                  setFormData({
-                    ...formData,
-                    preferredTime: time[0]
-                  });
-                }}
-                options={{
-                  enableTime: true,
-                  noCalendar: true,
-                  dateFormat: "H:i",
-                  time_24hr: true,
-                  disableMobile: true
-                }}
-              />
-            </Form.Group>
-          </div>
+          <Form.Group className="mb-3" controlId="formBasicContact">
+            <Form.Control
+              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px', height:'50px' }}
+              type="text"
+              placeholder="Description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+            />
+          </Form.Group>
 
           <button type="submit" className="payment_button">Get a quote</button>
         </Form>

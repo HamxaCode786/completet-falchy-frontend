@@ -1,13 +1,17 @@
 import React from "react";
 import Chauffered from "../../assets/images/transferpage/ChauferwithCar2.png";
 import Payment from '../../components/transferservice/payment'
+import { TransferContext } from "../../contextapi/transferservicecontext";
+import { useContext } from "react";
 
-const tranferforward = () => {
+
+const Tranferforward = () => {
+  const { selectedCard } = useContext(TransferContext);
   return (
     <div>
       <div className="driver_car_div">
         <img className="chauffer_2enh" src={Chauffered} />
-        <h2>Mercedes Benz S-580</h2>
+        <h2>{selectedCard.name}</h2>
         <ul className="icons_list_drivers">
           <li>
             <i class="fas fa-wifi fa-1x"></i> Free Wifi
@@ -59,20 +63,20 @@ const tranferforward = () => {
           <h5>Fuel Type</h5>
         </div>
         <div className="table_right">
-        <h5>Mercedes-Benz</h5>
-        <h5>S 580 4MATIC</h5>
-        <h5> 496 Horse Power</h5>
-        <h5>Obsidian Black</h5>
-        <h5>21 MPG</h5>
+        <h5>{selectedCard.name}</h5>
+        <h5></h5>
+        <h5>{selectedCard.power}</h5>
+        <h5>{selectedCard.color}</h5>
+        <h5>{selectedCard.milage}</h5>
         <h5>144 mph</h5>
         <h5>Premium Gasoline</h5>
         </div>
       </div>
       <div className="payment_div">
-      <Payment />
+      <Payment selectedCard={selectedCard} />
       </div>
     </div>
   );
 };
 
-export default tranferforward;
+export default Tranferforward;

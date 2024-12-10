@@ -51,7 +51,7 @@ const Accordion = () => {
 
   return (
     <div className="FAQs-section">
-      <h2 className="FAQs-heading">Frequently Asked Questions</h2>
+      <h2 className="FAQs-heading">Exquisite Insights to Your Most Common Inquiries.</h2>
       <div className="accordion">
         {faqData.map((faq) => (
           <FAQItem key={faq.id} id={faq.id} question={faq.question} answer={faq.answer} />

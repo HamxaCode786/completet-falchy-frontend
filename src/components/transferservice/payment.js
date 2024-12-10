@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_blue.css";
+import Autosuggest from 'react-autosuggest';
 
-const Payment = () => {
+
+const Payment = ({selectedCard}) => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -11,47 +13,16 @@ const Payment = () => {
     paymentMethod: '',
     accountNumber: '',
     expirationDate: null,
-    cvc: ''
+    cvc: '',
+    pickupDate: null,
+    numberOfPersons: '',
+    pickupLocation: '',
+    dropOffLocation: '',
+    luggageQuantity: ''
   });
 
-  const [errors, setErrors] = useState({});
-
-  const validateForm = () => {
-    const newErrors = {};
-    
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-
-    if (!formData.contact.trim()) {
-      newErrors.contact = 'Contact information is required';
-    }
-
-    if (!formData.paymentMethod) {
-      newErrors.paymentMethod = 'Please select a payment method';
-    }
-
-    if (!formData.accountNumber.trim()) {
-      newErrors.accountNumber = 'Account number is required';
-    }
-
-    if (!formData.expirationDate) {
-      newErrors.expirationDate = 'Expiration date is required';
-    }
-
-    if (!formData.cvc.trim()) {
-      newErrors.cvc = 'CVC is required';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  const [pickupSuggestions, setPickupSuggestions] = useState([]);
+  const [dropOffSuggestions, setDropOffSuggestions] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -61,40 +32,83 @@ const Payment = () => {
     });
   };
 
+  const handleDateChange = (date, name) => {
+    setFormData({
+      ...formData,
+      [name]: date[0]
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (validateForm()) {
-      try {
-        // Simulating API call
-        const response = await fetch('https://api.example.com/payment', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+    try {
+      // Simulating API call
+      const response = await fetch('https://api.example.com/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-        if (response.ok) {
-          alert('Payment information submitted successfully!');
-          // Reset form
-          setFormData({
-            fullName: '',
-            email: '',
-            contact: '',
-            paymentMethod: '',
-            accountNumber: '',
-            expirationDate: null,
-            cvc: ''
-          });
-        } else {
-          alert('Failed to submit payment information');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred while submitting payment information');
+      if (response.ok) {
+        alert('Payment information submitted successfully!');
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          contact: '',
+          paymentMethod: '',
+          accountNumber: '',
+          expirationDate: null,
+          cvc: '',
+          pickupDate: null,
+          numberOfPersons: '',
+          pickupLocation: '',
+          dropOffLocation: '',
+          luggageQuantity: ''
+        });
+      } else {
+        alert('Failed to submit payment information');
       }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while submitting payment information');
     }
+  };
+
+  const fetchSuggestions = async (value) => {
+    if (!value) return [];
+  
+    const response = await fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&q=${value}&limit=5`
+    );
+    const data = await response.json();
+    return data.map((place) => ({
+      description: place.display_name,
+      latitude: place.lat,
+      longitude: place.lon,
+    }));
+  };
+
+
+  const handleSuggestionsFetchRequested = async ({ value }, field) => {
+    const suggestions = await fetchSuggestions(value);
+    if (field === 'pickupLocation') {
+      setPickupSuggestions(suggestions);
+    } else if (field === 'dropOffLocation') {
+      setDropOffSuggestions(suggestions);
+    }
+  };
+
+  // Handle selection of suggestion
+  const handleSuggestionSelected = (event, { suggestion, suggestionValue, sectionIndex, method }, field) => {
+    const { description } = suggestion;
+    setFormData({
+      ...formData,
+      [field]: description,
+    });
   };
 
   return (
@@ -108,9 +122,7 @@ const Payment = () => {
             placeholder="Full Name"
             value={formData.fullName}
             onChange={handleInputChange}
-            isInvalid={!!errors.fullName}
           />
-          {errors.fullName && <Form.Control.Feedback type="invalid">{errors.fullName}</Form.Control.Feedback>}
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -121,9 +133,7 @@ const Payment = () => {
             placeholder="Email Address"
             value={formData.email}
             onChange={handleInputChange}
-            isInvalid={!!errors.email}
           />
-          {errors.email && <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -134,11 +144,193 @@ const Payment = () => {
             placeholder="Enter Your Contact Information"
             value={formData.contact}
             onChange={handleInputChange}
-            isInvalid={!!errors.contact}
           />
-          {errors.contact && <Form.Control.Feedback type="invalid">{errors.contact}</Form.Control.Feedback>}
         </Form.Group>
         
+        
+
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+            type="text"
+            name="accountNumber"
+            placeholder="Enter Your Account Number"
+            value={formData.accountNumber}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
+
+        <div className="last_div">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Flatpickr
+              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px', width: '100%' }}
+              className="form-control"
+              name="expirationDate"
+              placeholder="Expiration Date"
+              value={formData.expirationDate}
+              onChange={date => handleDateChange(date, 'expirationDate')}
+              options={{
+                dateFormat: "m/Y",
+                minDate: "today",
+                disableMobile: true
+              }}
+            />
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+              type="text"
+              name="cvc"
+              placeholder="Enter Your CVC"
+              value={formData.cvc}
+              onChange={handleInputChange}
+            />
+          </Form.Group>
+        </div>
+        <div className="last_div">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+              type="number"
+              name="numberOfPersons"
+              placeholder="Number of Persons"
+              value={formData.numberOfPersons}
+              onChange={handleInputChange}
+            />
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Flatpickr
+              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px', width: '100%' }}
+              className="form-control"
+              name="pickupDate"
+              placeholder="Pickup Date"
+              value={formData.pickupDate}
+              onChange={date => handleDateChange(date, 'pickupDate')}
+              options={{
+                dateFormat: "F j, Y",
+                minDate: "today",
+                disableMobile: true
+              }}
+            />
+          </Form.Group>
+        </div>
+        <div className="last_div">
+      {/* Drop Off Location */}
+      <Form.Group className="mb-3" controlId="formDropOffLocation">
+        <Autosuggest
+          suggestions={dropOffSuggestions} // Removed slice
+          onSuggestionsFetchRequested={(e) => handleSuggestionsFetchRequested(e, 'dropOffLocation')}
+          onSuggestionsClearRequested={() => setDropOffSuggestions([])}
+          getSuggestionValue={(suggestion) => suggestion.description}
+          renderSuggestion={(suggestion) => <div>{suggestion.description}</div>}
+          inputProps={{
+            value: formData.dropOffLocation,
+            onChange: handleInputChange,
+            name: 'dropOffLocation',
+            style: {
+              backgroundColor: '#f9f9f9',
+              border: 'none',
+              fontWeight: 600,
+              fontSize: '16px',
+              padding: '10px',
+              width: '100%',
+              color: '#575b62', // Placeholder text color
+            },
+            placeholder: 'Drop Off Location',
+          }}
+          onSuggestionSelected={(e, data) => handleSuggestionSelected(e, data, 'dropOffLocation')}
+          theme={{
+            container: {
+              position: 'relative',
+              zIndex: 1050, // Ensure suggestions overlay without disturbing other UI elements
+            },
+            suggestionsContainerOpen: {
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              maxHeight: '200px',
+              overflowY: 'auto',
+              border: '1px solid #ccc',
+              backgroundColor: 'white',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+              zIndex: 9999,
+            },
+            suggestion: {
+              padding: '10px',
+              cursor: 'pointer',
+            },
+            suggestionHighlighted: {
+              backgroundColor: '#d3d3d3',
+            },
+          }}
+        />
+      </Form.Group>
+
+      {/* Pickup Location */}
+      <Form.Group className="mb-3" controlId="formPickupLocation">
+        <Autosuggest
+          suggestions={pickupSuggestions} // Removed slice
+          onSuggestionsFetchRequested={(e) => handleSuggestionsFetchRequested(e, 'pickupLocation')}
+          onSuggestionsClearRequested={() => setPickupSuggestions([])}
+          getSuggestionValue={(suggestion) => suggestion.description}
+          renderSuggestion={(suggestion) => <div>{suggestion.description}</div>}
+          inputProps={{
+            value: formData.pickupLocation,
+            onChange: handleInputChange,
+            name: 'pickupLocation',
+            style: {
+              backgroundColor: '#f9f9f9',
+              border: 'none',
+              fontWeight: 600,
+              fontSize: '16px',
+              padding: '10px',
+              width: '100%',
+              color: '#34434d', // Placeholder text color
+            },
+            placeholder: 'Pickup Location',
+          }}
+          onSuggestionSelected={(e, data) => handleSuggestionSelected(e, data, 'pickupLocation')}
+          theme={{
+            container: {
+              position: 'relative',
+              zIndex: 1050, // Ensure suggestions overlay without disturbing other UI elements
+            },
+            suggestionsContainerOpen: {
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              maxHeight: '200px',
+              overflowY: 'auto',
+              border: '1px solid #ccc',
+              backgroundColor: 'white',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+              zIndex: 9999,
+            },
+            suggestion: {
+              padding: '10px',
+              cursor: 'pointer',
+            },
+            suggestionHighlighted: {
+              backgroundColor: '#d3d3d3',
+            },
+          }}
+        />
+      </Form.Group>
+    </div>
+        <Form.Group className="mb-3" controlId="formBasicEmail" style={{ width: '100%' }}>
+          <Form.Control
+            style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+            type="number"
+            name="luggageQuantity"
+            placeholder="Luggage Quantity"
+            value={formData.luggageQuantity}
+            onChange={handleInputChange}
+          />
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicRadio">
           <div style={{backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px'}}>
             <div style={{marginBottom: '10px', color: '#585b5e', fontWeight: 600}}>Choose Your Payment Method</div>
@@ -150,7 +342,6 @@ const Payment = () => {
               label={<span><i className="fa-brands fa-cc-visa" style={{marginRight: '8px'}}></i>Visa Card</span>}
               style={{color: '#1B1B1B', marginBottom: '8px'}}
               onChange={handleInputChange}
-              isInvalid={!!errors.paymentMethod}
             />
             <Form.Check
               type="radio"
@@ -160,61 +351,19 @@ const Payment = () => {
               label={<span><i className="fa-brands fa-cc-mastercard" style={{marginRight: '8px'}}></i>Master Card</span>}
               style={{color: '#1B1B1B'}}
               onChange={handleInputChange}
-              isInvalid={!!errors.paymentMethod}
             />
-            {errors.paymentMethod && <div className="invalid-feedback d-block">{errors.paymentMethod}</div>}
           </div>
         </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicEmail" style={{ width: '100%' }}>
           <Form.Control
             style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
-            type="text"
-            name="accountNumber"
-            placeholder="Enter Your Account Number"
-            value={formData.accountNumber}
-            onChange={handleInputChange}
-            isInvalid={!!errors.accountNumber}
+            type="number"
+            name="Amount"
+            placeholder={`Price: ${selectedCard.hourlyRate}$/hr`}
+            value={selectedCard.hourlyRate}
+            readOnly
           />
-          {errors.accountNumber && <Form.Control.Feedback type="invalid">{errors.accountNumber}</Form.Control.Feedback>}
         </Form.Group>
-
-        <div className="last_div">
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Flatpickr
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px', width: '100%' }}
-              className={`form-control ${errors.expirationDate ? 'is-invalid' : ''}`}
-              name="expirationDate"
-              placeholder="Expiration Date"
-              value={formData.expirationDate}
-              onChange={date => {
-                setFormData({
-                  ...formData,
-                  expirationDate: date[0]
-                });
-              }}
-              options={{
-                dateFormat: "m/Y",
-                minDate: "today",
-                disableMobile: true
-              }}
-            />
-            {errors.expirationDate && <Form.Control.Feedback type="invalid">{errors.expirationDate}</Form.Control.Feedback>}
-          </Form.Group>
-          
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
-              type="text"
-              name="cvc"
-              placeholder="Enter Your CVC"
-              value={formData.cvc}
-              onChange={handleInputChange}
-              isInvalid={!!errors.cvc}
-            />
-            {errors.cvc && <Form.Control.Feedback type="invalid">{errors.cvc}</Form.Control.Feedback>}
-          </Form.Group>
-        </div>
         <button type="submit" className="payment_button">Get a quote</button>
       </Form>
     </div>

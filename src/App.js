@@ -9,6 +9,7 @@ import Conceirgebooking from '../src/pages/conceirgebooking';
 import Luggagetransferform from '../src/components/luggagetransferform/luggagetransferform'
 import Aboutpage from '../src/pages/aboutus'
 import { Route, Routes } from 'react-router-dom';
+import ScrollToTop from '../src/pages/scrolltop/scroll';
 
 import './styles/style.css'
 import './styles/header.css'
@@ -28,6 +29,7 @@ import './styles/luggage.css'
 import './styles/luggage1.css'
 import './styles/aboutus.css'
 import './styles/aboutsection.css'
+import './styles/caraosel.css'
 
 import './styles/aboutusmobile.css'
 import './styles/responsive/layout.css'
@@ -52,7 +54,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-
+ <ScrollToTop /> 
 <Routes>  {/* Wrapping Routes inside Router */}
             
             <Route path="/" element={<Layout><Homepage /></Layout>} /> {/* Define the route for HomePage */}

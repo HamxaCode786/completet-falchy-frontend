@@ -12,8 +12,20 @@
 
 @media (max-width:500px){
     .luggage-heading {
-        font-size: 42px;
+        font-size: 42px !important;
+        padding-right: 10px;
+        padding-left: 10px;
     }
+
+    .luggage-heading2 {
+        font-size: 22px !important;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+
+
+
 }
 
 @media (max-width:480px){

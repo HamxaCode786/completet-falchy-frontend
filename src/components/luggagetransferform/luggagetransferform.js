@@ -12,6 +12,7 @@ export default function Luggageransferform() {
     <div>
       <div className="luggage-section">
         <h1 className="luggage-heading">Book Your Luggage Transfer</h1>
+        <h2 className="luggage-heading2">Your Luggage Transfer—Where Every Journey Begins with Effortless Luxury</h2>
 
         <div className="form-section">
           <form action="#" method="POST">

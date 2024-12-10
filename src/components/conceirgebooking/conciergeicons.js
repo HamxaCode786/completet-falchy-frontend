@@ -16,7 +16,7 @@ const Conciergeicons = () => {
             </li>
           ))}
         </ul>
-        <ul className="small_cards_white2">
+        {/* <ul className="small_cards_white2">
           {cardData.icons2.map((item, index) => (
             <li key={index} className="box_small_card2">
               <h4>
@@ -24,7 +24,7 @@ const Conciergeicons = () => {
               </h4>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
 
   )

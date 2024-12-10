@@ -17,7 +17,7 @@ const Conceirge = () => {
   const CardComponent = ({ data }) => (
     <div className="image_hover_done custom_image"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${data.image})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${data.image[0]})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
@@ -32,11 +32,11 @@ const Conceirge = () => {
       }}
       onClick={() => handleCardClick(data)}
       onMouseOver={(e) => {
-        e.currentTarget.style.backgroundImage = `linear-gradient(rgba(5, 2, 31, 0.8), rgba(5, 2, 31, 0.8)), url(${data.image})`;
+        e.currentTarget.style.backgroundImage = `linear-gradient(rgba(5, 2, 31, 0.8), rgba(5, 2, 31, 0.8)), url(${data.image[0]})`;
         e.currentTarget.style.opacity = "1";
       }}
       onMouseOut={(e) => {
-        e.currentTarget.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${data.image})`;
+        e.currentTarget.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${data.image[0]})`;
         e.currentTarget.style.opacity = "1";
       }}
     >
@@ -61,14 +61,15 @@ const Conceirge = () => {
 
   const cardDetails = [
     {
-      title: "Dining & Entertainment",
-      image: image1,
+      title:"Dining and Entertainment",
+      title2: "Reserve Your Exclusive Dining and Entertainment Experience",
+      image: [image1, image2, image3, image4],
       description: "Experience exquisite culinary delights and world-class entertainment. From exclusive restaurant reservations to private concerts and shows, we curate unforgettable experiences. Our expert concierge team handpicks the finest dining establishments and arranges VIP access to the most sought-after entertainment venues. Whether it's a romantic dinner at a Michelin-starred restaurant or front-row seats at a sold-out performance, we ensure every moment is extraordinary.",
       icons1: [
-        { icon: "fa-cocktail", text: "Cocktail" },
-        { icon: "fa-utensils", text: "3 Course Meal" },
-        { icon: "fa-wifi", text: "Internet" },
-        { icon: "fa-ice-cream", text: "Dessert" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -80,14 +81,15 @@ const Conceirge = () => {
       ]
     },
     {
-      title: "Wellness & Beauty", 
-      image: image2,
+      title:"Wellness and Relaxation",
+      title2: "Indulge in the Ultimate Wellness & Relaxation Experience", 
+      image: [image2, image1, image3, image4],
       description: "Rejuvenate your body and mind with our premium wellness services. Access top spas, personal trainers, beauty treatments, and holistic health experiences. Our carefully selected wellness partners provide transformative treatments, from traditional therapies to cutting-edge beauty technologies. Enjoy personalized fitness sessions, meditation classes, and rejuvenating spa treatments delivered by industry-leading professionals in luxurious settings.",
       icons1: [
-        { icon: "fa-spa", text: "Spa Services" },
-        { icon: "fa-dumbbell", text: "Fitness Training" },
-        { icon: "fa-heart", text: "Wellness Programs" },
-        { icon: "fa-hand-sparkles", text: "Beauty Treatments" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -100,14 +102,15 @@ const Conceirge = () => {
     },
 
     {
-      title: "Conference & Events",
-      image: image3,
+      title:"Conferences",
+      title2: "Where Every Conference & Event is a Celebration of Excellence",
+      image: [image3, image2, image4, image1],
       description: "Let us handle your corporate and social events with precision. From venue selection to full-service event planning, we ensure flawless execution. Our experienced event coordinators manage every aspect, including catering, decor, entertainment, and technical requirements. Whether it's an intimate gathering or a large-scale conference, we deliver exceptional events that exceed expectations and leave lasting impressions.",
       icons1: [
-        { icon: "fa-users", text: "Event Planning" },
-        { icon: "fa-microphone", text: "Audio Setup" },
-        { icon: "fa-projector", text: "Presentation" },
-        { icon: "fa-calendar-check", text: "Scheduling" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -119,14 +122,15 @@ const Conceirge = () => {
       ]
     },
     {
-      title: "Professional Services",
-      image: image4,
+      title: "Travel and Accomodation",
+      title2: "Secure Your Exclusive Professional Services – Tailored to Perfection for the Discerning Few",
+      image: [image4, image3, image1, image2],
       description: "Access our network of trusted professionals for business support, legal services, translation, and other specialized assistance during your stay. Our vetted experts provide seamless solutions for all your professional needs, from document preparation to business meeting coordination. We connect you with skilled interpreters, legal advisors, and business consultants who understand the nuances of both local and international operations.",
       icons1: [
-        { icon: "fa-briefcase", text: "Business Support" },
-        { icon: "fa-gavel", text: "Legal Services" },
-        { icon: "fa-language", text: "Translation" },
-        { icon: "fa-handshake", text: "Consulting" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -138,14 +142,16 @@ const Conceirge = () => {
       ]
     },
     {
-      title: "Lifestyle Management",
-      image: image5,
+      
+      title: "Lifestyle & Expereinces",
+      title2: "Where Every Detail of Your Life is Managed with Excellence",
+      image: [image5, image3, image1, image2],
       description: "Simplify your life with our comprehensive lifestyle management services. From personal shopping to home management, we take care of every detail. Our dedicated team handles everything from wardrobe curation and gift procurement to household maintenance and administrative tasks. We provide proactive solutions and personalized attention to ensure your lifestyle runs smoothly and efficiently.",
       icons1: [
-        { icon: "fa-shopping-bag", text: "Personal Shopping" },
-        { icon: "fa-home", text: "Home Management" },
-        { icon: "fa-tshirt", text: "Wardrobe Curation" },
-        { icon: "fa-gift", text: "Gift Services" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -158,13 +164,14 @@ const Conceirge = () => {
     },
     {
       title: "Travel Arrangements",
-      image: image6,
+      title2: "Your Travel, Our Expertise—Creating Luxe Experiences Beyond Compare",
+      image: [image6, image1, image3, image2],
       description: "Let us orchestrate your travel needs with precision. From luxury transportation to exclusive excursions, we create seamless travel experiences. Our travel specialists arrange private jets, luxury vehicles, and yacht charters while crafting bespoke itineraries that showcase the best destinations. We handle all logistics, including VIP airport services, custom tours, and last-minute changes to ensure stress-free, memorable journeys.",
       icons1: [
-        { icon: "fa-plane", text: "Private Jets" },
-        { icon: "fa-car-side", text: "Luxury Vehicles" },
-        { icon: "fa-ship", text: "Yacht Charters" },
-        { icon: "fa-map-marked-alt", text: "Custom Tours" },
+        { icon: "fa-solid fa-bottle-water", text: "Water Bottle" },
+        { icon: "fa-wifi", text: "Wifi" },
+        { icon: "fa-car", text: "Luxury Transportation" },
+        { icon: "fa-gem", text: "Luxury",},
         
       ],
       icons2: [
@@ -180,6 +187,7 @@ const Conceirge = () => {
   return (
     <div className="luggage_transfer_and_deposit">
       <h1 className="transfer_service_heading1">Experience Tailored Services for Every Need</h1>
+      <h1 className="transfer_service_heading2">Indulge in Services Crafted Exclusively for Your Every Desire.</h1>
 
       <div className="tailored_container">
         <div className="first_row1">

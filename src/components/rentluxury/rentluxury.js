@@ -6,6 +6,10 @@ const transfercards = () => {
   return (
     <div>
       <h1 className="transfer_service_heading1">Rent Luxury</h1>
+      <h1 className="transfer_service_heading2">Sense the Pulse of Perfection on Every Mile You Travel.</h1>
+
+
+      
 
       <div className="cards_div_transfer">
         <div className="card_transfer12">

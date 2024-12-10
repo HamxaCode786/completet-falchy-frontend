@@ -2,12 +2,28 @@
 
 text-align: center;
 padding-top: 60px;
-padding-bottom: 30px;
+padding-bottom: 10px;
 font-size: 52px;
 font-weight: 700;
 color: rgba(0, 11, 29, 1);
 
 }
+.transfer_service_heading2 {
+
+  
+  font-size: 28px;
+  text-align: center;
+  font-weight: 700;
+  color: rgba(0, 11, 29, 1);
+  padding-right: 10px;
+  padding-left: 10px;
+  
+  }
+  
+
+
+
+
 
 .cards_div_transfer{
     display: grid;
@@ -32,7 +48,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-height: 600px;
+height: 690px;
 min-width: 350px;
 max-width: 420px;
 border-radius: 10px;
@@ -165,8 +181,24 @@ width: 80%;
     font-weight: 600;
     color: #FFFFFF;
     padding-top: 35px;
+    text-align: center;
   }
   
+  .last_rent_now_div h5 {
+    font-size: 12px;
+    font-weight: 350;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+
+
+
+
+
 
 .card_specs_p1 {
 
@@ -192,6 +224,15 @@ padding-left: 40px;
     color: #e9bd49;
 
 }
+
+.last_rent_now_div:hover h5 {
+    
+    color: #e9bd49;
+
+}
+
+
+
 .last_rent_now_div:hover {
     
     color: #e9bd49;
@@ -208,3 +249,74 @@ background-color: #05021f;
 
 }
 
+.location_cards_selectable {
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 10px;
+align-items: center;
+text-align: center;
+width: 100%;
+
+}
+
+
+
+.small_cards_1 {
+  text-align: center;
+  white-space: pre-line;
+  height: 35px;
+  display: flex
+;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  width: 90px;
+  border: none;
+  border-radius: 15px;
+  background-color: #05021f;
+  color: white;
+}
+
+  .small_cards_1 {
+
+font-weight: 500;
+padding: 0;
+margin: 0%;
+line-height: 14px;
+
+
+  }
+
+
+
+  .small_cards_1:hover {
+    transform: scale(1.1); /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease; /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_1:hover {
+    color: #e8bb47; /* Change text color on hover */
+  }
+  
+
+
+
+
+
+
+
+
+
+    
+  .small_cards_1 span {
+    display: block; /* Each word or element inside span will appear on a new line */
+  }
+  .small_cards_1.selected {
+    background-color: #66afe9; /* Change background color when selected */
+    color: white; /* Change text color */
+    border: 2px solid #3c8dbc; /* Light blue border */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow when selected */
+  }
