@@ -1,6 +1,7 @@
 import React from "react";
 import Footerimage from "../../src/assets/images/layout/footer_image.jpg";
 import Footerlogo from '../../src/assets/logo/FalchyLogo.svg'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -67,11 +68,11 @@ const Footer = () => {
         <div className="footer_div2">
         <div className="navigation_div">
           <h1>Navigation</h1>
-          <h4>Home</h4>
-          <h4>About Us</h4>
-          <h4>Services</h4>
-          <h4>Testimonials</h4>
-          <h4>Contact Us</h4>
+          <Link to="/"><h4>Home</h4></Link>
+          <Link to="/aboutus"><h4>About Us</h4></Link>
+          <Link to="/conciergeevents"><h4>Services</h4></Link>
+          <Link to="/testimonials"><h4>Testimonials</h4></Link>
+          
         </div>
         <div className="contact_us_div" style={{ alignItems: "flex-start" }}>
           <h1 style={{ color: "#05021F", fontSize: "24px", fontWeight: "600" }}>Contact Us</h1>

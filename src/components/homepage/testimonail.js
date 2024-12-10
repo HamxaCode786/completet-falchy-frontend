@@ -5,6 +5,9 @@ import BottomRightEclipse from '../../assets/images/homepageimage/Testimonial-Im
 
 // TestimonialCard Component
 const TestimonialCard = ({ description, author, company }) => (
+
+
+  
   <div className="testimonial-card">
     <img className="quotation-mark" src={QuotationMark} alt="Quotation Marks" />
     <p className="testimonial-card-description">{description}</p>
@@ -16,6 +19,10 @@ const TestimonialCard = ({ description, author, company }) => (
 
 // TestimonialSection Component
 const Testimonial = () => {
+
+
+
+  
   const testimonials = [
     {
       description:

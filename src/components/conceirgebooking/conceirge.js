@@ -62,7 +62,7 @@ const Conceirge = () => {
   const cardDetails = [
     {
       title:"Dining and Entertainment",
-      title2: "Reserve Your Exclusive Dining and Entertainment Experience",
+      title2: "Reserve Your Exclusive Dining and Entertainment Experience with us!",
       image: [image1, image2, image3, image4],
       description: "Experience exquisite culinary delights and world-class entertainment. From exclusive restaurant reservations to private concerts and shows, we curate unforgettable experiences. Our expert concierge team handpicks the finest dining establishments and arranges VIP access to the most sought-after entertainment venues. Whether it's a romantic dinner at a Michelin-starred restaurant or front-row seats at a sold-out performance, we ensure every moment is extraordinary.",
       icons1: [
@@ -82,7 +82,7 @@ const Conceirge = () => {
     },
     {
       title:"Wellness and Relaxation",
-      title2: "Indulge in the Ultimate Wellness & Relaxation Experience", 
+      title2: "Your Path to Relaxation Starts Here – Fill Out the Form and Unwind!", 
       image: [image2, image1, image3, image4],
       description: "Rejuvenate your body and mind with our premium wellness services. Access top spas, personal trainers, beauty treatments, and holistic health experiences. Our carefully selected wellness partners provide transformative treatments, from traditional therapies to cutting-edge beauty technologies. Enjoy personalized fitness sessions, meditation classes, and rejuvenating spa treatments delivered by industry-leading professionals in luxurious settings.",
       icons1: [
@@ -103,7 +103,7 @@ const Conceirge = () => {
 
     {
       title:"Conferences",
-      title2: "Where Every Conference & Event is a Celebration of Excellence",
+      title2: "Transform Your Event into a Masterpiece – We’re Here to Guide You!",
       image: [image3, image2, image4, image1],
       description: "Let us handle your corporate and social events with precision. From venue selection to full-service event planning, we ensure flawless execution. Our experienced event coordinators manage every aspect, including catering, decor, entertainment, and technical requirements. Whether it's an intimate gathering or a large-scale conference, we deliver exceptional events that exceed expectations and leave lasting impressions.",
       icons1: [
@@ -123,7 +123,7 @@ const Conceirge = () => {
     },
     {
       title: "Travel and Accomodation",
-      title2: "Secure Your Exclusive Professional Services – Tailored to Perfection for the Discerning Few",
+      title2: "Secure Your Exclusive Professional Services With Us– Tailored to Perfection for the Discerning Few",
       image: [image4, image3, image1, image2],
       description: "Access our network of trusted professionals for business support, legal services, translation, and other specialized assistance during your stay. Our vetted experts provide seamless solutions for all your professional needs, from document preparation to business meeting coordination. We connect you with skilled interpreters, legal advisors, and business consultants who understand the nuances of both local and international operations.",
       icons1: [
@@ -144,7 +144,7 @@ const Conceirge = () => {
     {
       
       title: "Lifestyle & Expereinces",
-      title2: "Where Every Detail of Your Life is Managed with Excellence",
+      title2: "Streamline Your Life with Excellence – Let’s Create the Perfect Experience for You!",
       image: [image5, image3, image1, image2],
       description: "Simplify your life with our comprehensive lifestyle management services. From personal shopping to home management, we take care of every detail. Our dedicated team handles everything from wardrobe curation and gift procurement to household maintenance and administrative tasks. We provide proactive solutions and personalized attention to ensure your lifestyle runs smoothly and efficiently.",
       icons1: [
@@ -164,7 +164,7 @@ const Conceirge = () => {
     },
     {
       title: "Travel Arrangements",
-      title2: "Your Travel, Our Expertise—Creating Luxe Experiences Beyond Compare",
+      title2: "Effortless Luxury, Expertly Crafted – Your Ultimate Travel Adventure Starts Here!",
       image: [image6, image1, image3, image2],
       description: "Let us orchestrate your travel needs with precision. From luxury transportation to exclusive excursions, we create seamless travel experiences. Our travel specialists arrange private jets, luxury vehicles, and yacht charters while crafting bespoke itineraries that showcase the best destinations. We handle all logistics, including VIP airport services, custom tours, and last-minute changes to ensure stress-free, memorable journeys.",
       icons1: [

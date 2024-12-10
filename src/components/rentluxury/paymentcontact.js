@@ -134,7 +134,7 @@ const Paymentcontact = () => {
 
   return (
     <div className="payment_form">
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: 'rgba(27, 27, 27, 0.95)' }}>Rent Your Luxury Car!</h2>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: 'rgba(27, 27, 27, 0.95)' }}>Your Ride, Your Status – Experience the Thrill of Luxury on the Road With Us!</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicFullName">
           <Form.Control

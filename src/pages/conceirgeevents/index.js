@@ -7,7 +7,7 @@ const Luggagetransfer = () => {
     <div>
       
       <Luggage />
-      <Contactcard2 />
+      {/* <Contactcard2 /> */}
     </div>
   )
 }
