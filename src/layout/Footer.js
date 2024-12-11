@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer_main_container">
     <div className="footer_main_div">
-      <div
+      {/* <div
         className="image_div"
         style={{
           background: `linear-gradient(rgba(39, 47, 59, 0.7), rgba(39, 47, 59, 0.7)), url(${Footerimage})`,
@@ -19,13 +19,12 @@ const Footer = () => {
           Lets Get You Moving <span className="span_1">-</span>{" "}
           <span>Contact Us</span>
         </h1>
-      </div>
+      </div> */}
       <div className="footer_main_data">
         <div className="footer_div1">
           <img className="footer_logo1" src={Footerlogo} alt="footer_image" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Experience unparalleled luxury with our Elegant services, designed for comfort and elegance.
           </p>
           <button>Contact Us</button>
           <div className="icons_div1">

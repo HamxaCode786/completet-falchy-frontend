@@ -26,19 +26,19 @@ const Testimonial = () => {
   const testimonials = [
     {
       description:
-        'I recently purchased a car from WHA Road Solution, and the experience was exceptional! The staff were knowledgeable and guided me through the entire process, making it easy to find the perfect vehicle. I highly recommend them for anyone looking to buy a car!',
-      author: 'John Doe',
+        'I recently used the transfer service from these guys, and the experience was exceptional! The team was professional and ensured my journey was seamless from start to finish. The vehicle was immaculate, and the driver was courteous and prompt. I highly recommend their luxury transfer services for a reliable and comfortable travel experience!',
+      author: 'Giovanni Doe',
       company: 'Owner of Car Rental Company',
     },
     {
       description:
-        'I recently purchased a car from WHA Road Solution, and the experience was exceptional! The staff were knowledgeable and guided me through the entire process, making it easy to find the perfect vehicle. I highly recommend them for anyone looking to buy a car!',
+        'I recently had the pleasure of using the luxury rental service from them, and I couldn’t be more impressed! From the moment I made my booking, the team was highly professional, ensuring that every detail of my journey was taken care of. The vehicle was absolutely spotless, and the service was nothing short of outstanding!',
       author: 'Jane Smith',
       company: 'CEO of Auto Ventures',
     },
     {
       description:
-        'I recently purchased a car from WHA Road Solution, and the experience was exceptional! The staff were knowledgeable and guided me through the entire process, making it easy to find the perfect vehicle. I highly recommend them for anyone looking to buy a car!',
+        'I recently used the concierge services from Falchyy, and the experience was exceptional! The team was incredibly knowledgeable and attentive, guiding me through every step and ensuring my needs were met with ease. They went above and beyond to provide personalized solutions, making my experience very seamless and stress-free!',
       author: 'Robert Brown',
       company: 'Founder of Road Safety Solutions',
     },

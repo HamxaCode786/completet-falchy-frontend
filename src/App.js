@@ -30,6 +30,7 @@ import './styles/luggage1.css'
 import './styles/aboutus.css'
 import './styles/aboutsection.css'
 import './styles/caraosel.css'
+import './styles/caraouselcomponent.css'
 
 import './styles/aboutusmobile.css'
 import './styles/responsive/layout.css'

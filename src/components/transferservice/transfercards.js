@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TransferContext } from "../../contextapi/transferservicecontext";
-import Drivers from "../../assets/images/transferpage/chaufferedcars.png";
+import Drivers from "../../assets/images/transferpage/transfercars/Mercedes-E-Chauffer.png";
+import Driversv from "../../assets/images/transferpage/transfercars/Mercedes-V-Chauffer (2).png";
+import Driverss from "../../assets/images/transferpage/transfercars/Mercedes-S-Chaffuer.png";
 
 const Transfercards = () => {
   const { selectedCard, setSelectedCard } = useContext(TransferContext); // Destructure both selectedCard and setSelectedCard from context
@@ -28,7 +30,7 @@ const Transfercards = () => {
           className="card_transfer12"
           onClick={() =>
             handleCardSelection({
-              name: "Merceds E-Class",
+              name: "Merceds-Benz E-Class",
               hourlyRate: "$120",
               color: "Super White",
               power: "375 HP",
@@ -72,7 +74,7 @@ const Transfercards = () => {
               Milan
             </button>
           </div>
-          <h4>Merceds E-Class</h4>
+          <h4>Merceds-Benz E-Class</h4>
           <div className="cards_grey_buttons">
             <div className="grey_button_1_d">
               <p className="first_text1">$120</p>
@@ -201,7 +203,7 @@ const Transfercards = () => {
             })
           }
         >
-          <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
+          <img className="card_transfer1_img1" src={Driversv} alt="cards_1" />
           <div className="location_cards_selectable">
             <button
               className="small_cards_1"
@@ -366,7 +368,7 @@ const Transfercards = () => {
             })
           }
         >
-          <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
+          <img className="card_transfer1_img1" src={Driverss} alt="cards_1" />
           <div className="location_cards_selectable">
             <button
               className="small_cards_1"

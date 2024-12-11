@@ -12,7 +12,7 @@ const transfercards = () => {
       
 
       <div className="cards_div_transfer">
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">
@@ -130,7 +130,7 @@ const transfercards = () => {
             </Link>
           </div>
         </div>
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">
@@ -249,7 +249,7 @@ const transfercards = () => {
           </div>
         </div>
 
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">
@@ -368,7 +368,7 @@ const transfercards = () => {
           </div>
         </div>
 
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">
@@ -487,7 +487,7 @@ const transfercards = () => {
           </div>
         </div>
 
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">
@@ -606,7 +606,7 @@ const transfercards = () => {
           </div>
         </div>
 
-        <div className="card_transfer12">
+        <div className="card_transfer12 custom_height_card">
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
           <h4>Merchedes-Benz S 580 </h4>
           {/* <div className="cards_grey_buttons">

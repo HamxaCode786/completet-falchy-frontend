@@ -29,3 +29,18 @@ input::placeholder {
     outline: none; /* Remove default outline */
   }
     
+
+.custom_height_card {
+
+height: 550px !important;
+
+
+}
+
+
+.image_hover_done {
+
+min-height: 280px;
+
+
+}

@@ -5,6 +5,7 @@ import Testimonial from '../../components/homepage/testimonail'
 import Aboutus from '../../components/homepage/aboutus'
 import Steps from '../../components/homepage/steps'
 import Accordion from '../../components/homepage/accordion'
+import Footertop from '../../components/footerabove/footerabove'
 
 const Homepage = () => {
   return (
@@ -15,6 +16,7 @@ const Homepage = () => {
       <Aboutus />
       <Testimonial />
       <Accordion />
+      <Footertop />
     </div>
   )
 }

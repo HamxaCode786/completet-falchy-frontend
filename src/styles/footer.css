@@ -1,10 +1,10 @@
-.footer_main_div {
+/* .footer_main_div {
 
 display: grid;
 grid-template-rows: 1fr 2fr;
 
 
-}
+} */
 
 
 .footer_heading {
@@ -34,6 +34,7 @@ font-weight: bold;
 display: flex;
 justify-content: center;
 align-items: center;
+min-height: 280px;
 
     }
 

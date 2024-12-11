@@ -8,7 +8,7 @@ const Pic = () => {
   const cardData = location.state;
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
+    setIndex (selectedIndex);
   };
   return (
     <div>

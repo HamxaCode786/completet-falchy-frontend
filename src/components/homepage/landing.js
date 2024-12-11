@@ -54,8 +54,8 @@ const landing = () => {
   </div>  
   <div className="landing-content">
 <div className='landing-content1'>
-<h2>Save Big With Our<br /> Renting Services</h2>
-<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui</h4>
+<h2>Unmatched Elegance with<br />Our Luxury Renting Services</h2>
+<h4>Experience superior service and unmatched quality, tailored to your highest standards. Whether for business or leisure, we provide exclusive solutions prioritizing comfort, style, and convenience for an elevated lifestyle.</h4>
 <button>Contact Us</button>
      </div>
    </div>
