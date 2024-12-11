@@ -1,4 +1,5 @@
 import React from 'react'
+import Footerimage from "../../assets/images/layout/footer_image.jpg";
 
 const footerabove = () => {
   return (
@@ -6,7 +7,7 @@ const footerabove = () => {
       <div
         className="image_div"
         style={{
-          
+          background: `linear-gradient(rgba(39, 47, 59, 0.7), rgba(39, 47, 59, 0.7)), url(${Footerimage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

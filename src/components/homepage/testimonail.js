@@ -32,13 +32,13 @@ const Testimonial = () => {
     },
     {
       description:
-        'I recently had the pleasure of using the luxury rental service from them, and I couldn’t be more impressed! From the moment I made my booking, the team was highly professional, ensuring that every detail of my journey was taken care of. The vehicle was absolutely spotless, and the service was nothing short of outstanding!',
+        'Last month I had the pleasure of using the luxury rental service from them, and I couldn’t be more impressed! From the moment I made my booking, the team was highly professional, ensuring that every detail of my journey was taken care of. The vehicle was absolutely spotless, and the service was nothing short of outstanding!',
       author: 'Jane Smith',
       company: 'CEO of Auto Ventures',
     },
     {
       description:
-        'I recently used the concierge services from Falchyy, and the experience was exceptional! The team was incredibly knowledgeable and attentive, guiding me through every step and ensuring my needs were met with ease. They went above and beyond to provide personalized solutions, making my experience very seamless and stress-free!',
+        'Two Days ago used the concierge services from Falchyy, and the experience was exceptional! The team was incredibly knowledgeable and attentive, guiding me through every step and ensuring my needs were met with ease. They went above and beyond to provide personalized solutions, making my experience very seamless and stress-free!',
       author: 'Robert Brown',
       company: 'Founder of Road Safety Solutions',
     },
