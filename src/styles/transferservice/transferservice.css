@@ -42,8 +42,9 @@ align-items: center;
 
 .contact_card1_form1_label1{
 
-color:white;
+color:white !important;
 font-size: 14px;
+font-weight: 600;
 
 
 }
@@ -63,7 +64,7 @@ height: 80px;
 }
 .contact_div1 button {
 
-margin-top: 30px;
+
 height: 38px;
 border:none;
 padding-right: 5px;
@@ -72,6 +73,10 @@ background-color: #dfb045;
 color: black;
 font-weight: bold;
 font-size: 14px;
+width: 180px;
+display:flex;
+justify-content: center;
+align-items: center;
 
 }
 

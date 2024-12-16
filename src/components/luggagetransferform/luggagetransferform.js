@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/themes/material_green.css'; // Import Flatpickr CSS for styling
+import { MDBInput } from 'mdb-react-ui-kit';
 
 export default function Luggageransferform() {
   const [date1, setDate1] = useState(null);
@@ -17,89 +18,139 @@ export default function Luggageransferform() {
         <div className="form-section">
           <form action="#" method="POST">
             <div className="form-layout">
-              <select name="luggage_type" required>
-                <option value="" disabled selected hidden>
-                  Luggage Type
-                </option>
-                <option value="suitcase">Suitcase</option>
-                <option value="backpack">Backpack</option>
-                <option value="duffel">Duffel Bag</option>
-                <option value="others">Others</option>
-              </select>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="luggage_type" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Luggage Type</label>
+                <select id="luggage_type" name="luggage_type" required style={{ fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', height: '52px' }}>
+                  <option value="" disabled selected hidden>
+                    Select Your Luggage Type
+                  </option>
+                  <option value="None Selected">None</option>
+                  <option value="Suitcase">Suitcase</option>
+                  <option value="Backpack">Backpack</option>
+                  <option value="Duffel">Duffel Bag</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
 
-              <input
-                type="text"
-                name="pickup_location"
-                placeholder="Pickup Location"
-                required
-              />
-              <input
-                type="text"
-                name="dropoff_location"
-                placeholder="Drop Off Location"
-                required
-              />
-
-              <div className="input-wrapper">
-                <Flatpickr
-                  value={date1}
-                  onChange={(date) => setDate1(date)}
-                  options={{
-                    dateFormat: 'Y-m-d',
-                    minDate: 'today'
-                  }}
-                  placeholder="Pick Up Date"
-                  name="pickup_date"
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="pickupLocation" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Pickup Location</label>
+                <input
+                  id="pickupLocation"
+                  type="text"
+                  name="pickup_location"
+                  placeholder=" Select Your Pickup Location"
                   required
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
                 />
-                <Flatpickr
-                  value={time1}
-                  onChange={(time) => setTime1(time)}
-                  options={{
-                    noCalendar: true,
-                    enableTime: true,
-                    dateFormat: "H:i",
-                    time_24hr: true
-                  }}
-                  placeholder="Pick Up Time"
-                  name="pickup_time"
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="dropoffLocation" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Drop Off Location</label>
+                <input
+                  id="dropoffLocation"
+                  type="text"
+                  name="dropoff_location"
+                  placeholder="Select Your Dropoff Location"
                   required
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
                 />
               </div>
 
-              <div className="input-wrapper">
+              <div className='lugagge_transfer_mobile' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="pickupdate" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Pick Up Date</label>
                 <Flatpickr
-                  value={date2}
-                  onChange={(date) => setDate2(date)}
-                  options={{
-                    dateFormat: 'Y-m-d',
-                    minDate: date1 || 'today'
-                  }}
-                  placeholder="Drop Off Date"
-                  name="dropoff_date"
+                  id="pickupdate"
+                  name="pickupdate"
+                  placeholder="Select Your Pick Up Date"
                   required
-                />
-                <Flatpickr
-                  value={time2}
-                  onChange={(time) => setTime2(time)}
                   options={{
-                    noCalendar: true,
-                    enableTime: true,
-                    dateFormat: "H:i",
-                    time_24hr: true
+                    enableTime: false,
+                    dateFormat: "F j, Y"
                   }}
-                  placeholder="Drop Off Time"
-                  name="dropoff_time"
-                  required
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
                 />
               </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="pickuptime" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Pick Up Time</label>
+                <Flatpickr
+                  id="pickuptime"
+                  name="pickuptime"
+                  placeholder="Select Your Pick Up Time"
+                  required
+                  options={{
+                    enableTime: true,
+                    noCalendar: true,
+                    dateFormat: "g:i K"
+                  }}
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
+                />
+              </div>
+              </div>
 
-              <input
-                type="text"
-                name="contact_info"
-                placeholder="Contact Info"
-                required
-              />
+              <div className='lugagge_transfer_mobile' style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3%' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="dropOffDate" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Drop Off Date</label>
+                <Flatpickr
+                  id="dropOffDate"
+                  name="dropoffdate"
+                  placeholder="Select Your Drop Off Date"
+                  required
+                  options={{
+                    enableTime: true,
+                    dateFormat: "F j, Y g:i K"
+                  }}
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
+                />
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="dropOffTime" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Drop Off Time</label>
+                <Flatpickr
+                  id="dropOffTime"
+                  name="dropofftime"
+                  placeholder="Select Your Drop Off Time"
+                  required
+                  options={{
+                    enableTime: true,
+                    noCalendar: true,
+                    dateFormat: "g:i K"
+                  }}
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
+                />
+              </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <label htmlFor="pickupLocation" style={{ alignSelf: 'flex-start', color: 'white', fontWeight: 'bold' }}>Contact Information</label>
+                <input
+                  id="pickupLocation"
+                  type="text"
+                  name="pickup_location"
+                  placeholder="Contact Information"
+                  required
+                  style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none', color: 'black', border: 'none', borderColor:"white", height: '52px' }}
+                />
+              </div>
             </div>
 
             <div className='buttonWrapper'>

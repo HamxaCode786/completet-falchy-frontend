@@ -4,16 +4,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { TransferProvider } from "./contextapi/transferservicecontext";
-
+import './i18n';
+import TranslationProvider from './contextapi/translationContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <TranslationProvider>
   <TransferProvider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
     </TransferProvider>
-  
+    </TranslationProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

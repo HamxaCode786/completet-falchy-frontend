@@ -1,5 +1,8 @@
 import React from 'react'
 import Car from '../../assets/images/homepageimage/Hero Car.png'
+import { TranslationContext } from '../../contextapi/translationContext';
+import { useContext } from "react";
+
 
 // const landing = () => {
 //   return (
@@ -47,16 +50,66 @@ import Car from '../../assets/images/homepageimage/Hero Car.png'
 
 
 
-const landing = () => {
+const Landing = () => {
+  const { language } = useContext(TranslationContext);
+
+
+
   return (
   <>
   <div className='svg_clippath'>
   </div>  
   <div className="landing-content">
 <div className='landing-content1'>
-<h2>Unmatched Elegance with<br />Our Luxury Renting Services</h2>
-<h4>Experience superior service and unmatched quality, tailored to your highest standards. Whether for business or leisure, we provide exclusive solutions prioritizing comfort, style, and convenience for an elevated lifestyle.</h4>
-<button>Contact Us</button>
+<h2>
+{language === 'en' ? (
+  <>
+    Unmatched Elegance with Our <br /> Luxury Renting Services
+  </>
+) : language === 'it' ? (
+  <>
+    Eleganza incomparabile con <br /> I nostri servizi di noleggio di lusso<br />
+  </>
+) : language === 'du' ? (
+  <>
+    Ongeëvenaarde elegantie met Onze <br /> luxe verhuurdiensten<br />
+  </>
+) : language === 'fr' ? (
+  <>
+    Une élégance inégalée avec nos <br /> services de location de luxe<br />
+  </>
+) : (
+  <>
+    Unmatched Elegance with Our Luxury Renting Services<br />
+  </>
+)}
+
+</h2>
+
+<h4>{language === 'en' ? (
+  'Experience superior service and unmatched quality, tailored to your highest standards. Whether for business or leisure, we provide exclusive solutions prioritizing comfort, style, and convenience for an elevated lifestyle.'
+) : language === 'it' ? (
+  'Vivi un servizio superiore e una qualità senza pari, progettato per i tuoi più alti standard. Che sia per affari o svago, offriamo soluzioni esclusive che priorizzano comfort, stile e convenienza per uno stile di vita elevato.'
+) : language === 'du' ? (
+  'Ervaar superieure service en ongeëvenaarde kwaliteit, op maat gemaakt naar uw hoogste normen. Of het nu voor zaken of recreatie is, wij bieden exclusieve oplossingen die comfort, stijl en gemak prioriteren voor een verhoogde levensstijl.'
+) : language === 'fr' ? (
+  'Découvrez un service supérieur et une qualité inégalée, adaptés à vos normes les plus élevées. Que ce soit pour les affaires ou les loisirs, nous proposons des solutions exclusives qui privilégient le confort, le style et la commodité pour un mode de vie élevé.'
+) : (
+  'Experience superior service and unmatched quality, tailored to your highest standards. Whether for business or leisure, we provide exclusive solutions prioritizing comfort, style, and convenience for an elevated lifestyle.'
+)}
+</h4>
+<button>{language === 'en' ? (
+  'Contact Us'
+) : language === 'it' ? (
+  'Contattaci'
+) : language === 'du' ? (
+  'Neem contact met ons op'
+) : language === 'fr' ? (
+  'Contactez-nous'
+) : (
+  'Contact Us'
+)}
+</button>
      </div>
    </div>
    <div className="image-container">
@@ -69,4 +122,4 @@ const landing = () => {
 
 
 
-export default landing
+export default Landing

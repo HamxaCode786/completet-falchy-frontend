@@ -1,0 +1,31 @@
+.custom_car_modal {
+
+
+text-align: center !important;
+width: 100%;
+font-weight: 700;
+
+}
+
+
+.modal_custom_footer {
+
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+
+.modal_custom_footer button {
+
+    width: 70%;
+    background-color: #05021f;
+    color: #dfb045;
+    font-weight: 600;
+    
+    
+    }
+
+

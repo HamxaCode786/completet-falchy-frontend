@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TransferContext } from "../../contextapi/transferservicecontext";
-import Drivers from "../../assets/images/transferpage/transfercars/Mercedes-E-Chauffer.png";
-import Driversv from "../../assets/images/transferpage/transfercars/Mercedes-V-Chauffer (2).png";
-import Driverss from "../../assets/images/transferpage/transfercars/Mercedes-S-Chaffuer.png";
+import Drivers from "../../assets/images/transferpage/transfercars/E-Class.png";
+import Driversv from "../../assets/images/transferpage/transfercars/V-Class.png";
+import Driverss from "../../assets/images/transferpage/transfercars/S-class.png";
 
 const Transfercards = () => {
   const { selectedCard, setSelectedCard } = useContext(TransferContext); // Destructure both selectedCard and setSelectedCard from context
 
-  const handleCardSelection = (cardData) => {
-    console.log("Selected card:", cardData);
-    setSelectedCard(cardData);
+  const handleCardSelection = (cardData, cardImage) => {
+    console.log("Selected card:", cardData, cardImage);
+    setSelectedCard({ ...cardData, image: cardImage });
   };
 
   const handleSelect = (cardId) => {
@@ -19,7 +19,7 @@ const Transfercards = () => {
 
   return (
     <div>
-      <h1 className="transfer_service_heading1">Transfer Service</h1>
+      <h1 className="transfer_service_heading1">Arrive With Grace</h1>
       <h1 className="transfer_service_heading2">Feel the Thrill of True Elegance with Every Transfer.</h1>
 
 
@@ -35,7 +35,7 @@ const Transfercards = () => {
               color: "Super White",
               power: "375 HP",
               milage: "30 MPG",
-            })
+            }, Drivers)
           }
         >
           <img className="card_transfer1_img1" src={Drivers} alt="cards_1" />
@@ -52,8 +52,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_2"
+              className={`small_cards_2 ${
                 selectedCard === 2 ? "selected" : ""
               }`}
               onClick={() => handleSelect(2)}
@@ -63,8 +63,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_3"
+              className={`small_cards_3 ${
                 selectedCard === 3 ? "selected" : ""
               }`}
               onClick={() => handleSelect(3)}
@@ -200,7 +200,7 @@ const Transfercards = () => {
               color: "Super White",
               power: "237 HP",
               milage: "40 MPG",
-            })
+            }, Driversv)
           }
         >
           <img className="card_transfer1_img1" src={Driversv} alt="cards_1" />
@@ -217,8 +217,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_2"
+              className={`small_cards_2 ${
                 selectedCard === 2 ? "selected" : ""
               }`}
               onClick={() => handleSelect(2)}
@@ -228,8 +228,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_3"
+              className={`small_cards_3 ${
                 selectedCard === 3 ? "selected" : ""
               }`}
               onClick={() => handleSelect(3)}
@@ -365,7 +365,7 @@ const Transfercards = () => {
               color: "Super white",
               power: "510 HP",
               milage: "32 MPG",
-            })
+            }, Driverss)
           }
         >
           <img className="card_transfer1_img1" src={Driverss} alt="cards_1" />
@@ -382,8 +382,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_2"
+              className={`small_cards_2 ${
                 selectedCard === 2 ? "selected" : ""
               }`}
               onClick={() => handleSelect(2)}
@@ -393,8 +393,8 @@ const Transfercards = () => {
               Milan
             </button>
             <button
-              className="small_cards_1"
-              className={`small_cards_1 ${
+              className="small_cards_3"
+              className={`small_cards_3 ${
                 selectedCard === 3 ? "selected" : ""
               }`}
               onClick={() => handleSelect(3)}

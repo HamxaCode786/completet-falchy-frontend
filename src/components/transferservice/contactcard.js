@@ -6,15 +6,15 @@ const contactcard = () => {
     <div>
       <div className="contact_card1">
         <h2>
-          Need Help Finding The Right Car To Hire
+          Need a Custom Car to Hire?
           <br />
           Contact Our Team
         </h2>
-        <h4>
+        {/* <h4>
   Looking for something unique? We also offer customized car options 
   tailored to your preferences. Whether it's luxury features, color 
   schemes, or specific requirements, we can help you find the perfect match.
-</h4>
+</h4> */}
     
         <div className="contact_card1_form1" style={{width: "100%"}}>
           <div className="contact_div">
@@ -33,12 +33,18 @@ const contactcard = () => {
             </Form.Label>
             <Form.Control type="tel" placeholder="Enter your phone number" />
           </div>
-          <div className="contact_div1" >
+          <div className="contact_div" >
+            <Form.Label className="contact_card1_form1_label1">
+              Description
+            </Form.Label>
+            <Form.Control type="tel" placeholder="Enter Description" />
+          </div>
+          
+        </div>
+        <div className="contact_div1" >
           <Form.Label className="contact_card1_form1_label1">&nbsp;</Form.Label>
           <button>Request Callback</button>
         </div>
-        </div>
-        
       </div>
     </div>
   );

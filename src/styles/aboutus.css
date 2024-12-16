@@ -5,6 +5,7 @@
     background: url('../assets/images/About Us Image/AboutUsPageImage.png');
     text-align: center;
     padding: 100px 20px 60px;
+    
 
 }
 
@@ -205,3 +206,114 @@ width: 100%;
         color:#e7ba48 !important;
         cursor: pointer !important;
     }
+
+
+    .contact_card_1 {
+      min-height: 600px;
+      background-image: url('../assets/images/newcontactcomponent/jonathan-tasman-DEGGHGwDuik-unsplash 4 (2)-min.png');
+      background-size: cover; /* Ensures the image covers the entire area */
+      background-repeat: no-repeat; /* Prevents the background from repeating */
+      background-position: center; /* Centers the image */
+      padding-top: 6%;
+      padding-left: 5%;
+      width: 100%; /* Ensures the width of the container is 100% */
+    }
+    
+
+.new_contact_heading_one {
+
+font-size: 85px;
+color: white;
+
+
+}
+.new_contact_heading_2 {
+
+  font-size: 52px;
+  color: white;
+  font-weight: 250;
+  
+
+
+}
+
+.contact_card_1 {
+  min-height: 600px;
+  background-image: url('../assets/images/newcontactcomponent/jonathan-tasman-DEGGHGwDuik-unsplash 4 (2)-min.png');
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-repeat: no-repeat; /* Prevents the background from repeating */
+  background-position: center; /* Centers the image */
+  padding-top: 6%;
+  padding-left: 5%;
+  width: 100%; /* Ensures the width of the container is 100% */
+}
+
+
+
+@media (max-width: 1250px) {
+
+  
+  .contact_card_1{
+  
+    min-height: 500px;
+  }
+
+}
+
+
+@media (max-width: 830px) {
+
+  
+  .contact_card_1{
+  
+  min-height: 350px;
+  padding-top: 4%;
+
+
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  
+  .contact_card_1{
+  
+  min-height: 180px !important;
+  padding-top: 4%;
+
+
+  }
+
+  .new_contact_heading_one {
+
+    font-size: 36px;
+    color: white;
+    
+    
+    }
+    .new_contact_heading_2 {
+    
+      font-size: 22px;
+      color: white;
+      font-weight: 250;
+      
+    
+    
+    }
+    
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+

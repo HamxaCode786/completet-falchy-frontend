@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Swal from 'sweetalert2';
+import { MDBInput } from 'mdb-react-ui-kit'; // Import MDBInput
 
 const Paymentcontact = () => {
   const [formData, setFormData] = useState({
@@ -137,13 +138,14 @@ const Paymentcontact = () => {
       <h2 style={{ textAlign: 'center', marginBottom: '20px', color: 'rgba(27, 27, 27, 0.95)' }}>Your Ride, Your Status – Experience the Thrill of Luxury on the Road With Us!</h2>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicFullName">
-          <Form.Control
-            style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+          <MDBInput
+            id="formFullName"
+            label="Full Name"
             type="text"
-            placeholder="Full Name"
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
+            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
             isInvalid={!!errors.fullName}
             disabled={isLoading}
           />
@@ -151,13 +153,14 @@ const Paymentcontact = () => {
         </Form.Group>
         
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control
-            style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+          <MDBInput
+            id="formEmail"
+            label="Email Address"
             type="email"
-            placeholder="Email Address"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
             isInvalid={!!errors.email}
             disabled={isLoading}
           />
@@ -165,13 +168,14 @@ const Paymentcontact = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicContact">
-          <Form.Control
-            style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 600, fontSize: '16px', padding: '10px' }}
+          <MDBInput
+            id="formContact"
+            label="Contact Information"
             type="text"
-            placeholder="Enter Your Contact Information"
             name="contact"
             value={formData.contact}
             onChange={handleChange}
+            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
             isInvalid={!!errors.contact}
             disabled={isLoading}
           />

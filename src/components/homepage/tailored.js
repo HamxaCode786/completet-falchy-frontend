@@ -4,13 +4,31 @@ import image2 from "../../assets/images/homepageimage/transfer2.jpg";
 import image3 from "../../assets/images/homepageimage/luggage2.jpg";
 import image4 from "../../assets/images/homepageimage/concerge2.jpg";
 import { useNavigate } from "react-router-dom";
+import { TranslationContext } from '../../contextapi/translationContext';
+import { useContext } from "react";
+
 
 const Tailored = () => {
   const navigate = useNavigate();
+  const { language } = useContext(TranslationContext);
+
 
   return (
     <div className="custom_tailored_heading">
-      <h3>Tailored Solution For Every Need</h3>
+      <h3>
+  {language === 'en' ? (
+    'Tailored Solution For Every Need'
+  ) : language === 'it' ? (
+    'Soluzione su misura per ogni esigenza'
+  ) : language === 'du' ? (
+    'Op maat gemaakte oplossing voor elke behoefte'
+  ) : language === 'fr' ? (
+    'Solution sur mesure pour chaque besoin'
+  ) : (
+    'Tailored Solution For Every Need'
+  )}
+</h3>
+
     <div className="tailored_container">
       
       <div className="first_row">
@@ -39,7 +57,20 @@ const Tailored = () => {
           }}
         >
           <h2 style={{ margin: 0, color: "white", fontSize: "36px" }}>
-            Rent Luxury
+          {
+  language === 'en' ? (
+    'Rent Luxury'
+  ) : language === 'it' ? (
+    'Noleggia lusso'
+  ) : language === 'du' ? (
+    'Huur luxe'
+  ) : language === 'fr' ? (
+    'Louer du luxe'
+  ) : (
+    'Rent Luxury'
+  )
+}
+
           </h2>
           <button
             className="image_button_div"
@@ -51,7 +82,20 @@ const Tailored = () => {
               gap: "8px",
             }}
           >
-            Transfer{" "}
+            {
+  language === 'en' ? (
+    'View More'
+  ) : language === 'it' ? (
+    'Vedi di più'
+  ) : language === 'du' ? (
+    'Bekijk meer'
+  ) : language === 'fr' ? (
+    'Voir plus'
+  ) : (
+    'View More'
+  )
+}
+{" "}
             <i className="fas fa-arrow-right" style={{ width: "40px" }}></i>
           </button>
         </div>
@@ -80,7 +124,20 @@ const Tailored = () => {
           }}
         >
           <h2 style={{ margin: 0, color: "white", fontSize: "36px" }}>
-            Transfers
+          {
+  language === 'en' ? (
+    'Transfers'
+  ) : language === 'it' ? (
+    'Trasferimenti'
+  ) : language === 'du' ? (
+    'Transfers'
+  ) : language === 'fr' ? (
+    'Transferts'
+  ) : (
+    'Transfers'
+  )
+}
+
           </h2>
           <button
             className="image_button_div"
@@ -92,7 +149,20 @@ const Tailored = () => {
               gap: "8px",
             }}
           >
-            View more{" "}
+            {
+  language === 'en' ? (
+    'View More'
+  ) : language === 'it' ? (
+    'Vedi di più'
+  ) : language === 'du' ? (
+    'Bekijk meer'
+  ) : language === 'fr' ? (
+    'Voir plus'
+  ) : (
+    'View More'
+  )
+}
+{" "}
             <i className="fas fa-arrow-right" style={{ width: "40px" }}></i>
           </button>
         </div>
@@ -123,7 +193,20 @@ const Tailored = () => {
           }}
         >
           <h2 style={{ margin: 0, color: "white", fontSize: "36px" }}>
-            Luggage Transfers & Deposit
+          {
+  language === 'en' ? (
+    'Luggage Transfers & Deposit'
+  ) : language === 'it' ? (
+    'Trasferimenti di bagagli e deposito'
+  ) : language === 'du' ? (
+    'Bagagevervoer & Borg'
+  ) : language === 'fr' ? (
+    'Transferts de bagages et dépôt'
+  ) : (
+    'Luggage Transfers & Deposit'
+  )
+}
+
           </h2>
           <button
             className="image_button_div"
@@ -135,7 +218,20 @@ const Tailored = () => {
               gap: "8px",
             }}
           >
-            View more{" "}
+            {
+  language === 'en' ? (
+    'View More'
+  ) : language === 'it' ? (
+    'Vedi di più'
+  ) : language === 'du' ? (
+    'Bekijk meer'
+  ) : language === 'fr' ? (
+    'Voir plus'
+  ) : (
+    'View More'
+  )
+}
+{" "}
             <i className="fas fa-arrow-right" style={{ width: "40px" }}></i>
           </button>
         </div>
@@ -164,7 +260,20 @@ const Tailored = () => {
           }}
         >
           <h2 style={{ margin: 0, color: "white", fontSize: "36px" }}>
-            Concierge
+          {
+  language === 'en' ? (
+    'Concierge'
+  ) : language === 'it' ? (
+    'Concierge'  // The same word in Italian
+  ) : language === 'du' ? (
+    'Concierge'  // The same word in Dutch
+  ) : language === 'fr' ? (
+    'Concierge'  // The same word in French
+  ) : (
+    'Concierge'
+  )
+}
+
           </h2>
           <button
             className="image_button_div"
@@ -176,7 +285,20 @@ const Tailored = () => {
               gap: "8px",
             }}
           >
-            View more{" "}
+            {
+  language === 'en' ? (
+    'View More'
+  ) : language === 'it' ? (
+    'Vedi di più'
+  ) : language === 'du' ? (
+    'Bekijk meer'
+  ) : language === 'fr' ? (
+    'Voir plus'
+  ) : (
+    'View More'
+  )
+}
+{" "}
             <i className="fas fa-arrow-right" style={{ width: "40px" }}></i>
           </button>
         </div>

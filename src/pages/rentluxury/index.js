@@ -1,18 +1,16 @@
-import React from 'react'
-import Luxury from '../../components/rentluxury/rentluxury'
-import Contactcard2 from '../../components/transferservice/contactcard'
-
+import React from "react";
+import Luxury from "../../components/rentluxury/rentluxury";
+import Contactcard2 from "../../components/transferservice/contactcard";
+import Caraouselluxury from "../../components/caraousel/carousalrentluxury";
 
 const Rentluxury = () => {
   return (
     <div>
-    <Luxury />
-<Contactcard2 />
-
-
-
+      <Caraouselluxury />
+      <Luxury />
+      <Contactcard2 />
     </div>
-  )
-}
+  );
+};
 
-export default Rentluxury
+export default Rentluxury;

@@ -1,11 +1,9 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import firstImage from '../../assets/images/caraoselImage/compressedones/elegant-uber-driver-giving-taxi-ride.jpeg';
-import secondImage from '../../assets/images/caraoselImage/compressedones/pexels-mike-noga-1916934-3541743.jpg';
-import thirdImage from '../../assets/images/caraoselImage/compressedones/xclusive-chauffeurs-HC3yL9YGpjI-unsplash.jpg';
-import fourthImage from '../../assets/images/caraoselImage/compressedones/pexels-zandatsu-17455633.jpeg';
-
-
+import firstImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/1.png';
+import secondImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/2.png';
+import thirdImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/3.png';
+import fourthImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/4.png';
 
 const CarouselComponent = () => {
   return (

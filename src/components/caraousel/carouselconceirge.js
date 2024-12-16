@@ -1,9 +1,9 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import firstImage from '../../assets/images/caraoselImage/elegant-uber-driver-giving-taxi-ride.jpeg';
-import secondImage from '../../assets/images/caraoselImage/pexels-mike-noga-1916934-3541743.jpg';
-import thirdImage from '../../assets/images/caraoselImage/xclusive-chauffeurs-HC3yL9YGpjI-unsplash.jpg';
-import fourthImage from '../../assets/images/caraoselImage/pexels-zandatsu-17455633.jpeg';
+import firstImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/ConciergeBannerImage-min.png';
+import secondImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/035_WEB 1-min.png';
+import thirdImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/alessio-furlan-jjGHCyHUGSk-unsplash 1-min.png';
+import fourthImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/maxime-gauthier-9rIFLa7roaU-unsplash 1-min.png';
 
 
 
@@ -18,8 +18,8 @@ const Carouselconceirge = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            {/* <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -29,8 +29,8 @@ const Carouselconceirge = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            {/* <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -40,8 +40,8 @@ const Carouselconceirge = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            {/* <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -51,8 +51,8 @@ const Carouselconceirge = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            {/* <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 

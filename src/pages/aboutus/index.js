@@ -1,16 +1,17 @@
 import React from 'react'
 import First from '../../components/aboutus/aboutusheading' 
 import Second from '../../components/aboutus/aboutgrid'
-import Third from '../../components/aboutus/aboutmap'
+import Contactcaraousel from '../../components/aboutus/contactpicture'
 
 
 
 const Aboutus = () => {
   return (
     <div>
-      <First />
+      <Contactcaraousel />
+      {/* <First /> */}
       <Second />
-      <Third /> 
+      
     </div>
   )
 }

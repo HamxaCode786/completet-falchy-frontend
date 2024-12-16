@@ -120,11 +120,11 @@ gap: 30px;
 .conceirge_form_heading2 {
 
 font-weight: 700;
-font-size: 36px;
+font-size: 32px;
 color: #1B1B1B;
 text-align: center;
-margin: 0;
-padding-top: 30px;
+margin: 0 auto;
+width: 620px;
 
 
 }  
@@ -225,6 +225,10 @@ width: 100% !important;
 .conceirge_form_heading2 {
 
 font-size: 24px;
+padding-right: 10px;
+padding-left: 10px;
+margin: 0 auto;
+width: 100% !important;
 padding-right: 10px;
 padding-left: 10px;
 

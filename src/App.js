@@ -6,7 +6,7 @@ import Conceirgeevents from './pages/conceirgeevents'
 import Transferforward from '../src/components/transferservice/tranferforward';
 import Rentluxuryforward from '../src/components/rentluxury/rentforward';
 import Conceirgebooking from '../src/pages/conceirgebooking';
-import Luggagetransferform from '../src/components/luggagetransferform/luggagetransferform'
+import Luggagetransferform from '../src/pages/luggagetransferpage'
 import Aboutpage from '../src/pages/aboutus'
 import { Route, Routes } from 'react-router-dom';
 import ScrollToTop from '../src/pages/scrolltop/scroll';
@@ -31,7 +31,7 @@ import './styles/aboutus.css'
 import './styles/aboutsection.css'
 import './styles/caraosel.css'
 import './styles/caraouselcomponent.css'
-
+import './styles/customcar.css'
 import './styles/aboutusmobile.css'
 import './styles/responsive/layout.css'
 import './styles/responsive/transferluxury.css'
@@ -43,6 +43,7 @@ import './styles/conceirgebookings/conciergebooking.css'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 
 
 

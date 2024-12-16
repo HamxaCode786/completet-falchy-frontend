@@ -1,13 +1,18 @@
 import React from 'react'
-import Luggage from '../../components/conceirgebooking/conceirge'
+import Conceirgeevents from '../../components/conceirgebooking/conceirge'
 import Contactcard2 from '../../components/transferservice/contactcard'
+import Footertop from '../../components/footerabove/footerabove'
+import Caraouselconceirge from '../../components/caraousel/carouselconceirge'
+
 
 const Luggagetransfer = () => {
   return (
     <div>
       
-      <Luggage />
+      <Caraouselconceirge />
+      <Conceirgeevents />
       {/* <Contactcard2 /> */}
+      <Footertop />
     </div>
   )
 }

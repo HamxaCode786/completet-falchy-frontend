@@ -138,9 +138,9 @@ box-shadow: none;
         .image-container {
           position: absolute !important;
           right: 0px !important;
-          top: 28% !important;
+          top: 30% !important;
           transform: translateY(-50%) !important; /* Centers the image vertically */
-          width: 50% !important; /* Adjust the width of the image */
+          width: 55% !important; /* Adjust the width of the image */
         }
       
         .landing-content {
@@ -218,9 +218,68 @@ font-weight: 700;
 
     position: absolute;
     left: 0;
-    top: 33%;
+    top: 37%;
     transform: translateY(-50%);
   }
 
 
-  
+  @media (min-width: 480px) and (max-width: 768px) {
+    .landing-content1 h4 {
+        display: none !important;
+    }
+
+
+.image-container  {
+width: 510px;
+
+}
+
+.svg_clippath {
+
+height: 62vh;
+
+}
+
+.landing-content1 h2 {
+  font-size: 32px;
+}
+
+.landing-content1 {
+
+width: 400px;
+
+
+}
+  }
+
+
+
+
+  @media (min-width: 768px) and (max-width: 1050px) {
+    .landing-content1 h4 {
+        display: none !important;
+    }
+
+
+.image-container  {
+width: 510px;
+
+}
+
+.svg_clippath {
+
+height: 66vh;
+
+}
+
+.landing-content1 h2 {
+  font-size: 45px;
+}
+
+.landing-content1 {
+
+width: 400px;
+
+
+}
+  }

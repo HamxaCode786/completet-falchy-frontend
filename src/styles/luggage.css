@@ -46,6 +46,20 @@ gap: 15px;
     .luggage-section button {
         padding:8px 16px;
     }
+
+.lugagge_transfer_mobile {
+
+
+grid-template-columns: none !important;
+
+
+}
+
+
+
+
+
+
 }
 
 @media(max-width:650px){

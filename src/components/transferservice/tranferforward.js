@@ -10,7 +10,7 @@ const Tranferforward = () => {
   return (
     <div>
       <div className="driver_car_div">
-        <img className="chauffer_2enh" src={Chauffered} />
+        <img className="chauffer_2enh" src={selectedCard.image} />
         <h2>{selectedCard.name}</h2>
         <ul className="icons_list_drivers">
           <li>

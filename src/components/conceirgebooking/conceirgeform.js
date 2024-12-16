@@ -5,6 +5,8 @@ import { useLocation } from "react-router-dom";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_blue.css";
 import axios from 'axios'; // Import axios
+import { MDBInput } from 'mdb-react-ui-kit'; // Import MDBInput
+import { MDBTextArea } from 'mdb-react-ui-kit';
 
 const Conceirgeform = () => {
   const location = useLocation();
@@ -114,51 +116,61 @@ const Conceirgeform = () => {
       <h3 className="conceirge_form_heading2">{cardData.title2}</h3>
       <div className="payment_form2">
         <Form className="hamza" onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicFullName">
-            <Form.Control
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px' }}
+          {/* Full Name Field */}
+          <div className="form-outline mb-3">
+            <MDBInput
+              id="formFullName"
+              label="Full Name"
               type="text"
-              placeholder="Full Name"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
+              style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none' }}
             />
-          </Form.Group>
-          
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px' }}
+          </div>
+
+          {/* Email Field */}
+          <div className="form-outline mb-3">
+            <MDBInput
+              id="formEmail"
+              label="Email Address"
               type="email"
-              placeholder="Email Address"
               name="email"
               value={formData.email}
               onChange={handleChange}
+              style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none' }}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group className="mb-3" controlId="formBasicContact">
-            <Form.Control
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px' }}
+          {/* Contact Field */}
+          <div className="form-outline mb-3">
+            <MDBInput
+              id="formContact"
+              label="Contact Information"
               type="text"
-              placeholder="Enter Your Contact Information"
               name="contact"
               value={formData.contact}
               onChange={handleChange}
+              style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', border: 'none' }}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group className="mb-3" controlId="formBasicContact">
-            <Form.Control
-              style={{ backgroundColor: "#f9f9f9", border: 'none', fontWeight: 400, fontSize: '16px', padding: '10px', height:'50px' }}
-              type="text"
-              placeholder="Description"
+          {/* Description Field */}
+          <div className="form-outline mb-3">
+            <MDBTextArea
+              id="formDescription"
+              label="Description"
               name="description"
               value={formData.description}
               onChange={handleChange}
+              style={{ backgroundColor: "#f9f9f9", fontWeight: 400, fontSize: '16px', padding: '10px', height: '100px', border: 'none' }}
             />
-          </Form.Group>
+          </div>
 
-          <button type="submit" className="payment_button">Get a quote</button>
+          {/* Submit Button */}
+          <button type="submit" className="payment_button">
+            Get a quote
+          </button>
         </Form>
       </div>
     </div>
