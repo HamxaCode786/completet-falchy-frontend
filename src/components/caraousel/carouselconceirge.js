@@ -1,13 +1,15 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import firstImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImage-min.png';
-import secondImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 65-min.png';
-import thirdImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 66-min.png';
-import fourthImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 67-min.png';
-
-
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import firstImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImage (1)-min.png";
+import secondImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 65-min.png";
+import thirdImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 66-min.png";
+import fourthImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 67-min.png";
+import { TranslationContext } from "../../contextapi/translationContext";
+import { useContext } from "react";
 
 const Carouselconceirge = () => {
+  const { language } = useContext(TranslationContext);
+
   return (
     <div>
       <Carousel>
@@ -18,8 +20,29 @@ const Carouselconceirge = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            {/* <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+            <h3 className="carousel_custom_text1">
+              {language === "en"
+                ? "Concierge Services"
+                : language === "it"
+                ? "Servizi di concierge"
+                : language === "du"
+                ? "Conciërge diensten"
+                : language === "fr"
+                ? "Services de conciergerie"
+                : "Concierge Services"}
+            </h3>
+
+            <p className="carousel_custom_text2">
+              {language === "en"
+                ? "Adventure's Out There"
+                : language === "it"
+                ? "L'avventura è là fuori"
+                : language === "du"
+                ? "Avontuur is daarbuiten"
+                : language === "fr"
+                ? "L'aventure est là-bas"
+                : "Adventure's Out There"}
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -55,7 +78,6 @@ const Carouselconceirge = () => {
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
-
       </Carousel>
     </div>
   );

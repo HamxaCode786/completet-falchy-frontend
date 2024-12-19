@@ -83,13 +83,18 @@ const Testimonial = () => {
   ) : language === 'it' ? (
     'Testimonianze dei Clienti'
   ) : language === 'du' ? (
-    'Klant<br/>beoordelingen'
+    <>
+      Klant
+      <br />
+      beoordelingen
+    </>
   ) : language === 'fr' ? (
     'Témoignages des Clients'
   ) : (
     'Client Testimonials'
   )
 }
+
 </h2>
       <p className="testimonial-tagline">
       {

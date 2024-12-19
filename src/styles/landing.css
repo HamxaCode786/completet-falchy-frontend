@@ -22,7 +22,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: left !important;
-width: 50%;
+width: 60%;
 gap: 40px;
 margin-top: 10%;
 padding-left: 5%;
@@ -32,9 +32,11 @@ padding-left: 5%;
 
 .landing-content1 h2 {
 
-  font-size: 52px;
+  font-size: clamp(20px, 5vw + 10px, 52px);
+
   font-weight: 700;
   color: rgba(30, 30, 30, 1);
+  width: 100%;
   
   }
   .landing-content1 h4 {
@@ -42,6 +44,7 @@ padding-left: 5%;
     font-size: 20px;
     font-weight: 700;
     color: rgba(30, 30, 30, 1);
+    width: 80%;
     
     }
 
@@ -98,7 +101,7 @@ box-shadow: none;
         }
       
         .landing-content1 {
-          width: 120% !important;
+          width: 115% !important;
           gap: 10px !important;
           margin-top: 6% !important;
         }
@@ -132,7 +135,7 @@ box-shadow: none;
           
           /* Ensure the div's size is set to see the background */
           width: 100% !important;
-          height: 30vh !important; /* Adjust as needed */
+          height: 34vh !important; /* Adjust as needed */
         }
       
         .image-container {
@@ -161,6 +164,8 @@ box-shadow: none;
           padding: 0 !important;
           margin: 0 !important;
           padding-top: 15px !important;
+          padding-right: 10px;
+          padding-left: 10px;
         }
       
         .diagonal-image-container {
@@ -218,7 +223,7 @@ font-weight: 700;
 
     position: absolute;
     left: 0;
-    top: 37%;
+    top: 40%;
     transform: translateY(-50%);
   }
 
@@ -268,7 +273,7 @@ width: 510px;
 
 .svg_clippath {
 
-height: 66vh;
+height: 60vh;
 
 }
 
@@ -282,4 +287,105 @@ width: 400px;
 
 
 }
+.landing-content {
+
+
+top: 30% !important;
+
+}
+
+.image-container {
+
+top: 40%;
+
+}
+
+
+
+
   }
+
+
+  @media (min-width: 1000px) and (max-width: 1300px) {
+    .landing-content1 h2 {
+      font-size: 42px;
+      font-weight: 700;
+      color: rgba(30, 30, 30, 1);
+      width: 150%;
+    }
+    .svg_clippath {
+
+      height: 60vh;
+      
+      }
+      
+
+      .landing-content {
+
+
+        top: 25% !important;
+        
+        }
+
+        .image-container {
+
+          top: 40%;
+          
+          }
+          
+.image-container  {
+  width: 400px;
+  
+  }
+  
+
+        
+
+  }
+
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    .landing-content1 h4 {
+        display: none !important;
+    }
+
+
+.image-container  {
+width: 300px;
+
+}
+
+.svg_clippath {
+
+height: 65vh;
+
+}
+
+.landing-content1 h2 {
+  font-size: 32px;
+}
+
+.landing-content1 {
+
+width: 300px;
+
+
+}
+.landing-content {
+
+
+top: 35% !important;
+
+}
+
+.image-container {
+
+top: 40%;
+
+}
+
+
+
+
+  }
+

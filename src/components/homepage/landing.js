@@ -103,9 +103,9 @@ const Landing = () => {
 ) : language === 'it' ? (
   'Contattaci'
 ) : language === 'du' ? (
-  'Neem contact met ons op'
+  'Neem contact op'
 ) : language === 'fr' ? (
-  'Contactez-nous'
+  'Contactez nous'
 ) : (
   'Contact Us'
 )}

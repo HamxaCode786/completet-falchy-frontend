@@ -380,5 +380,53 @@ width: 120px !important;
         
       }
 
+/* Header Dropdown Styling */
+
+/* Remove border from the dropdown button */
+.language-dropdown .dropdown-toggle {
+  border: none !important; /* Removes border */
+  box-shadow: 0px 24px 48px 0px rgba(0, 0, 0, 0.15) !important;
+  background: transparent; /* Optional: makes background transparent */
+}
+
+/* Ensure dropdown menu matches the button width */
+.language-dropdown .dropdown-menu {
+  width: 100% !important; /* Makes the dropdown menu the same width as the button */
+  min-width: unset;
+  box-shadow: 0px 24px 48px 0px rgba(0, 0, 0, 0.075)
+
+}
 
 
+
+@media (max-width: 480px) {
+  .mybutton {
+    width: 80px;
+    height: 80px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  .mybutton .mybuttoninner {
+    width: 70px;
+    height: 70px;
+  }
+
+  .mybutton .mybuttoninner .mybuttoninner2 {
+    width: 70px;
+    height: 70px;
+  }
+
+  .mybutton .mybuttoninner .mybuttoninner2 ul li {
+    font-size: 8px;
+    padding-top: 10px;
+  }
+
+  .custom_car_div {
+    padding-top: 8%;
+    padding-left: 6%;
+}
+
+
+
+}

@@ -1,11 +1,15 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import firstImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/1.png';
-import secondImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/2.png';
-import thirdImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/3.png';
-import fourthImage from '../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/4.png';
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import firstImage from "../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/Transfer_Service-Banner (7)-min.png";
+import secondImage from "../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/2.png";
+import thirdImage from "../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/3.png";
+import fourthImage from "../../assets/images/caraoselImage/carouseltransfer/chauffered/ChaufferBanner/4.png";
+import { TranslationContext } from "../../contextapi/translationContext";
+import { useContext } from "react";
 
 const CarouselComponent = () => {
+  const { language } = useContext(TranslationContext);
+
   return (
     <div>
       <Carousel>
@@ -16,8 +20,31 @@ const CarouselComponent = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            {/* <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
+            <Carousel.Caption>
+              <h3 className="carousel_custom_text1">
+                {language === "en"
+                  ? "Transfer Service"
+                  : language === "it"
+                  ? "Servizio di Trasferimento"
+                  : language === "du"
+                  ? "Transfer Service" // Dutch translation (same as English)
+                  : language === "fr"
+                  ? "Service de Transfert"
+                  : "Transfer Service"}
+              </h3>
+
+              <p className="carousel_custom_text2">
+                {language === "en"
+                  ? "You sit back. I'll drive it."
+                  : language === "it"
+                  ? "Rilassati. Guiderò io."
+                  : language === "du"
+                  ? "Jij leunt achterover. Ik rijd het."
+                  : language === "fr"
+                  ? "Détendez-vous. Je conduirai."
+                  : "You sit back. I'll drive it."}
+              </p>
+            </Carousel.Caption>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -53,7 +80,6 @@ const CarouselComponent = () => {
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
-
       </Carousel>
     </div>
   );

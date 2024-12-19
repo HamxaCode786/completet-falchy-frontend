@@ -10,13 +10,13 @@ import Footertop from '../../components/footerabove/footerabove'
 const Homepage = () => {
   return (
     <div>
-      <Landing /> 
-      <Tailored />
+      <Landing />
+       <Tailored />
       <Steps />
-      <Aboutus />
+      <Aboutus /> 
       <Testimonial />
       <Accordion />
-      <Footertop />
+      <Footertop /> 
     </div>
   )
 }

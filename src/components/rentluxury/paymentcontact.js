@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import Swal from 'sweetalert2';
 import { MDBInput } from 'mdb-react-ui-kit'; // Import MDBInput
+import { TranslationContext } from "../../contextapi/translationContext";
+import { useContext } from "react";
+
 
 const Paymentcontact = () => {
+  const { language } = useContext(TranslationContext);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "", 
@@ -135,62 +139,83 @@ const Paymentcontact = () => {
 
   return (
     <div className="payment_form">
-      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: 'rgba(27, 27, 27, 0.95)' }}>Your Ride, Your Status – Experience the Thrill of Luxury on the Road With Us!</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicFullName">
-          <MDBInput
-            id="formFullName"
-            label="Full Name"
-            type="text"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
-            isInvalid={!!errors.fullName}
-            disabled={isLoading}
-          />
-          <Form.Control.Feedback type="invalid">{errors.fullName}</Form.Control.Feedback>
-        </Form.Group>
-        
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <MDBInput
-            id="formEmail"
-            label="Email Address"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
-            isInvalid={!!errors.email}
-            disabled={isLoading}
-          />
-          <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
-        </Form.Group>
+  <h2 style={{ textAlign: 'center', marginBottom: '20px', color: 'rgba(27, 27, 27, 0.95)' }}>
+    {language === "en" ? "Your Ride, Your Status – Experience the Thrill of Luxury on the Road With Us!" :
+     language === "it" ? "Il tuo viaggio, il tuo status – Vivi il brivido del lusso sulla strada con noi!" :
+     language === "du" ? "Jouw rit, jouw status – Ervaar de spanning van luxe op de weg met ons!" :
+     language === "fr" ? "Votre trajet, votre statut – Vivez l'excitation du luxe sur la route avec nous !" :
+     "Your Ride, Your Status – Experience the Thrill of Luxury on the Road With Us!"}
+  </h2>
+  
+  <Form onSubmit={handleSubmit}>
+    <Form.Group className="mb-3" controlId="formBasicFullName">
+      <MDBInput
+        id="formFullName"
+        label={language === "en" ? "Full Name" :
+               language === "it" ? "Nome Completo" :
+               language === "du" ? "Volledige Naam" :
+               language === "fr" ? "Nom Complet" : "Full Name"}
+        type="text"
+        name="fullName"
+        value={formData.fullName}
+        onChange={handleChange}
+        style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
+        isInvalid={!!errors.fullName}
+        disabled={isLoading}
+      />
+      <Form.Control.Feedback type="invalid">{errors.fullName}</Form.Control.Feedback>
+    </Form.Group>
+    
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+      <MDBInput
+        id="formEmail"
+        label={language === "en" ? "Email Address" :
+               language === "it" ? "Indirizzo Email" :
+               language === "du" ? "E-mail Adres" :
+               language === "fr" ? "Adresse Email" : "Email Address"}
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
+        isInvalid={!!errors.email}
+        disabled={isLoading}
+      />
+      <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
+    </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicContact">
-          <MDBInput
-            id="formContact"
-            label="Contact Information"
-            type="text"
-            name="contact"
-            value={formData.contact}
-            onChange={handleChange}
-            style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
-            isInvalid={!!errors.contact}
-            disabled={isLoading}
-          />
-          <Form.Control.Feedback type="invalid">{errors.contact}</Form.Control.Feedback>
-        </Form.Group>
+    <Form.Group className="mb-3" controlId="formBasicContact">
+      <MDBInput
+        id="formContact"
+        label={language === "en" ? "Contact Information" :
+               language === "it" ? "Informazioni di Contatto" :
+               language === "du" ? "Contact Informatie" :
+               language === "fr" ? "Informations de Contact" : "Contact Information"}
+        type="text"
+        name="contact"
+        value={formData.contact}
+        onChange={handleChange}
+        style={{ backgroundColor: "#f9f9f9", fontWeight: 600, fontSize: '16px', padding: '10px', border: 'none' }}
+        isInvalid={!!errors.contact}
+        disabled={isLoading}
+      />
+      <Form.Control.Feedback type="invalid">{errors.contact}</Form.Control.Feedback>
+    </Form.Group>
 
-        <button 
-          type="submit" 
-          className="payment_button"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Submitting...' : 'Get a quote'}
-        </button>
-      </Form>
-    </div>
+    <button 
+      type="submit" 
+      className="payment_button"
+      disabled={isLoading}
+    >
+      {language === "en" ? (isLoading ? 'Submitting...' : 'Get a quote') :
+       language === "it" ? (isLoading ? 'Invio...' : 'Ottieni un preventivo') :
+       language === "du" ? (isLoading ? 'Verzenden...' : 'Krijg een offerte') :
+       language === "fr" ? (isLoading ? 'Soumission...' : 'Obtenez un devis') :
+       (isLoading ? 'Submitting...' : 'Get a quote')}
+    </button>
+  </Form>
+</div>
+
   );
 };
 
