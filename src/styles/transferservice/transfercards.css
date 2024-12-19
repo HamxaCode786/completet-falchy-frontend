@@ -275,8 +275,7 @@ width: 100%;
   font-size: 11px;
   width: 90px;
   border: none;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 10px;
   background-color: #05021f;
   color: white;
   padding-left: 3px !important;
@@ -306,7 +305,7 @@ line-height: 14px;
     font-size: 11px;
     width: 90px;
     border: none;
-    border-radius: 0px;
+    border-radius: 10px;
     background-color: #05021f;
     color: white;
     
@@ -329,8 +328,7 @@ line-height: 14px;
     font-size: 11px;
     width: 90px;
     border: none;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 10px;
     background-color: #05021f;
     color: white;
     

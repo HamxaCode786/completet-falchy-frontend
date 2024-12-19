@@ -11,12 +11,12 @@ const Homepage = () => {
   return (
     <div>
       <Landing /> 
-      <Tailored />
+      {/* <Tailored />
       <Steps />
       <Aboutus />
       <Testimonial />
       <Accordion />
-      <Footertop />
+      <Footertop /> */}
     </div>
   )
 }

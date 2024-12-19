@@ -165,7 +165,10 @@ color: #aaaaaa;
 list-style-type: none;
 text-align: center;
 text-transform: uppercase;
-padding: 7px;
+padding: 10px;
+font-size: 10px;
+padding-top: 15px;
+font-weight: 500;
 }
 
 .mybutton .mybuttoninner .mybuttoninner2 ul .mybuttoninnerline2 {
@@ -321,15 +324,27 @@ display: none;
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
-column-gap: 15px;
+column-gap: 10px;
 
 }
+.custom_language_changer button {
 
+  border: none !important;
+
+
+  }
+  .mobile_menu_dropdown {
+
+width: 120px !important;
+
+
+  }
+  
 
 
       }
 
-      @media (max-width: 1430px) {
+      @media (max-width: 1300px) {
         .custom_responsiveness{
   
   display: none;
@@ -351,13 +366,19 @@ column-gap: 15px;
         }
   
 
-        @media (min-width: 1430px) {
+        @media (min-width: 1300px) {
           .custom_hide_for_laptop {
             display: none;
           }
+
+          .custom_language_changer button {
+
+            border: none !important;
+          
+
         }
         
-
+      }
 
 
 

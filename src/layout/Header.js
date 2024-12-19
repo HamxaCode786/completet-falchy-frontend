@@ -13,6 +13,7 @@ const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const [selectedFlag, setSelectedFlag] = useState('US');
   const { changeLanguage } = useContext(TranslationContext);
+  const { language } = useContext(TranslationContext);
 
 
 
@@ -50,27 +51,27 @@ const Header = () => {
         <Dropdown className="language-dropdown custom_hide_for_laptop ">
       <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
         <Flag code={selectedFlag} style={{ width: 20, height: 15, marginRight: 10 }} />
-        {selectedLanguage === 'en' ? 'English' : 
-         selectedLanguage === 'it' ? 'Italian' : 
-         selectedLanguage === 'du' ? 'Dutch' : 'French'}
+        {selectedLanguage === 'en' ? 'En' : 
+         selectedLanguage === 'it' ? 'It' : 
+         selectedLanguage === 'du' ? 'Du' : 'Fr'}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <Dropdown.Item onClick={() => handleLanguageChange('en', 'US')}>
           <Flag code="US" style={{ width: 20, height: 15, marginRight: 10 }} />
-          English
+          En
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('it', 'IT')}>
           <Flag code="IT" style={{ width: 20, height: 15, marginRight: 10 }} />
-          Italian
+          It
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('du', 'NL')}>
           <Flag code="NL" style={{ width: 20, height: 15, marginRight: 10 }} />
-          Dutch
+          Du
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('fr', 'FR')}>
           <Flag code="FR" style={{ width: 20, height: 15, marginRight: 10 }} />
-          French
+          Fr
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
@@ -89,34 +90,35 @@ const Header = () => {
           <Dropdown className="language-dropdown custom_responsiveness">
       <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
         <Flag code={selectedFlag} style={{ width: 20, height: 15, marginRight: 10 }} />
-        {selectedLanguage === 'en' ? 'English' : 
-         selectedLanguage === 'it' ? 'Italian' : 
-         selectedLanguage === 'du' ? 'Dutch' : 'French'}
+        {selectedLanguage === 'en' ? 'En' : 
+         selectedLanguage === 'it' ? 'It' : 
+         selectedLanguage === 'du' ? 'Du' : 'Fr'}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="mobile_menu_dropdown">
         <Dropdown.Item onClick={() => handleLanguageChange('en', 'US')}>
           <Flag code="US" style={{ width: 20, height: 15, marginRight: 10 }} />
-          English
+          En
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('it', 'IT')}>
           <Flag code="IT" style={{ width: 20, height: 15, marginRight: 10 }} />
-          Italian
+          It
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('du', 'NL')}>
           <Flag code="NL" style={{ width: 20, height: 15, marginRight: 10 }} />
-          Dutch
+          Du
         </Dropdown.Item>
         <Dropdown.Item onClick={() => handleLanguageChange('fr', 'FR')}>
           <Flag code="FR" style={{ width: 20, height: 15, marginRight: 10 }} />
-          French
+          Fr
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
           </li>
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/" style={isActivePath('/') ? {color: '#0dc270'} : {}}><strong>Home</strong></Link>
+              <Link to="/" style={isActivePath('/') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Home' : language === 'it' ? 'Casa' : language === 'du' ? 'Huis' : language === 'fr' ? 'Accueil' : 'Home'}
+              </strong></Link>
             </p>
           </li>
           {/* <li className="list_second_styling" onClick={closeMenu}>
@@ -126,22 +128,26 @@ const Header = () => {
           </li> */}
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/rentluxury" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>Rent Luxury</strong></Link>
+              <Link to="/rentluxury" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Rent Luxury' : language === 'it' ? 'Noleggia Lusso' : language === 'du' ? 'Huur Luxe' : language === 'fr' ? 'Louer du luxe' : 'Rent Luxury'}
+              </strong></Link>
             </p>
           </li>
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/transferservice" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>Transfer Service</strong></Link>
+              <Link to="/transferservice" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Transfer Service' : language === 'it' ? 'Servizio di Trasferimento' : language === 'du' ? 'Transfer Service' : language === 'fr' ? 'Service de Transfert' : 'Transfer Service'}
+              </strong></Link>
             </p>
           </li>
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/luggagetransferform" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>Luggage Transfer & Deposit</strong></Link>
+              <Link to="/luggagetransferform" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Luggage Transfer & Deposit' : language === 'it' ? 'Trasferimento e Deposito Bagagli' : language === 'du' ? 'Bagageoverdracht & Storting' : language === 'fr' ? 'Transfert et Dépôt des Bagages' : 'Luggage Transfer & Deposit'}
+              </strong></Link>
             </p>
           </li>
           <li className="list_second_styling" onClick={closeMenu}>
             <p>
-              <Link to="/conciergeevents" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>Conceirge Services</strong></Link>
+              <Link to="/conciergeevents" style={isActivePath('/services') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Concierge Services' : language === 'it' ? 'Servizi di Concierge' : language === 'du' ? 'Concierge Services' : language === 'fr' ? 'Services de Conciergerie' : 'Concierge Services'}
+              </strong></Link>
             </p>
           </li>
           {/* <Dropdown className="dropdown_header" >
@@ -186,7 +192,8 @@ const Header = () => {
           
           <li className="list_second_styling custom_header_1" onClick={closeMenu}>
             <p>
-              <Link to="/aboutus" style={isActivePath('/') ? {color: '#0dc270'} : {}}><strong>Contact Us</strong></Link>
+              <Link to="/aboutus" style={isActivePath('/') ? {color: '#0dc270'} : {}}><strong>{language === 'en' ? 'Contact Us' : language === 'it' ? 'Contattaci' : language === 'du' ? 'Contacteer Ons' : language === 'fr' ? 'Contactez-nous' : 'Contact Us'}
+              </strong></Link>
             </p>
           </li>
         </ul>

@@ -1,9 +1,9 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import firstImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/ConciergeBannerImage-min.png';
-import secondImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/035_WEB 1-min.png';
-import thirdImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/alessio-furlan-jjGHCyHUGSk-unsplash 1-min.png';
-import fourthImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImages/maxime-gauthier-9rIFLa7roaU-unsplash 1-min.png';
+import firstImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImage-min.png';
+import secondImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 65-min.png';
+import thirdImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 66-min.png';
+import fourthImage from '../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 67-min.png';
 
 
 

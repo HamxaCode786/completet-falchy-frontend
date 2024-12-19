@@ -2,8 +2,12 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { TranslationContext } from "../../contextapi/translationContext";
+import { useContext } from "react";
+
 
 const Pic = () => {
+  const { language } = useContext(TranslationContext);
   const location = useLocation();
   const cardData = location.state;
   const [index, setIndex] = useState(0);
@@ -26,9 +30,9 @@ const Pic = () => {
 
 
       <div className="conceirge_pic1_text_div">
-        <h2>{cardData.title}</h2>
+        <h2>{cardData.title[language]}</h2>
           <h4>
-            {cardData.description}
+            {cardData.description[language]}
           </h4>
       </div>
     </div>

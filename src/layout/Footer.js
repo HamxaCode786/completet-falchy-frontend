@@ -120,42 +120,23 @@ const Footer = () => {
   'Home'
 )}
 </h4></Link>
-          <Link to="/aboutus"><h4>{language === 'en' ? (
-  'About Us'
-) : language === 'it' ? (
-  'Chi Siamo'
-) : language === 'du' ? (
-  'Over Ons'
-) : language === 'fr' ? (
-  'À Propos de Nous'
-) : (
-  'About Us'
-)}
+          <Link to="/rentluxury"><h4>{language === 'en' ? 'Rent Luxury' : language === 'it' ? 'Noleggia Lusso' : language === 'du' ? 'Huur Luxe' : language === 'fr' ? 'Louer du luxe' : 'Rent Luxury'}
+
 </h4></Link>
-          <Link to="/conciergeevents"><h4>{language === 'en' ? (
-  'Services'
-) : language === 'it' ? (
-  'Servizi'
-) : language === 'du' ? (
-  'Diensten'
-) : language === 'fr' ? (
-  'Services'
-) : (
-  'Services'
-)}
+          <Link to="/transferservice"><h4>{language === 'en' ? 'Transfer Service' : language === 'it' ? 'Servizio di Trasferimento' : language === 'du' ? 'Transfer Service' : language === 'fr' ? 'Service de Transfert' : 'Transfer Service'}
+
 </h4></Link>
-          <Link to="/testimonials"><h4>{language === 'en' ? (
-  'Testimonials'
-) : language === 'it' ? (
-  'Testimonianze'
-) : language === 'du' ? (
-  'Getuigenissen'
-) : language === 'fr' ? (
-  'Témoignages'
-) : (
-  'Testimonials'
-)}
+          <Link to="/luggagetransferform"><h4>{language === 'en' ? 'Luggage Transfer & Deposit' : language === 'it' ? 'Trasferimento e Deposito Bagagli' : language === 'du' ? 'Bagageoverdracht & Storting' : language === 'fr' ? 'Transfert et Dépôt des Bagages' : 'Luggage Transfer & Deposit'}
+
 </h4></Link>
+
+<Link to="/conciergeevents"><h4>{language === 'en' ? 'Concierge Services' : language === 'it' ? 'Servizi di Concierge' : language === 'du' ? 'Concierge Services' : language === 'fr' ? 'Services de Conciergerie' : 'Concierge Services'}
+
+
+</h4></Link>
+
+
+
           
         </div>
         <div className="contact_us_div" style={{ alignItems: "flex-start" }}>

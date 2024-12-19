@@ -12,9 +12,9 @@
         align-items: center;
     }
 
-    .testimonial-card:nth-child(2) {
+    /* .testimonial-card:nth-child(2) {
         background: #fff;
-    }
+    } */
 
 
     
@@ -30,6 +30,6 @@
 @media (max-width:530px){
    
     .blue-testimonial-section h2 {
-        padding:0 45px 0;
+        padding:0 5% 0;
     }
 }
