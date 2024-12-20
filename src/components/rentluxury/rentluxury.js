@@ -1,152 +1,164 @@
 import React from "react";
-import Drivers from "../../assets/images/transferpage/rentluxury.png";
+import Class1 from '../../assets/images/rentLuxury/RentLuxuryCars/Mercedes-E-Class-Car.png'
+import Class2 from '../../assets/images/rentLuxury/RentLuxuryCars/Mercedes-V-Class-Car.png'
+import Class3 from '../../assets/images/rentLuxury/RentLuxuryCars/Mercedes-S-Class-Car.png'
 import { Link } from "react-router-dom";
 import { TranslationContext } from "../../contextapi/translationContext";
+import { SelectedCardContext } from "../../contextapi/rentluxurycontext";
 import { useContext } from "react";
 
 const Transfercards = () => {
   const { language } = useContext(TranslationContext);
+  const { setSelectedCard } = useContext(SelectedCardContext);
 
   const cardsData = [
     {
       id: 1,
       title: {
-        en: "Mercedes-Benz S 580",
-        it: "Mercedes-Benz S 580",
-        du: "Mercedes-Benz S 580",
-        fr: "Mercedes-Benz S 580"
+        en: "Mercedes-Benz E-Class",
+        it: "Mercedes-Benz E-Class",
+        du: "Mercedes-Benz E-Klasse",
+        fr: "Mercedes-Benz Classe E",
       },
       color: {
-        en: "Black",
-        it: "Nero",
-        du: "Zwart",
-        fr: "Noir"
+        en: "Color",
+        it: "Colore",
+        du: "Kleur",
+        fr: "Couleur",
       },
       horsepower: {
-        en: "450 HP",
-        it: "450 CV",
-        du: "450 PK",
-        fr: "450 CH"
+        en: "Power",
+        it: "Potenza",
+        du: "Kracht",
+        fr: "Puissance",
       },
       miles: {
-        en: "0 miles",
-        it: "0 km",
-        du: "0 mijl",
-        fr: "0 km"
+        en: "Mileage",
+        it: "Chilometraggio",
+        du: "Kilometerstand",
+        fr: "Kilométrage",
       },
       obsidianBlack: {
-        en: "Obsidian Black",
-        it: "Nero Obsidiano",
-        du: "Obsidian Zwart",
-        fr: "Noir Obsidien"
+        en: "Super White",
+        it: "Super Bianco",
+        du: "Super Wit",
+        fr: "Super Blanc",
       },
       horsepower2: {
-        en: "496 HP",
-        it: "496 CV",
-        du: "496 PK",
-        fr: "496 CH"
+        en: "375 HP",
+        it: "375 CV",
+        du: "375 PK",
+        fr: "375 CH",
       },
       mpg: {
-        en: "21 MPG",
-        it: "21 MPG",
-        du: "21 MPG",
-        fr: "21 MPG"
+        en: "30 MPG",
+        it: "30 MPG",
+        du: "30 MPG",
+        fr: "30 MPG",
       },
-      img: Drivers
+      img: Class1,
     },
     {
       id: 2,
       title: {
-        en: "Mercedes-Benz S 580",
-        it: "Mercedes-Benz S 580",
-        du: "Mercedes-Benz S 580",
-        fr: "Mercedes-Benz S 580"
+        en: "Mercedes-Benz V-Class",
+        it: "Mercedes-Benz V-Class",
+        du: "Mercedes-Benz V-Klasse",
+        fr: "Mercedes-Benz Classe V",
       },
       color: {
-        en: "Black",
-        it: "Nero",
-        du: "Zwart",
-        fr: "Noir"
+        en: "Color",
+        it: "Colore",
+        du: "Kleur",
+        fr: "Couleur",
       },
       horsepower: {
-        en: "450 HP",
-        it: "450 CV",
-        du: "450 PK",
-        fr: "450 CH"
+        en: "Power",
+        it: "Potenza",
+        du: "Kracht",
+        fr: "Puissance",
       },
       miles: {
-        en: "0 miles",
-        it: "0 km",
-        du: "0 mijl",
-        fr: "0 km"
+        en: "Mileage",
+        it: "Chilometraggio",
+        du: "Kilometerstand",
+        fr: "Kilométrage",
       },
       obsidianBlack: {
-        en: "Obsidian Black",
-        it: "Nero Obsidiano",
-        du: "Obsidian Zwart",
-        fr: "Noir Obsidien"
+        en: "Super White",
+        it: "Super Bianco",
+        du: "Super Wit",
+        fr: "Super Blanc",
       },
       horsepower2: {
-        en: "496 HP",
-        it: "496 CV",
-        du: "496 PK",
-        fr: "496 CH"
+        en: "237 HP",
+        it: "237 CV",
+        du: "237 PK",
+        fr: "237 CH",
       },
       mpg: {
-        en: "21 MPG",
-        it: "21 MPG",
-        du: "21 MPG",
-        fr: "21 MPG"
+        en: "40 MPG",
+        it: "40 MPG",
+        du: "40 MPG",
+        fr: "40 MPG",
       },
-      img: Drivers
+      img: Class2,
     },
     {
       id: 3,
       title: {
-        en: "Mercedes-Benz S 580",
-        it: "Mercedes-Benz S 580",
-        du: "Mercedes-Benz S 580",
-        fr: "Mercedes-Benz S 580"
+        en: "Mercedes-Benz S-Class",
+        it: "Mercedes-Benz S-Class",
+        du: "Mercedes-Benz S-Klasse",
+        fr: "Mercedes-Benz Classe S",
       },
       color: {
-        en: "Black",
-        it: "Nero",
-        du: "Zwart",
-        fr: "Noir"
+        en: "Color",
+        it: "Colore",
+        du: "Kleur",
+        fr: "Couleur",
       },
       horsepower: {
-        en: "450 HP",
-        it: "450 CV",
-        du: "450 PK",
-        fr: "450 CH"
+        en: "Power",
+        it: "Potenza",
+        du: "Kracht",
+        fr: "Puissance",
       },
       miles: {
-        en: "0 miles",
-        it: "0 km",
-        du: "0 mijl",
-        fr: "0 km"
+        en: "Mileage",
+        it: "Chilometraggio",
+        du: "Kilometerstand",
+        fr: "Kilométrage",
       },
       obsidianBlack: {
-        en: "Obsidian Black",
-        it: "Nero Obsidiano",
-        du: "Obsidian Zwart",
-        fr: "Noir Obsidien"
+        en: "Super White",
+        it: "Super Bianco",
+        du: "Super Wit",
+        fr: "Super Blanc",
       },
       horsepower2: {
-        en: "496 HP",
-        it: "496 CV",
-        du: "496 PK",
-        fr: "496 CH"
+        en: "510 HP",
+        it: "510 CV",
+        du: "510 PK",
+        fr: "510 CH",
       },
       mpg: {
-        en: "21 MPG",
-        it: "21 MPG",
-        du: "21 MPG",
-        fr: "21 MPG"
+        en: "32 MPG",
+        it: "32 MPG",
+        du: "32 MPG",
+        fr: "32 MPG",
       },
-      img: Drivers
-    }
-  ];
+      img: Class3,
+    },
+  ];
+
+  const handleCardClick = (card) => {
+    console.log('Card clicked:', card);  // Log the clicked card
+    setSelectedCard(card); // Set the selected card in context
+  };
+  
+
+
 
   return (
     <div>
@@ -243,15 +255,17 @@ const Transfercards = () => {
             </div>
             <div className="last_rent_now_div">
               <Link to="/rentluxuryforward">
-                <h4> {language === 'en'
-        ? 'Rent Now'
-        : language === 'it'
-        ? 'Noleggia ora'
-        : language === 'du'
-        ? 'Huur nu'
-        : language === 'fr'
-        ? 'Louer maintenant'
-        : 'Rent Now'}</h4>
+              <h4 onClick={() => handleCardClick(card)}>
+  {language === 'en'
+    ? 'Rent Now'
+    : language === 'it'
+    ? 'Noleggia ora'
+    : language === 'du'
+    ? 'Huur nu'
+    : language === 'fr'
+    ? 'Louer maintenant'
+    : 'Rent Now'}
+</h4>
               </Link>
             </div>
           </div>

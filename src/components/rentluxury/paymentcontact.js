@@ -4,13 +4,17 @@ import Swal from 'sweetalert2';
 import { MDBInput } from 'mdb-react-ui-kit'; // Import MDBInput
 import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
+import { SelectedCardContext } from '../../contextapi/rentluxurycontext';
+import axios from "axios";
+
 
 
 const Paymentcontact = () => {
   const { language } = useContext(TranslationContext);
+  const { selectedCard } = useContext(SelectedCardContext);
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "", 
+    email: "",
     contact: ""
   });
 
@@ -21,7 +25,6 @@ const Paymentcontact = () => {
   const validateForm = () => {
     let tempErrors = {};
 
-    // Full name validation
     if (!formData.fullName.trim()) {
       tempErrors.fullName = "Full name is required";
     } else if (formData.fullName.length < 2) {
@@ -30,14 +33,12 @@ const Paymentcontact = () => {
       tempErrors.fullName = "Name can only contain letters";
     }
 
-    // Email validation
     if (!formData.email) {
       tempErrors.email = "Email is required";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
       tempErrors.email = "Invalid email address";
     }
 
-    // Contact validation 
     if (!formData.contact) {
       tempErrors.contact = "Contact information is required";
     } else if (!/^\+?[\d\s-]{10,}$/.test(formData.contact)) {
@@ -54,8 +55,7 @@ const Paymentcontact = () => {
       ...prevState,
       [name]: value
     }));
-    // Clear error when user starts typing
-    if(errors[name]) {
+    if (errors[name]) {
       setErrors({
         ...errors,
         [name]: null
@@ -63,33 +63,35 @@ const Paymentcontact = () => {
     }
   };
 
-  // Dummy API call
-  const submitToApi = async (data) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          success: true,
-          message: "Form submitted successfully",
-          data: data
-        });
-      }, 2000); // 2 second delay
-    });
-  };
-
+  // Submit the form data
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (validateForm()) {
       setIsLoading(true);
       try {
-        const response = await submitToApi(formData);
+        // Prepare the payload including the selected card's title
+        const payload = {
+          customer_name: formData.fullName,  // Map fullName to customer_name
+        customer_email: formData.email,  // Map email to customer_email
+        phone_number: formData.contact,
+          car: selectedCard ? selectedCard.title[language] : "",  // Add the car title from selectedCard
+        };
 
-        if (response.success) {
-          console.log('Form data submitted:', response.data);
-          
+        // Actual API request
+        const response = await axios.post('https://4ac6-2400-adc5-463-9d00-9c13-5215-5a37-b36e.ngrok-free.app/rent-luxury/bookings', payload, {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+          console.log('Form data submitted:', responseData);
           Swal.fire({
             icon: 'success',
-            title: 'Success!', 
+            title: 'Success!',
             text: 'Contact Information Has Been Noted. Our Team Will Contact Within 10 Minutes!',
             iconColor: '#05021f',
             confirmButtonColor: '#05021f',
@@ -98,12 +100,24 @@ const Paymentcontact = () => {
               confirmButton: 'swal-button-custom',
             }
           }).then(() => {
-            // Reset form
             setFormData({
               fullName: "",
               email: "",
               contact: ""
             });
+          });
+        } else {
+          // Handle server-side validation errors or failure
+          Swal.fire({
+            icon: 'error',
+            title: 'Submission Failed',
+            text: responseData.message || 'Unable to share contact information. Please try again later.',
+            confirmButtonColor: '#05021f',
+            iconColor: '#05021f',
+            customClass: {
+              popup: 'swal-popup-custom',
+              confirmButton: 'swal-button-custom',
+            }
           });
         }
       } catch (error) {
@@ -136,6 +150,8 @@ const Paymentcontact = () => {
       });
     }
   };
+
+  
 
   return (
     <div className="payment_form">

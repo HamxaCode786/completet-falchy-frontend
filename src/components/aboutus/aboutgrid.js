@@ -8,6 +8,7 @@ import { MDBTextArea } from 'mdb-react-ui-kit'
 import Swal from 'sweetalert2'
 import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
+import axios from 'axios'
 
 
 const Aboutusgrid = () => {
@@ -28,42 +29,70 @@ const Aboutusgrid = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate a fake API call for testing
+
+    // Construct the URL to which you want to send the POST request
+    const url = 'https://your-api-endpoint.com/contact'; // Replace with your actual API endpoint
+
     try {
-      const response = await new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({
-            data: formData
-          });
-        }, 1000); // Simulate a 2 second delay
+        // Send a POST request with form data
+        const response = await axios.post(url, formData);
+
+        // Handle the response when the request is successful
+        Swal.fire({
+            icon: 'success',
+            title: language === 'en' ? 'Success!' :
+                   language === 'it' ? 'Successo!' :
+                   language === 'fr' ? 'Succès!' :
+                   language === 'du' ? 'Succes!' :
+                   'Success!', // Default to English
+
+            text: language === 'en' ? 'Thank You For Reaching Out, Our team will Get in touch with you Shortly!' :
+                   language === 'it' ? 'Grazie per averci contattato, il nostro team ti contatterà a breve!' :
+                   language === 'fr' ? 'Merci de nous avoir contacté, notre équipe vous contactera sous peu!' :
+                   language === 'du' ? 'Dank je voor het contact opnemen, ons team neemt binnenkort contact met je op!' :
+                   'Thank You For Reaching Out, Our team will Get in touch with you Shortly!', // Default to English
+
+            iconColor: '#05021f',
+            confirmButtonColor: '#05021f',
+            customClass: {
+                popup: 'swal-popup-custom',
+                confirmButton: 'swal-button-custom',
+            }
+        });
+        setFormData({
+          fullName: '',
+          email: '',
+          contact: '',
+          description: ''
       });
-      const data = response.data;
-      Swal.fire({
-        icon: 'success',
-        title: 'Success!', 
-        text: 'Thank You For Reaching Out, Our team will Get in touch with you Shortly!',
-        iconColor: '#05021f',
-        confirmButtonColor: '#05021f',
-        customClass: {
-          popup: 'swal-popup-custom',
-          confirmButton: 'swal-button-custom',
-        }
-      });
+
     } catch (error) {
-      console.error('Error:', error);
-      Swal.fire({
-        icon: 'error',
-        title: 'Error!', 
-        text: 'Failed to submit contact information. Please try again later.',
-        iconColor: '#05021f',
-        confirmButtonColor: '#05021f',
-        customClass: {
-          popup: 'swal-popup-custom',
-          confirmButton: 'swal-button-custom',
-        }
-      });
+        // Handle the error if the request fails
+        console.error('Error:', error);
+
+        Swal.fire({
+            icon: 'error',
+            title: language === 'en' ? 'Error!' :
+                   language === 'it' ? 'Errore!' :
+                   language === 'fr' ? 'Erreur!' :
+                   language === 'du' ? 'Fout!' :
+                   'Error!', // Default to English
+
+            text: language === 'en' ? 'Failed to submit contact information. Please try again later.' :
+                   language === 'it' ? 'Impossibile inviare le informazioni di contatto. Riprova più tardi.' :
+                   language === 'fr' ? 'Échec de l\'envoi des informations de contact. Veuillez réessayer plus tard.' :
+                   language === 'du' ? 'Het verzenden van contactinformatie is mislukt. Probeer het later opnieuw.' :
+                   'Failed to submit contact information. Please try again later.', // Default to English
+
+            iconColor: '#05021f',
+            confirmButtonColor: '#05021f',
+            customClass: {
+                popup: 'swal-popup-custom',
+                confirmButton: 'swal-button-custom',
+            }
+        });
     }
-  };
+};
 
   return (
     <div className='aboutus-info-flex'>

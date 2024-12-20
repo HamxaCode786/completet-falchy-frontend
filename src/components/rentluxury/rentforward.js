@@ -3,19 +3,18 @@ import Chauffered from "../../assets/images/transferpage/Car1.png";
 import Payment from '../../components/rentluxury/paymentcontact'
 import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
+import { SelectedCardContext } from '../../contextapi/rentluxurycontext';
 
 
 const Tranferforward = () => {
   const { language } = useContext(TranslationContext);
+  const { selectedCard } = useContext(SelectedCardContext);
   return (
     <div>
   <div className="driver_car_div">
-    <img className="chauffer_2enh" src={Chauffered} />
+    <img className="chauffer_2enh" src={selectedCard.img} />
     <h2 className="car_name1">
-      {language === "en" ? "Mercedes Benz S-580" :
-       language === "it" ? "Mercedes Benz S-580" :
-       language === "du" ? "Mercedes Benz S-580" :
-       language === "fr" ? "Mercedes Benz S-580" : "Mercedes Benz S-580"}
+      {selectedCard.title[language]}
     </h2>
     
     <ul className="icons_list_drivers">
@@ -141,31 +140,19 @@ const Tranferforward = () => {
   </h5>
   
   <h5>
-    {language === "en" ? "S 580 4MATIC" :
-     language === "it" ? "S 580 4MATIC" :
-     language === "du" ? "S 580 4MATIC" :
-     language === "fr" ? "S 580 4MATIC" : "S 580 4MATIC"}
+    {selectedCard.title[language]}
   </h5>
 
   <h5>
-    {language === "en" ? "496 Horse Power" :
-     language === "it" ? "496 Cavalli" :
-     language === "du" ? "496 Paardenkracht" :
-     language === "fr" ? "496 Chevaux" : "496 Horse Power"}
+    {selectedCard.horsepower2[language]}
   </h5>
 
   <h5>
-    {language === "en" ? "Obsidian Black" :
-     language === "it" ? "Nero Obsidiana" :
-     language === "du" ? "Obsidiaans Zwart" :
-     language === "fr" ? "Noir Obsidienne" : "Obsidian Black"}
+    {selectedCard.obsidianBlack[language]}
   </h5>
 
   <h5>
-    {language === "en" ? "21 MPG" :
-     language === "it" ? "21 MPG" :
-     language === "du" ? "21 MPG" :
-     language === "fr" ? "21 MPG" : "21 MPG"}
+    {selectedCard.mpg[language]}
   </h5>
 
   <h5>
