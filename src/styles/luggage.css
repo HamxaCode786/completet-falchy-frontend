@@ -1,0 +1,78 @@
+
+@media (max-width:815px){
+
+    .form-layout {
+        padding:0 10%;
+    }
+
+    .buttonWrapper {
+        padding:0 10%;
+    }
+}
+
+@media (max-width:500px){
+    .luggage-heading {
+        font-size: 42px !important;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .luggage-heading2 {
+        font-size: 22px !important;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    
+
+
+
+}
+
+@media (max-width:480px){
+    .luggage-section input, .luggage-section select {
+        padding:8px 16px;
+    }
+
+.input-wrapper {
+
+display: flex;
+flex-direction: column;
+gap: 15px;
+
+
+}
+
+
+    .luggage-section button {
+        padding:8px 16px;
+    }
+
+.lugagge_transfer_mobile {
+
+
+grid-template-columns: none !important;
+
+
+}
+
+.form-layout {
+
+padding-right: 5% !important;
+padding-left: 5% !important;
+
+
+
+}
+
+
+
+
+
+
+}
+
+@media(max-width:650px){
+    .luggage-section {
+        padding: 50px 0 60px;
+    }
+}

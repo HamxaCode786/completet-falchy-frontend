@@ -1,0 +1,90 @@
+.contact_card1 {
+
+min-height: 370px;
+display: flex !important;
+flex-direction: column !important;
+justify-content: center !important;
+align-items: center !important;
+gap: 35px;
+background: linear-gradient(rgba(5, 2, 31, 0.8), rgba(5, 2, 31, 0.8)), url('../../assets/images/contactcard/contact_card1image.jpg');
+background-size: cover;
+background-position: center;
+
+}
+
+.contact_card1 h2 {
+
+text-align: center !important;
+color:white;
+font-size: 32px;
+font-weight: 400;
+
+
+}
+
+.contact_card1 h4 {
+
+text-align: center !important;
+color:white;
+font-size: 17px;
+font-weight: 400;
+
+}
+
+.contact_card1_form1{
+width: 100%;
+display: flex;
+justify-content: space-evenly !important;
+align-items: center;
+
+
+}
+
+.contact_card1_form1_label1{
+
+color:white !important;
+font-size: 14px;
+font-weight: 600;
+
+
+}
+
+
+.contact_div {
+
+height: 80px;
+width: 20%;
+
+}
+
+.contact_div1 {
+
+height: 80px;
+
+}
+.contact_div1 button {
+
+
+height: 38px;
+border:none;
+padding-right: 5px;
+padding-left: 5px;
+background-color: #dfb045;
+color: black;
+font-weight: bold;
+font-size: 14px;
+width: 180px;
+display:flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.form-control {
+    border-radius: 0 !important;
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+
+@media (max-width:1000px) {
+
+    .accordion {
+        max-width: 90% !important;
+    }
+    
+    .FAQs-section {
+        text-align: center;
+        margin:50px 0 55px;
+    }
+}
