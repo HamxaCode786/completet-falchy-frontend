@@ -113,7 +113,8 @@ const Aboutusgrid = () => {
       <div className='grid-item'>
         <div className='grid-item-flex'>
           <div className='grid-item-heading-flex'>
-            <img src={LocationIcon} alt='Location Icon' />
+          <i class="fas fa-location-pin" alt="Location Icon"></i>
+
             <p className='grid-item-heading'> 
               {language === 'en' 
                 ? "Find Us" 
@@ -155,7 +156,8 @@ const Aboutusgrid = () => {
       <div className='grid-item'>
         <div className='grid-item-flex'>
           <div className='grid-item-heading-flex'>
-            <img src={CallIcon} alt='Location Icon' />
+          <i class="fas fa-phone-alt" alt="Call Icon"></i>
+
             <p className='grid-item-heading'> 
               {language === 'en' 
                 ? "Call Us" 
@@ -177,7 +179,8 @@ const Aboutusgrid = () => {
       <div className='grid-item'>
         <div className='grid-item-flex'>
           <div className='grid-item-heading-flex'>
-            <img src={TimeIcon} alt='Location Icon' />
+          <i class="fas fa-clock" alt="Time Icon"></i>
+
             <p className='grid-item-heading'> 
               {language === 'en' 
                 ? "Visit Us" 
@@ -209,7 +212,8 @@ const Aboutusgrid = () => {
       <div className='grid-item'>
         <div className='grid-item-flex'>
           <div className='grid-item-heading-flex'>
-            <img src={MailIcon} alt='Location Icon' />
+          <i class="fas fa-envelope" alt="Mail Icon"></i>
+
             <p className='grid-item-heading'> 
               {language === 'en' 
                 ? "Mail Us" 

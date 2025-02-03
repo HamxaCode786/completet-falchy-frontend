@@ -1,0 +1,182 @@
+.landing-container {
+    font-family: "Rubik";
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.landing-text-content {
+    text-align: center;
+    color: #CACFCD;
+    width: 90%;
+    z-index: 999;
+    padding-top: 3%;
+}
+
+.landing-text-content h1 {
+    font-size: 3rem;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-bottom: 15px;
+    z-index: 99999999;
+    padding-bottom: 10px;
+
+}
+
+.landing-text-content button {
+    border: 0;
+    border-radius: 2px;
+    padding: 10px;
+    background-color:#e7c469;
+    color: #080809;
+    font-weight: 600;
+    z-index: 9999999;
+
+}
+
+.landing-paragraph {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding-bottom: 2%;
+    z-index: 999999;
+    color: aliceblue;
+    font-weight: 400;
+    width: 65%;
+}
+
+/*  Experimental Code */
+
+.car-image {
+    display: block;
+  
+    width: 40%;
+    margin-top: -6rem;
+    
+  }
+
+  .reflection-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+/*
+
+.reflection-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+    
+  }
+  
+  .car-image {
+    display: block;
+    width: 100%; 
+  }
+  
+  .reflection-container::after {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: url('../assets/images/homepageimage/E-Class-Landing.png') no-repeat;
+    background-size: 100% 100%;
+    background-size: cover;
+    transform: scaleY(-1); 
+    opacity: 0.6;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); 
+    
+  }
+  */
+
+
+@media (max-width:768px){
+
+    .landing-text-content h1 {
+        line-height: 1.2;
+        margin-bottom: 10px;
+    
+    }
+
+    .landing-text-content {
+       
+        width: 85%;
+    }
+
+    .landing-paragraph {
+        
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .landing-container {
+        gap:35px;
+        
+    }
+    
+
+}
+
+@media (max-width:480px){
+
+    .landing-text-content h1 {
+        margin-bottom: 10px;
+        line-height: 1;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 28px;
+    
+    }
+
+    .landing-text-content {
+       
+        width: 90%;
+    }
+
+    .landing-paragraph {
+  
+        margin-bottom: 20px;
+        width: 100%;
+        margin: 0 auto;
+        font-size: 12px;
+    
+    }
+    
+    .landing-container {
+        gap:35px;
+        padding: 50px 0 20px;
+        
+    }
+
+    .landing-text-content button {
+        border: 0;
+        border-radius: 2px;
+        padding: 6px 10px;
+    }
+    
+
+.car-image {
+
+margin-top: 0;
+
+}
+
+
+}
+
+
+
+
+.landing-button {
+
+width: 150px;
+border-radius: 5px;
+
+
+}

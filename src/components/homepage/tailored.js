@@ -1,20 +1,22 @@
 import React from "react";
-import image1 from "../../assets/images/homepageimage/luxury2.jpg";
-import image2 from "../../assets/images/homepageimage/transfer2.jpg";
+import image1 from "../../assets/images/homepageimage/Updated-Rent-Tailoredwefawe.png";
+import image2 from "../../assets/images/homepageimage/Transfer-Homepage-Imageupdated.png";
 import image3 from "../../assets/images/homepageimage/luggage2.jpg";
 import image4 from "../../assets/images/homepageimage/concerge2.jpg";
 import { useNavigate } from "react-router-dom";
 import { TranslationContext } from '../../contextapi/translationContext';
 import { useContext } from "react";
+import { useScroll } from '../../contextapi/scrollContext';  // Import the custom hook
 
 
 const Tailored = () => {
   const navigate = useNavigate();
   const { language } = useContext(TranslationContext);
+  const { servicesRef } = useScroll()
 
 
   return (
-    <div className="custom_tailored_heading">
+    <div ref={servicesRef} className="custom_tailored_heading">
       <h3>
   {language === 'en' ? (
     'Tailored Solution For Every Need'
@@ -34,7 +36,7 @@ const Tailored = () => {
       <div className="first_row">
         <div
           className="image_hover_done"
-          onClick={() => navigate('/rentluxury')}
+          onClick={() => navigate('/rental')}
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${image1})`,
             backgroundSize: "cover",
@@ -101,7 +103,7 @@ const Tailored = () => {
         </div>
         <div
           className="image_hover_done"
-          onClick={() => navigate('/transferservice')}
+          onClick={() => navigate('/transfers')}
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image2})`,
             backgroundSize: "cover",

@@ -1,35 +1,210 @@
 import React, { useState } from "react";
 import Flatpickr from "react-flatpickr";
-import "flatpickr/dist/themes/material_green.css"; // Import Flatpickr CSS for styling
-import { MDBInput } from "mdb-react-ui-kit";
+import "flatpickr/dist/themes/material_green.css";
 import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
 import Autosuggest from "react-autosuggest";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Luggageransferform() {
   const { language } = useContext(TranslationContext);
   const [pickupSuggestions, setPickupSuggestions] = useState([]);
   const [dropOffSuggestions, setDropOffSuggestions] = useState([]);
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
+    luggageType: "",
     pickupLocation: "",
     dropOffLocation: "",
+    pickupDate: "",
+    pickupTime: "",
+    dropOffDate: "",
+    dropOffTime: "",
+    phoneNumber: "",
+    email: "",
   });
+
+  const validateForm = () => {
+    let tempErrors = {};
+    let formIsValid = true;
+
+    if (!formData.luggageType) {
+      tempErrors.luggageType = "Luggage type is required";
+      formIsValid = false;
+    }
+
+    if (!formData.pickupLocation) {
+      tempErrors.pickupLocation = "Pickup location is required";
+      formIsValid = false;
+    }
+
+    if (!formData.dropOffLocation) {
+      tempErrors.dropOffLocation = "Drop off location is required";
+      formIsValid = false;
+    }
+
+    if (!formData.pickupDate) {
+      tempErrors.pickupDate = "Pickup date is required";
+      formIsValid = false;
+    }
+
+    if (!formData.pickupTime) {
+      tempErrors.pickupTime = "Pickup time is required";
+      formIsValid = false;
+    }
+
+    if (!formData.dropOffDate) {
+      tempErrors.dropOffDate = "Drop off date is required";
+      formIsValid = false;
+    }
+
+    if (!formData.dropOffTime) {
+      tempErrors.dropOffTime = "Drop off time is required";
+      formIsValid = false;
+    }
+
+    if (!formData.phoneNumber) {
+      tempErrors.phoneNumber = "Phone number is required";
+      formIsValid = false;
+    } else if (!/^\+?[\d\s-]+$/.test(formData.phoneNumber)) {
+      tempErrors.phoneNumber = "Invalid phone number";
+      formIsValid = false;
+    }
+
+    if (!formData.email) {
+      tempErrors.email = "Email is required";
+      formIsValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Invalid email format";
+      formIsValid = false;
+    }
+
+    setErrors(tempErrors);
+    return formIsValid;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      try {
+        // Format dates and times to match required format
+        const formatDate = (date) => {
+          const d = new Date(date);
+          return d.toISOString().split("T")[0]; // Returns YYYY-MM-DD
+        };
+
+        const formatTime = (time) => {
+          const d = new Date(time);
+          return d.toTimeString().split(" ")[0].substring(0, 5); // Returns HH:mm
+        };
+
+        const payload = {
+          luggage_type: formData.luggageType,
+          pick_up_location: formData.pickupLocation,
+          drop_off_location: formData.dropOffLocation,
+          pick_up_date: formatDate(formData.pickupDate),
+          pick_up_time: formatTime(formData.pickupTime),
+          drop_off_date: formatDate(formData.dropOffDate),
+          drop_off_time: formatTime(formData.dropOffTime),
+          phone_number: formData.phoneNumber,
+          email: formData.email,
+        };
+
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/luggage-transfers/`, // Use the environment variable here
+          payload
+        );
+
+        if (response.status === 201) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Your luggage transfer Has Been Noted. Our Team Will Contact Within 10 Minutes!",
+            iconColor: "#05021f",
+            confirmButtonColor: "#05021f",
+            customClass: {
+              popup: "swal-popup-custom",
+              confirmButton: "swal-button-custom",
+            },
+          });
+          setFormData({
+            luggageType: "",
+            pickupLocation: "",
+            dropOffLocation: "",
+            pickupDate: "",
+            pickupTime: "",
+            dropOffDate: "",
+            dropOffTime: "",
+            phoneNumber: "",
+            email: "",
+          });
+        
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong! Please try again later.",
+          iconColor: "#05021f",
+          confirmButtonColor: "#05021f",
+          customClass: {
+            popup: "swal-popup-custom",
+            confirmButton: "swal-button-custom",
+          },
+        });
+        Swal.fire({
+          icon: "error",
+          title: "Submission Failed",
+          text: "Failed to submit form. Please try again.",
+          confirmButtonColor: "#05021f",
+          iconColor: "#05021f",
+          customClass: {
+            popup: "swal-popup-custom",
+            confirmButton: "swal-button-custom",
+          },
+        });
+      }
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: null,
+      });
+    }
+  };
 
   const fetchSuggestions = async (value) => {
     if (!value) return [];
 
     try {
-      const response = await axios.get(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${value}&limit=5`
+      const response = await fetch(
+        `${
+          process.env.REACT_APP_API_URL
+        }/transfers/autocomplete/?input=${encodeURIComponent(value)}`
       );
-      return response.data.map((place) => ({
-        description: place.display_name,
-        latitude: place.lat,
-        longitude: place.lon,
+      if (!response.ok) {
+        throw new Error("Failed to fetch location suggestions");
+      }
+
+      const data = await response.json();
+      return data.predictions?.map((place) => ({
+        description: place.description,
+        latitude: place.latitude,
+        longitude: place.longitude,
       }));
     } catch (error) {
-      console.error("Error fetching data from Nominatim:", error);
+      console.error("Error fetching data from API:", error);
       return [];
     }
   };
@@ -55,6 +230,8 @@ export default function Luggageransferform() {
     });
   };
 
+  
+
   // Autosuggest input component
   const renderInputComponent = (inputProps) => (
     <input
@@ -79,17 +256,6 @@ export default function Luggageransferform() {
   return (
     <div>
       <div className="luggage-section">
-        <h1 className="luggage-heading">
-          {language === "en"
-            ? "Book Your Luggage Transfer"
-            : language === "it"
-            ? "Prenota il Tuo Trasferimento Baggagli"
-            : language === "du"
-            ? "Boek Je Bagage Transfer"
-            : language === "fr"
-            ? "Réservez Votre Transfert de Bagages"
-            : "Book Your Luggage Transfer"}
-        </h1>
         <h2 className="luggage-heading2">
           {language === "en"
             ? "Your Luggage Transfer—Where Every Journey Begins with Effortless Luxury"
@@ -103,7 +269,7 @@ export default function Luggageransferform() {
         </h2>
 
         <div className="form-section">
-          <form action="#" method="POST">
+          <form onSubmit={handleSubmit} method="POST">
             <div className="form-layout">
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <label
@@ -126,7 +292,9 @@ export default function Luggageransferform() {
                 </label>
                 <select
                   id="luggage_type"
-                  name="luggage_type"
+                  name="luggageType"
+                  value={formData.luggageType}
+                  onChange={handleInputChange}
                   required
                   style={{
                     fontWeight: 400,
@@ -135,6 +303,7 @@ export default function Luggageransferform() {
                     border: "none",
                     color: "black",
                     height: "52px",
+                    width: "100%",
                   }}
                 >
                   <option value="" disabled selected hidden>
@@ -148,7 +317,7 @@ export default function Luggageransferform() {
                       ? "Sélectionnez Votre Type de Bagages"
                       : "Select Your Luggage Type"}
                   </option>
-                  <option value="None Selected">
+                  <option className="select-option" value="None Selected">
                     {language === "en"
                       ? "None"
                       : language === "it"
@@ -159,7 +328,7 @@ export default function Luggageransferform() {
                       ? "Aucun"
                       : "None"}
                   </option>
-                  <option value="Suitcase">
+                  <option className="select-option" value="Suitcase">
                     {language === "en"
                       ? "Suitcase"
                       : language === "it"
@@ -170,7 +339,7 @@ export default function Luggageransferform() {
                       ? "Valise"
                       : "Suitcase"}
                   </option>
-                  <option value="Backpack">
+                  <option className="select-option" value="Backpack">
                     {language === "en"
                       ? "Backpack"
                       : language === "it"
@@ -181,7 +350,7 @@ export default function Luggageransferform() {
                       ? "Sac à dos"
                       : "Backpack"}
                   </option>
-                  <option value="Duffel">
+                  <option className="select-option" value="Duffel">
                     {language === "en"
                       ? "Duffel Bag"
                       : language === "it"
@@ -192,7 +361,7 @@ export default function Luggageransferform() {
                       ? "Sac de sport"
                       : "Duffel Bag"}
                   </option>
-                  <option value="Others">
+                  <option className="select-option" value="Others">
                     {language === "en"
                       ? "Others"
                       : language === "it"
@@ -204,6 +373,9 @@ export default function Luggageransferform() {
                       : "Others"}
                   </option>
                 </select>
+                {errors.luggageType && (
+                  <span className="error">{errors.luggageType}</span>
+                )}
               </div>
 
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -226,6 +398,7 @@ export default function Luggageransferform() {
                     : "Pickup Location"}
                 </label>
                 <Autosuggest
+                  className="autosuggest_1"
                   suggestions={pickupSuggestions}
                   onSuggestionsFetchRequested={({ value }) =>
                     handleSuggestionsFetchRequested({ value }, "pickupLocation")
@@ -239,41 +412,41 @@ export default function Luggageransferform() {
                   theme={{
                     container: {
                       position: "relative",
-                      zIndex: 1050, // Ensures that the container has a higher stacking order
+                      zIndex: 1050,
                     },
                     suggestionsContainerOpen: {
                       position: "absolute",
-                      top: "100%", // Positioning the suggestion container directly below the input
+                      top: "100%",
                       left: 0,
                       right: 0,
-                      maxHeight: "250px", // Increased max height for better visibility
-                      overflowY: "auto", // Makes the suggestions container scrollable if the list is too long
-                      border: "1px solid #ccc", // Border to separate the dropdown from the rest of the page
-                      backgroundColor: "#fff", // Clean white background
-                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)", // Softer shadow with higher spread for a more polished look
-                      borderRadius: "8px", // Rounded corners for a more modern look
-                      zIndex: 9999, // Ensures the suggestions container appears above other content
-                      padding: "5px 0", // Adds space between suggestions and the border
+                      maxHeight: "250px",
+                      overflowY: "auto",
+                      border: "1px solid #ccc",
+                      backgroundColor: "#fff",
+                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                      borderRadius: "8px",
+                      zIndex: 9999,
+                      padding: "5px 0",
+                      listStyleType: "none !Important",
                     },
                     suggestion: {
-                      padding: "12px 16px", // Increase padding for better readability and clickability
-                      cursor: "pointer", // Indicates that each suggestion is clickable
+                      cursor: "pointer",
                       fontSize: "16px",
                       fontWeight: "500",
                       textAlign: "left",
-                      // Set a comfortable font size
-                      fontFamily: "'Arial', sans-serif", // Uniform and clean font style
-                      color: "#333", // Dark text for better contrast and readability
-                      transition: "background-color 0.2s ease, color 0.2s ease", // Smooth transition for hover effects
+                      paddingTop: "5px",
+                      paddingBottom: "5px",
+                      fontFamily: "'Arial', sans-serif",
+                      color: "#333",
+                      transition: "background-color 0.2s ease, color 0.2s ease",
                     },
                     suggestionHighlighted: {
-                      backgroundColor: "#05021f", // Highlight suggestion with a blue color for emphasis
-                      color: "grey", // Change text color to white when highlighted
+                      backgroundColor: "#05021f",
+                      color: "white",
                       borderRadius: "4px",
                       visibility: "visible !important",
                       zIndex: 9999,
-                      fontWeight: "700",
-                      // Rounded corners for the highlighted suggestion
+                      fontWeight: "bold",
                     },
                   }}
                   inputProps={{
@@ -291,10 +464,13 @@ export default function Luggageransferform() {
                         ? "Sélectionnez Votre Lieu de Prise en Charge"
                         : "Select Your Pickup Location",
                     required: true,
-                    style: { width: "100%" }, // Set input width to 100% to ensure it's full width
+                    style: { width: "100%" },
                   }}
                   renderInputComponent={renderInputComponent}
                 />
+                {errors.pickupLocation && (
+                  <span className="error">{errors.pickupLocation}</span>
+                )}
               </div>
 
               {/* Dropoff Location Autosuggest */}
@@ -334,39 +510,39 @@ export default function Luggageransferform() {
                   theme={{
                     container: {
                       position: "relative",
-                      zIndex: 1000, // Ensures that the container has a higher stacking order
+                      zIndex: 1000,
                     },
                     suggestionsContainerOpen: {
                       position: "absolute",
-                      top: "100%", // Positioning the suggestion container directly below the input
+                      top: "100%",
                       left: 0,
                       right: 0,
-                      maxHeight: "250px", // Increased max height for better visibility
-                      overflowY: "auto", // Makes the suggestions container scrollable if the list is too long
-                      border: "1px solid #ccc", // Border to separate the dropdown from the rest of the page
-                      backgroundColor: "#fff", // Clean white background
-                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)", // Softer shadow with higher spread for a more polished look
-                      borderRadius: "8px", // Rounded corners for a more modern look
-                      zIndex: 9999, // Ensures the suggestions container appears above other content
-                      padding: "5px 0", // Adds space between suggestions and the border
+                      maxHeight: "250px",
+                      overflowY: "auto",
+                      border: "1px solid #ccc",
+                      backgroundColor: "#fff",
+                      boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",
+                      borderRadius: "8px",
+                      zIndex: 9999,
+                      padding: "5px 0",
                     },
                     suggestion: {
-                      padding: "12px 16px", // Increase padding for better readability and clickability
-                      cursor: "pointer", // Indicates that each suggestion is clickable
+                      padding: "12px 16px",
+                      cursor: "pointer",
                       fontSize: "16px",
                       fontWeight: "500",
                       textAlign: "left",
-                      fontFamily: "'Arial', sans-serif", // Uniform and clean font style
-                      color: "#333", // Dark text for better contrast and readability
-                      transition: "background-color 0.2s ease, color 0.2s ease", // Smooth transition for hover effects
+                      fontFamily: "'Arial', sans-serif",
+                      color: "#333",
+                      transition: "background-color 0.2s ease, color 0.2s ease",
                     },
                     suggestionHighlighted: {
-                      backgroundColor: "#05021f", // Highlight suggestion with a blue color for emphasis
-                      color: "grey", // Change text color to grey when highlighted
+                      backgroundColor: "#05021f",
+                      color: "white",
                       borderRadius: "4px",
-                      visibility: "visible !important", // Ensure the highlighted suggestion is visible
+                      visibility: "visible !important",
                       zIndex: 9999,
-                      fontWeight: "700", // Emphasize highlighted suggestion text
+                      fontWeight: "700",
                     },
                   }}
                   inputProps={{
@@ -384,10 +560,13 @@ export default function Luggageransferform() {
                         ? "Sélectionnez Votre Lieu de Dépôt"
                         : "Select Your Dropoff Location",
                     required: true,
-                    style: { width: "100%" }, // Set input width to 100% to ensure it's full width
+                    style: { width: "100%" },
                   }}
                   renderInputComponent={renderInputComponent}
                 />
+                {errors.dropOffLocation && (
+                  <span className="error">{errors.dropOffLocation}</span>
+                )}
               </div>
 
               <div
@@ -419,7 +598,11 @@ export default function Luggageransferform() {
                   </label>
                   <Flatpickr
                     id="pickupdate"
-                    name="pickupdate"
+                    name="pickupDate"
+                    value={formData.pickupDate}
+                    onChange={(date) =>
+                      setFormData({ ...formData, pickupDate: date[0] })
+                    }
                     placeholder={
                       language === "en"
                         ? "Select Your Pick Up Date"
@@ -434,7 +617,9 @@ export default function Luggageransferform() {
                     required
                     options={{
                       enableTime: false,
-                      dateFormat: "F j, Y",
+                      dateFormat: "Y-m-d",
+                      minDate: "today",
+                      disableMobile: true, // Force Flatpickr to use its custom UI on mobile
                     }}
                     style={{
                       backgroundColor: "#f9f9f9",
@@ -445,8 +630,13 @@ export default function Luggageransferform() {
                       color: "black",
                       borderColor: "white",
                       height: "52px",
+                      width: "100%",
                     }}
                   />
+
+                  {errors.pickupDate && (
+                    <span className="error">{errors.pickupDate}</span>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label
@@ -469,7 +659,11 @@ export default function Luggageransferform() {
                   </label>
                   <Flatpickr
                     id="pickuptime"
-                    name="pickuptime"
+                    name="pickupTime"
+                    value={formData.pickupTime}
+                    onChange={(time) =>
+                      setFormData({ ...formData, pickupTime: time[0] })
+                    }
                     placeholder={
                       language === "en"
                         ? "Select Your Pick Up Time"
@@ -485,7 +679,11 @@ export default function Luggageransferform() {
                     options={{
                       enableTime: true,
                       noCalendar: true,
-                      dateFormat: "g:i K",
+                      dateFormat: "H:i",
+                      minTime: "09:00",
+                      maxTime: "17:00",
+                      time_24hr: true,
+                      disableMobile: true, // This prevents Flatpickr from using native input on mobile devices
                     }}
                     style={{
                       backgroundColor: "#f9f9f9",
@@ -496,8 +694,13 @@ export default function Luggageransferform() {
                       color: "black",
                       borderColor: "white",
                       height: "52px",
+                      width: "100%",
                     }}
                   />
+
+                  {errors.pickupTime && (
+                    <span className="error">{errors.pickupTime}</span>
+                  )}
                 </div>
               </div>
 
@@ -530,7 +733,11 @@ export default function Luggageransferform() {
                   </label>
                   <Flatpickr
                     id="dropOffDate"
-                    name="dropoffdate"
+                    name="dropOffDate"
+                    value={formData.dropOffDate}
+                    onChange={(date) =>
+                      setFormData({ ...formData, dropOffDate: date[0] })
+                    }
                     placeholder={
                       language === "en"
                         ? "Select Your Drop Off Date"
@@ -544,8 +751,10 @@ export default function Luggageransferform() {
                     }
                     required
                     options={{
-                      enableTime: true,
-                      dateFormat: "F j, Y g:i K",
+                      enableTime: false,
+                      dateFormat: "Y-m-d",
+                      minDate: formData.pickupDate || "today", // Ensures drop-off date is after pickup date
+                      disableMobile: true, // Force custom UI on mobile devices
                     }}
                     style={{
                       backgroundColor: "#f9f9f9",
@@ -556,8 +765,13 @@ export default function Luggageransferform() {
                       color: "black",
                       borderColor: "white",
                       height: "52px",
+                      width: "100%",
                     }}
                   />
+
+                  {errors.dropOffDate && (
+                    <span className="error">{errors.dropOffDate}</span>
+                  )}
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label
@@ -580,7 +794,11 @@ export default function Luggageransferform() {
                   </label>
                   <Flatpickr
                     id="dropOffTime"
-                    name="dropofftime"
+                    name="dropOffTime"
+                    value={formData.dropOffTime}
+                    onChange={(time) =>
+                      setFormData({ ...formData, dropOffTime: time[0] })
+                    }
                     placeholder={
                       language === "en"
                         ? "Select Your Drop Off Time"
@@ -596,7 +814,11 @@ export default function Luggageransferform() {
                     options={{
                       enableTime: true,
                       noCalendar: true,
-                      dateFormat: "g:i K",
+                      dateFormat: "H:i",
+                      minTime: "09:00",
+                      maxTime: "17:00",
+                      time_24hr: true,
+                      disableMobile: true, // Force Flatpickr to use the custom UI on mobile devices
                     }}
                     style={{
                       backgroundColor: "#f9f9f9",
@@ -607,57 +829,130 @@ export default function Luggageransferform() {
                       color: "black",
                       borderColor: "white",
                       height: "52px",
+                      width: "100%",
                     }}
                   />
+
+                  {errors.dropOffTime && (
+                    <span className="error">{errors.dropOffTime}</span>
+                  )}
                 </div>
               </div>
-
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <label
-                  htmlFor="pickupLocation"
-                  style={{
-                    alignSelf: "flex-start",
-                    color: "white",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {language === "en"
-                    ? "Contact Information"
-                    : language === "it"
-                    ? "Informazioni di Contatto"
-                    : language === "du"
-                    ? "Contactinformatie"
-                    : language === "fr"
-                    ? "Informations de Contact"
-                    : "Contact Information"}
-                </label>
-                <input
-                  id="pickupLocation"
-                  type="text"
-                  name="pickup_location"
-                  placeholder={
-                    language === "en"
-                      ? "Contact Information"
+              <div
+                className="lugagge_transfer_mobile"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "3%",
+                }}
+              >
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <label
+                    htmlFor="phoneNumber"
+                    style={{
+                      alignSelf: "flex-start",
+                      color: "white",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {language === "en"
+                      ? "Phone Number"
                       : language === "it"
-                      ? "Informazioni di Contatto"
+                      ? "Numero di Telefono"
                       : language === "du"
-                      ? "Contactinformatie"
+                      ? "Telefoonnummer"
                       : language === "fr"
-                      ? "Informations de Contact"
-                      : "Contact Information"
-                  }
-                  required
-                  style={{
-                    backgroundColor: "#f9f9f9",
-                    fontWeight: 400,
-                    fontSize: "16px",
-                    padding: "10px",
-                    border: "none",
-                    color: "black",
-                    borderColor: "white",
-                    height: "52px",
-                  }}
-                />
+                      ? "Numéro de Téléphone"
+                      : "Phone Number"}
+                  </label>
+                  <input
+                    id="phoneNumber"
+                    type="tel"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    placeholder={
+                      language === "en"
+                        ? "Phone Number"
+                        : language === "it"
+                        ? "Numero di Telefono"
+                        : language === "du"
+                        ? "Telefoonnummer"
+                        : language === "fr"
+                        ? "Numéro de Téléphone"
+                        : "Phone Number"
+                    }
+                    required
+                    style={{
+                      backgroundColor: "#f9f9f9",
+                      fontWeight: 400,
+                      fontSize: "16px",
+                      padding: "10px",
+                      border: "none",
+                      color: "black",
+                      borderColor: "white",
+                      height: "52px",
+                      width: "100%",
+                    }}
+                  />
+                  {errors.phoneNumber && (
+                    <span className="error">{errors.phoneNumber}</span>
+                  )}
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <label
+                    htmlFor="email"
+                    style={{
+                      alignSelf: "flex-start",
+                      color: "white",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {language === "en"
+                      ? "Email Address"
+                      : language === "it"
+                      ? "Indirizzo Email"
+                      : language === "du"
+                      ? "E-mailadres"
+                      : language === "fr"
+                      ? "Adresse e-mail"
+                      : "Email Address"}
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={
+                      language === "en"
+                        ? "Email Address"
+                        : language === "it"
+                        ? "Indirizzo Email"
+                        : language === "du"
+                        ? "E-mailadres"
+                        : language === "fr"
+                        ? "Adresse e-mail"
+                        : "Email Address"
+                    }
+                    required
+                    style={{
+                      backgroundColor: "#f9f9f9",
+                      fontWeight: 400,
+                      fontSize: "16px",
+                      padding: "10px",
+                      border: "none",
+                      color: "black",
+                      borderColor: "white",
+                      height: "52px",
+                      width: "100%",
+                    }}
+                  />
+                  {errors.email && (
+                    <span className="error">{errors.email}</span>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -673,6 +968,7 @@ export default function Luggageransferform() {
                   ? "Réservez Maintenant"
                   : "Reserve Now"}
               </button>
+              {errors.submit && <span className="error">{errors.submit}</span>}
             </div>
           </form>
         </div>

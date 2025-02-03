@@ -1,0 +1,18 @@
+
+/* WhatsAppIcon.css */
+.whatsapp-icon {
+    position: fixed !important;
+    bottom: 20px; /* Distance from the bottom of the page */
+    left: 20px; /* Distance from the left of the page */
+    z-index: 11000; /* Make sure the icon is above other content */
+    background-color: #25D366; /* WhatsApp color */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for a nice effect */
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-icon:hover {
+    transform: scale(1.1); /* Hover effect to scale the icon slightly */
+  }
+  

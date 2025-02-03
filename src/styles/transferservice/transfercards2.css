@@ -1,0 +1,444 @@
+.card_transfer1222 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Normal cards */
+  }
+  
+  .card_transfer1222:hover {
+    transform: translateY(-10px) rotateY(5deg) rotateX(5deg) scale(1.1); /* Adjust scale value to your liking */
+  transform-origin: center center; /* Ensures scaling occurs from the center */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure the hovered card stays on top */
+  }
+  
+  .card_transfer1222.center-card {
+    transform: scale(1.1); /* Enlarge the center card */
+    z-index: 20; /* Bring the center card to the front */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Bigger shadow for emphasis */
+  }
+  
+  .card_transfer1_img2 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .location_cards_selectable {
+    
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: -1rem !important;
+    padding-top: 5px;
+    
+  }
+  
+  
+
+
+  .last_rent_now_div2 {
+    width: 100%;
+    height: 85px;
+    background-color: #05021f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.4);
+    clip-path: ellipse(58% 66% at 50% 91%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .last_rent_now_div2 h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    padding-top: 35px;
+    text-align: center;
+    margin-top: -20px;
+  }
+  
+  .last_rent_now_div2 h5 {
+    font-size: 12px;
+    font-weight: 350;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  
+
+  .card_transfer1222 {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    align-items: center;
+    height: 385px;
+    min-width: 350px;
+    max-width: 420px;
+    border-radius: 10px;
+    /* padding-top: 30px; */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+  background-color: white;
+  }
+  
+
+
+  .location_cards_selectable2 {
+width: 100% !important;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1%;
+padding-right: 10px;
+padding-left: 10px;
+      
+  }
+
+
+  .small_cards_12 {
+    text-align: left;
+    white-space: pre-line;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    width: 90px;
+    
+    border-radius: 3px;
+    background-color: white;
+    border: 1px solid;
+    border-color: #f6f6f6;
+    color: #555;
+    width: 80%;
+    padding-right: 8px !important;
+    padding-left: 10px !important;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* animation: pulse 1.5s infinite; */
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  
+  .small_cards_12 {
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+  
+  
+  }
+  
+  .small_cards_22 {
+    text-align: center;
+    white-space: pre-line;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+    width: 80%;
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    /* animation: pulse 1.5s infinite; */
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  .small_cards_32 {
+    text-align: center;
+    white-space: pre-line;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    /* animation: pulse 1.5s infinite; */
+  }
+  .small_cards_52 {
+    text-align: center;
+    white-space: pre-line;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    cursor: default !important;
+  }
+  
+  
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  .small_cards_32 span {
+  
+  font-weight: 900;
+  font-size: 16px;
+  
+  }
+  .small_cards_22 span {
+  
+    font-weight: 900;
+    font-size: 16px;
+    
+    }
+  
+  
+    .small_cards_52 span {
+  
+      font-weight: 900;
+      font-size: 16px;
+      
+      }
+    
+  
+  
+  
+    .small_cards_12 span {
+  
+      font-weight: 900;
+      font-size: 15px;
+      
+      }
+      
+  .small_cards_42 {
+  
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  color:#555555;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  
+  
+  
+  }
+  .small_cards_42 span {
+  
+  
+    
+    color:#555555;
+    
+    
+    
+    font-weight: 500;
+    
+    
+    }
+    .small_cards_42:hover {
+      border: 2px solid #d9a35b;
+      transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+    }
+    
+  
+  
+  
+  
+  
+  
+  
+  .small_cards_22:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_22:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+  .small_cards_32:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_32:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+  .small_cards_12:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_12:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+
+
+  
+  .mercedes_names2 {
+    margin: 0 !important;
+    font-style: italic;
+    word-spacing: 10px; /* Adjust the value as needed */
+    color: #555555;
+    padding-bottom: 5px;
+}
+
+
+.new_card_last_div {
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 10px;
+align-items: center;
+min-height: 70px;
+width: 100%;
+padding-bottom: 20px;
+padding-right: 10px;
+padding-left: 10px;
+
+
+}
+
+
+.button_1_new_card {
+width: 100%;
+font-size: 12px;
+padding: 8px;
+background-color: #000000;
+border: none;
+color: white;
+border-radius: 3px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+font-weight: 500;
+
+}
+
+
+.button_1_new_card span {
+    font-weight: 700;
+    font-size: 12px;
+
+
+
+}
+
+
+
+.button_2_new_card {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+    background-color: #E8BC71;
+    border: none;
+    color: black;
+    border-radius: 3px;
+    font-weight: 500;
+    
+    
+    
+    }
+
+.mercedes_names1 {
+
+font-size: 12px;
+padding: 0;
+margin: 0;
+font-style: italic;
+font-weight: 600;
+color: #555555;
+
+
+}

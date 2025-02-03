@@ -1,6 +1,6 @@
 import React from "react";
 import Footerimage from "../../src/assets/images/layout/footer_image.jpg";
-import Footerlogo from "../../src/assets/logo/FalchyLogo.svg";
+import Footerlogo from "../../src/assets/logo/Falchy-Text-Notext-SameWidth-Logo2.svg";
 import { Link } from "react-router-dom";
 import { TranslationContext } from "../contextapi/translationContext";
 import { useContext } from "react";
@@ -26,30 +26,17 @@ const Footer = () => {
       </div> */}
         <div className="footer_main_data">
           <div className="footer_div1">
-            <img className="footer_logo1" src={Footerlogo} alt="footer_image" />
-            <p>
-              {language === "en"
-                ? "Experience unparalleled luxury with our Elegant services, designed for comfort and elegance."
-                : language === "it"
-                ? "Vivi un lusso senza pari con i nostri servizi eleganti, progettati per il comfort e l'eleganza."
-                : language === "du"
-                ? "Ervaar ongeëvenaard luxe met onze elegante diensten, ontworpen voor comfort en elegantie."
-                : language === "fr"
-                ? "Vivez un luxe inégalé avec nos services élégants, conçus pour le confort et l'élégance."
-                : "Experience unparalleled luxury with our Elegant services, designed for comfort and elegance."}
-            </p>
+            <img
+              className="footer_logo1"
+              src={Footerlogo}
+              alt="footer_image"
+              loading="lazy"
+            />
+            <p>Where Comfort Meets Excellence</p>
 
-            <button>
-              {language === "en"
-                ? "Contact Us"
-                : language === "it"
-                ? "Contattaci"
-                : language === "du"
-                ? "Neem contact met ons op"
-                : language === "fr"
-                ? "Contactez-nous"
-                : "Contact Us"}
-            </button>
+            <a href="#/contactus">
+              <button>Contact Us</button>
+            </a>
             <div className="icons_div1">
               <ul
                 className="footer_social_icons"
@@ -61,124 +48,105 @@ const Footer = () => {
                 }}
               >
                 <li>
-                  <i
-                    className="fab fa-facebook"
-                    style={{ fontSize: "25px", cursor: "pointer" }}
-                  ></i>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61571584896816"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fab fa-facebook"
+                      style={{
+                        fontSize: "25px",
+                        cursor: "pointer",
+                        color: "black",
+                      }}
+                    ></i>
+                  </a>
                 </li>
                 <li>
-                  <i
-                    className="fab fa-instagram"
-                    style={{ fontSize: "25px", cursor: "pointer" }}
-                  ></i>
+                  <a
+                    href="https://www.instagram.com/falchy_it/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fab fa-instagram"
+                      style={{
+                        fontSize: "25px",
+                        cursor: "pointer",
+                        color: "black",
+                      }}
+                    ></i>
+                  </a>
                 </li>
                 <li>
-                  <i
-                    className="fab fa-twitter"
-                    style={{ fontSize: "25px", cursor: "pointer" }}
-                  ></i>
+                  <a
+                    href="https://x.com/falchy_it"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fab fa-x-twitter"
+                      style={{
+                        fontSize: "25px",
+                        cursor: "pointer",
+                        color: "black",
+                      }}
+                    ></i>
+                  </a>
                 </li>
                 <li>
-                  <i
-                    className="fab fa-linkedin"
-                    style={{ fontSize: "25px", cursor: "pointer" }}
-                  ></i>
+                  <a
+                    href="https://www.linkedin.com/in/falchy-travels-2b1829345/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className="fab fa-linkedin"
+                      style={{
+                        fontSize: "25px",
+                        cursor: "pointer",
+                        color: "black",
+                      }}
+                    ></i>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
           <div className="footer_div2">
             <div className="navigation_div">
-              <h1>
-                {language === "en"
-                  ? "Navigation"
-                  : language === "it"
-                  ? "Navigazione"
-                  : language === "du"
-                  ? "Navigatie"
-                  : language === "fr"
-                  ? "Navigation"
-                  : "Navigation"}
-              </h1>
+              <h1>Navigation</h1>
+              <Link to="/home">
+                <h4>Home</h4>
+              </Link>
+              {/* <Link to="/rental">
+                <h4>Rent Luxury</h4>
+              </Link> */}
               <Link to="/">
-                <h4>
-                  {language === "en"
-                    ? "Home"
-                    : language === "it"
-                    ? "Casa"
-                    : language === "du"
-                    ? "Huis"
-                    : language === "fr"
-                    ? "Accueil"
-                    : "Home"}
-                </h4>
+                <h4>Transfer Service</h4>
               </Link>
-              <Link to="/rentluxury">
-                <h4>
-                  {language === "en"
-                    ? "Rent Luxury"
-                    : language === "it"
-                    ? "Noleggia Lusso"
-                    : language === "du"
-                    ? "Huur Luxe"
-                    : language === "fr"
-                    ? "Louer du luxe"
-                    : "Rent Luxury"}
-                </h4>
-              </Link>
-              <Link to="/transferservice">
-                <h4>
-                  {language === "en"
-                    ? "Transfer Service"
-                    : language === "it"
-                    ? "Servizio di Trasferimento"
-                    : language === "du"
-                    ? "Transfer Service"
-                    : language === "fr"
-                    ? "Service de Transfert"
-                    : "Transfer Service"}
-                </h4>
-              </Link>
-              <Link to="/luggagetransferform">
-                <h4>
-                  {language === "en"
-                    ? "Luggage Transfer & Deposit"
-                    : language === "it"
-                    ? "Trasferimento e Deposito Bagagli"
-                    : language === "du"
-                    ? "Bagageoverdracht & Storting"
-                    : language === "fr"
-                    ? "Transfert et Dépôt des Bagages"
-                    : "Luggage Transfer & Deposit"}
-                </h4>
-              </Link>
+              {/* <Link to="/luggagetransferform">
+                <h4>Luggage Transfer & Deposit</h4>
+              </Link> */}
 
-              <Link to="/conciergeevents">
-                <h4>
-                  {language === "en"
-                    ? "Concierge Services"
-                    : language === "it"
-                    ? "Servizi di Concierge"
-                    : language === "du"
-                    ? "Concierge Services"
-                    : language === "fr"
-                    ? "Services de Conciergerie"
-                    : "Concierge Services"}
-                </h4>
-                
+              {/* <Link to="/conciergeevents">
+                <h4>Concierge Services</h4>
+              </Link> */}
+              <Link to="/contactus">
+                <h4>Contact Us</h4>
               </Link>
-              <Link to="/aboutus">
-              <h4>
-  {
-    language === "en" ? "Contact Us" :
-    language === "it" ? "Contattaci" :
-    language === "nl" ? "Contacteer ons" :
-    language === "fr" ? "Contactez-nous" :
-    "Contact Us" // Default
-  }
-</h4>
-
-                
+            </div>
+            <div className="navigation_div">
+              <h1>Legal</h1>
+              <Link to="/privacypolicy">
+                <h4>Privacy Policy</h4>
+              </Link>
+              <Link to="/cookiepolicy">
+                <h4>Cookie Policy</h4>
+              </Link>
+              <Link to="/termsandconditions">
+                <h4>Terms and Conditions</h4>
               </Link>
             </div>
             <div
@@ -192,34 +160,22 @@ const Footer = () => {
                   fontWeight: "600",
                 }}
               >
-                {language === "en"
-                  ? "Contact Us"
-                  : language === "it"
-                  ? "Contattaci"
-                  : language === "du"
-                  ? "Neem contact met ons op"
-                  : language === "fr"
-                  ? "Contactez-nous"
-                  : "Contact Us"}
+                Contact Us
               </h1>
               <div
-                style={{ display: "flex", alignItems: "baseline", gap: "15px" }}
+                className="footer_mobile_responsive"
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "15px",
+                  textAlign: "left",
+                }}
               >
                 <i
                   className="fas fa-map-marker-alt"
                   style={{ fontSize: "20px", color: "#05021F" }}
                 ></i>
-                <p>
-                  {language === "en"
-                    ? "123 Business Street, City, Country"
-                    : language === "it"
-                    ? "Via Azienda 123, Città, Paese"
-                    : language === "du"
-                    ? "Bedrijfstraat 123, Stad, Land"
-                    : language === "fr"
-                    ? "123 Rue des Affaires, Ville, Pays"
-                    : "123 Business Street, City, Country"}
-                </p>
+                <p>CASSANO MAGNAGO (VA) VIA FORO SAN MARTINO 22 CAP 21012</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "baseline", gap: "15px" }}
@@ -228,17 +184,7 @@ const Footer = () => {
                   className="fas fa-envelope"
                   style={{ fontSize: "20px", color: "#05021F" }}
                 ></i>
-                <p>
-                  {language === "en"
-                    ? "info@company.com"
-                    : language === "it"
-                    ? "info@azienda.com"
-                    : language === "du"
-                    ? "info@bedrijf.com"
-                    : language === "fr"
-                    ? "info@entreprise.com"
-                    : "info@company.com"}
-                </p>
+                <p>info@falchy.com</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "baseline", gap: "15px" }}
@@ -247,17 +193,7 @@ const Footer = () => {
                   className="fas fa-phone"
                   style={{ fontSize: "20px", color: "#05021F" }}
                 ></i>
-                <p>
-                  {language === "en"
-                    ? "+1 234 567 8900"
-                    : language === "it"
-                    ? "+39 234 567 8900"
-                    : language === "du"
-                    ? "+31 234 567 8900"
-                    : language === "fr"
-                    ? "+33 234 567 8900"
-                    : "+1 234 567 8900"}
-                </p>
+                <p>(+39) 375 911 9255</p>
               </div>
               <div
                 style={{ display: "flex", alignItems: "baseline", gap: "15px" }}
@@ -266,23 +202,13 @@ const Footer = () => {
                   className="far fa-clock"
                   style={{ fontSize: "20px", color: "#05021F" }}
                 ></i>
-                <p>
-                  {language === "en"
-                    ? "Mon - Fri: 9:00 AM - 6:00 PM"
-                    : language === "it"
-                    ? "Lun - Ven: 9:00 AM - 6:00 PM"
-                    : language === "du"
-                    ? "Ma - Vr: 9:00 AM - 18:00"
-                    : language === "fr"
-                    ? "Lun - Ven: 9h00 - 18h00"
-                    : "Mon - Fri: 9:00 AM - 6:00 PM"}
-                </p>
+                <p>We Are Available 24/7</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="footer_copyright">
+      <div className="footer_copyright">
         {language === "en" ? (
           <h3>Copyright © 2024 FALCHY - All Rights Reserved.</h3>
         ) : language === "it" ? (
@@ -294,7 +220,7 @@ const Footer = () => {
         ) : (
           <h3>Copyright © 2024 FALCHY - All Rights Reserved.</h3>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

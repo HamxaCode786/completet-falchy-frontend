@@ -81,10 +81,33 @@ align-items: center;
 }
 
 .form-control {
-    border-radius: 0 !important;
+    border-radius: 0;
 }
 
 
+.images_banner_caraousel_replace {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    height: 540px;
+    width: 100%;
+  }
+  
+  .images_banner_caraousel_replace > div {
+    display: flex; /* Makes sure divs are flexible to center content */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    background-size: cover; /* Ensures the image covers the area */
+    background-position: center; /* Centers the background image */
+  }
+  
+  .images_banner_caraousel_replace > div:nth-child(1) {
+    background-image: url('../../assets/images/new_components/oguz-yagiz-kara-V9dF7nGvLMQ-unsplash.jpg');
+  }
+  
+  .images_banner_caraousel_replace > div:nth-child(2) {
+    background-image: url('../../assets/images/new_components/philipp-katzenberger-YVkB4W1HRv4-unsplash.jpg');
+  }
+  
 
 
-
+  

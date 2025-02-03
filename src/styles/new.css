@@ -1,0 +1,53 @@
+.slider1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    background-color: #05021f;
+    position: relative;
+  }
+  
+  .slide-track1 {
+    display: flex;
+    justify-content: space-evenly;
+    animation: scroll 55s linear infinite;
+    width: 100vw; /* Ensures the track width is flexible based on content */
+    gap: 120px;
+  }
+  
+  .slide1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+  }
+  
+  /* Keyframes for continuous scrolling from right to left */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%); /* Start the animation from the right */
+    }
+    100% {
+      transform: translateX(-100%); /* Move all the way to the left */
+    }
+  }
+  
+  /* Stop animation and enlarge icon on hover */
+  .slider1:hover .slide-track1 {
+    animation-play-state: paused; /* Pause the scrolling animation */
+  }
+  
+  .slide1:hover {
+    transform: scale(1.2); /* Enlarge the icon */
+  }
+  
+
+  .slide1 img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }

@@ -108,7 +108,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <img className="about-us-image" src={AboutUsImage} alt="about us" />
+        <img className="about-us-image" src={AboutUsImage} loading="lazy" alt="about us" />
       </div>
     </div>
   );

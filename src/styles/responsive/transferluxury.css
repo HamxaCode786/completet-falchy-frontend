@@ -91,8 +91,7 @@
   }
 
   .card_transfer12 {
-    margin-right: 30px;
-    margin-left: 30px;
+    
     min-width: 320px !important;
   }
 
@@ -142,4 +141,13 @@
   .footer_logo1 {
     padding-top: 5px !important;
   }
+}
+
+.card_luxury_background_image {
+  width: 100%;
+  
+   border-top-right-radius: 8px;
+   border-top-left-radius: 8px;
+   background-color:#323232;
+   min-height: 200px;
 }

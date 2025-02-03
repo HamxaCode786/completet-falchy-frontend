@@ -1,9 +1,11 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import firstImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/ConciergeBannerImage (1)-min.png";
-import secondImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 65-min.png";
-import thirdImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 66-min.png";
-import fourthImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Group 67-min.png";
+import secondImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/na.png";
+import thirdImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/nb.png";
+import fourthImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/nc.png";
+import fifthImage from "../../assets/images/caraoselImage/CONCEIRGECARAOUSEL/Adventures-min.png";
+
 import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
 
@@ -18,6 +20,7 @@ const Carouselconceirge = () => {
             className="d-block w-100 custom_styling_image"
             src={firstImage}
             alt="First slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             <h3 className="carousel_custom_text1">
@@ -50,6 +53,7 @@ const Carouselconceirge = () => {
             className="d-block w-100 custom_styling_image"
             src={secondImage}
             alt="Second slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Second slide label</h3>
@@ -61,6 +65,7 @@ const Carouselconceirge = () => {
             className="d-block w-100 custom_styling_image"
             src={thirdImage}
             alt="Third slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Third slide label</h3>
@@ -72,6 +77,19 @@ const Carouselconceirge = () => {
             className="d-block w-100 custom_styling_image"
             src={fourthImage}
             alt="Third slide"
+            loading="lazy"
+          />
+          <Carousel.Caption>
+            {/* <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 custom_styling_image"
+            src={fifthImage}
+            alt="Third slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Third slide label</h3>

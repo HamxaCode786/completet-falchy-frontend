@@ -11,7 +11,7 @@
 .second_row1 {
 
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr;
 gap: 20px;
 
 
@@ -21,7 +21,7 @@ gap: 20px;
 .first_row1 {
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     
     
@@ -71,7 +71,6 @@ border: none;
   
   .footer_main_data {
       display: grid;
-      grid-template-rows: 0.8fr 1fr;
       grid-template-columns: none;
       align-items: center;
       padding-top: 3%;

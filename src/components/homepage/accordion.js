@@ -27,11 +27,11 @@ const Accordion = () => {
     {
       id: 1,
       question:
-        language === 'en' ? 'How do I book a car for rental?' :
+        language === 'en' ? 'How do I book a car for rental service?' :
         language === 'it' ? 'Come prenoto un\'auto a noleggio?' :
         language === 'du' ? 'Hoe boek ik een auto voor verhuur?' :
         language === 'fr' ? 'Comment réserver une voiture de location?' :
-        'How do I book a car for rental?',
+        'How do I book a car for rental service?',
       answer:
         language === 'en' ? 
           'To book a car for rental, choose your desired vehicle and follow the prompts to complete your booking. You can also submit our Appointment Book and our specialist will contact you soon.' :

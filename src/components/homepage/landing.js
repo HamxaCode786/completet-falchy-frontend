@@ -1,7 +1,8 @@
 import React from 'react'
-import Car from '../../assets/images/homepageimage/Hero Car.png'
+import Car from '../../assets/images/homepageimage/bannerimage.png'
 import { TranslationContext } from '../../contextapi/translationContext';
 import { useContext } from "react";
+import { useScroll } from '../../contextapi/scrollContext'; 
 
 
 // const landing = () => {
@@ -52,6 +53,7 @@ import { useContext } from "react";
 
 const Landing = () => {
   const { language } = useContext(TranslationContext);
+  const { scrollToServices } = useScroll(); 
 
 
 
@@ -98,23 +100,25 @@ const Landing = () => {
   'Experience superior service and unmatched quality, tailored to your highest standards. Whether for business or leisure, we provide exclusive solutions prioritizing comfort, style, and convenience for an elevated lifestyle.'
 )}
 </h4>
-<button>{language === 'en' ? (
-  'Contact Us'
+<button onClick={scrollToServices} >{language === 'en' ? (
+  'Services'
 ) : language === 'it' ? (
-  'Contattaci'
+  'Servizi'
 ) : language === 'du' ? (
-  'Neem contact op'
+  'Diensten'
 ) : language === 'fr' ? (
-  'Contactez nous'
+  'Services'
 ) : (
-  'Contact Us'
+  'Services'
 )}
+
 </button>
      </div>
    </div>
    <div className="image-container">
-     <img src={Car} alt="Service" />
+     <img src={Car} alt="Service" loading="lazy" />
    </div> 
+   
   </>
 
   )

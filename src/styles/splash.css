@@ -1,0 +1,103 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+
+/* Splash 2 */
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* Ensure it's above all other content */
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.splash {
+  background: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity .6s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.splash--exit {
+  opacity: 0;
+}
+
+.splash__image {
+  width:170px ;
+  height:190px;
+  opacity: 1;
+  animation-name: fadeIn, pulse;
+  animation-duration: 1s, 1s;
+  animation-delay: 0, 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@media (max-width: 480px) {
+  .splash__image {
+    width: 50px;
+    height: 70px;
+  }
+}
+.splash__image--exit {
+  animation-name: zoomOutUp;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutUp {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    transform-origin: center bottom;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}

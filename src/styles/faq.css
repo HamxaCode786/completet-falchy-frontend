@@ -12,9 +12,11 @@
   
   .accordion {
     text-align: left;
-    max-width: 70%;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
+    padding-right: 25%;
+    padding-left: 25%;
   }
   
   .accordion-item {
@@ -102,3 +104,13 @@
   .accordion-header:hover .accordion-arrow {
     border-color: #fff;
   }
+
+
+
+
+  @media (max-width: 768px) {
+    .accordion {
+        padding-right: 5%; /* Adjust the padding for smaller screens */
+        padding-left: 5%;  /* Adjust the padding for smaller screens */
+    }
+}

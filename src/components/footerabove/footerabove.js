@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 import Footerimage from "../../assets/images/layout/footer_image.jpg";
-import { TranslationContext } from '../../contextapi/translationContext';
+import { TranslationContext } from "../../contextapi/translationContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 const Footerabove = () => {
   const { language } = useContext(TranslationContext);
-
-
 
   return (
     <div>
@@ -19,32 +18,52 @@ const Footerabove = () => {
         }}
       >
         <h1 className="footer_heading">
-  {language === 'en' ? (
-    <>
-      Lets Get You Moving <span className="span_1">-</span> <span>Contact Us</span>
-    </>
-  ) : language === 'it' ? (
-    <>
-      Facciamo partire il tuo viaggio <span className="span_1">-</span> <span>Contattaci</span>
-    </>
-  ) : language === 'du' ? (
-    <>
-      Laten we je in beweging krijgen <span className="span_1">-</span> <span>Neem contact met ons op</span>
-    </>
-  ) : language === 'fr' ? (
-    <>
-      Commençons votre voyage <span className="span_1">-</span> <span>Contactez-nous</span>
-    </>
-  ) : (
-    <>
-      Lets Get You Moving <span className="span_1">-</span> <span>Contact Us</span>
-    </>
-  )}
-</h1>
-
-      </div> 
+          {language === "en" ? (
+            <>
+              Lets Get You Moving <span className="span_1">-</span>{" "}
+              <span>
+                <Link to="/contactus" className="hehehehe">
+                  Contact Us
+                </Link>
+              </span>
+            </>
+          ) : language === "it" ? (
+            <>
+              Facciamo partire il tuo viaggio <span className="span_1">-</span>{" "}
+              <span>
+                <Link to="/contactus" className="hehehehe">
+                  Contattaci
+                </Link>
+              </span>
+            </>
+          ) : language === "du" ? (
+            <>
+              Laten we je in beweging krijgen <span className="span_1">-</span>{" "}
+              <span>
+                <Link to="/contactus" className="hehehehe">
+                  Neem contact met ons op
+                </Link>
+              </span>
+            </>
+          ) : language === "fr" ? (
+            <>
+              Commençons votre voyage <span className="span_1">-</span>{" "}
+              <span>
+                <Link to="/contactus" className="hehehehe">
+                  Contactez-nous
+                </Link>
+              </span>
+            </>
+          ) : (
+            <>
+              Lets Get You Moving <span className="span_1">-</span>{" "}
+              <span>Contact Us</span>
+            </>
+          )}
+        </h1>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footerabove
+export default Footerabove;

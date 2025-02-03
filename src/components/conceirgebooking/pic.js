@@ -19,7 +19,7 @@ const Pic = () => {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {cardData.image.map((image, index) => (
         <Carousel.Item key={index}>
-          <img className="caraousel_image_size" src={image} alt={`conceirgepic${index}`} />
+          <img className="caraousel_image_size" src={image} loading="lazy" alt={`conceirgepic${index}`} />
           <Carousel.Caption>
             
             

@@ -8,6 +8,7 @@ const index = () => {
     <div>
       
       <Caraouselluggage />
+      
       <Luggageform />
       <Footerabove />
 

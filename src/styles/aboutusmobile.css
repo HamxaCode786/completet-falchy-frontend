@@ -37,7 +37,7 @@
 
         grid-template-columns: repeat(1, 1fr); /* 4 columns */
         grid-template-rows: repeat(4, 1fr);   /* 4 rows */
-        gap: 15px; /* Space between items */
+        gap: 0px; /* Space between items */
         
         width: 100%;
         align-items: center;
@@ -73,6 +73,73 @@
     
     
 
+.aboutus-info-flex {
+
+width: 100% !important;
+
+
+}
+
+
+.grid-container {
+
+
+}
+
+.grid-item-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    width: 280px;  /* Set a fixed width */
+    height: 280px; /* Set the same height to make it circular */
+    
+    border-radius: 50%;
+    padding: 20px;
+    background:#05021f;
+
+
+  }
+
+
+
+  .grid-item {
+
+    /* background-color: #05021f; */
+min-height: 350px;
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+  
+
+.info-button {
+
+width: 280px;
+
+}
+
+.aboutus-info-flex {
+
+padding-top: 20px !important;
+
+
+}
+
+.grid-item-heading {
+
+color: white;
+
+
+
+}
+
+.grid-item-info {
+
+color: white;
+font-weight: 400;
+
+}
 
 
 

@@ -6,17 +6,23 @@ import Aboutus from '../../components/homepage/aboutus'
 import Steps from '../../components/homepage/steps'
 import Accordion from '../../components/homepage/accordion'
 import Footertop from '../../components/footerabove/footerabove'
+import Landing2 from '../../components/homepage/landing2'
 
 const Homepage = () => {
   return (
     <div>
-      <Landing />
+      
+      
+      {/* <Landing /> */}
+      <Landing2 />
        <Tailored />
       <Steps />
       <Aboutus /> 
+      {/* <AboutusCarousel /> */}
       <Testimonial />
       <Accordion />
       <Footertop /> 
+      
     </div>
   )
 }

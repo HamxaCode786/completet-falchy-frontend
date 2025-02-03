@@ -18,6 +18,7 @@ const CarouselComponent = () => {
             className="d-block w-100 custom_styling_image"
             src={firstImage}
             alt="First slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             <Carousel.Caption>
@@ -52,6 +53,7 @@ const CarouselComponent = () => {
             className="d-block w-100 custom_styling_image"
             src={secondImage}
             alt="Second slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Second slide label</h3>
@@ -63,6 +65,7 @@ const CarouselComponent = () => {
             className="d-block w-100 custom_styling_image"
             src={thirdImage}
             alt="Third slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Third slide label</h3>
@@ -74,6 +77,7 @@ const CarouselComponent = () => {
             className="d-block w-100 custom_styling_image"
             src={fourthImage}
             alt="Third slide"
+            loading="lazy"
           />
           <Carousel.Caption>
             {/* <h3>Third slide label</h3>

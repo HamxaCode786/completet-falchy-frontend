@@ -40,6 +40,7 @@
     gap:33px;
     max-width: 1200px;
     margin: 0 auto;
+    
 }
 
 .testimonial-card {
@@ -47,7 +48,7 @@
     background-color: #ffffff;
     padding: 26px;
     max-width: 320px;
-    z-index:9999999;
+    
 }
 
 .testimonial-card:nth-child(2) {

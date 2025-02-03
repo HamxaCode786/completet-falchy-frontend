@@ -12,12 +12,12 @@ const Tranferforward = () => {
   return (
     <div>
   <div className="driver_car_div">
-    <img className="chauffer_2enh" src={selectedCard.img} />
+    <img className="chauffer_2enh" src={selectedCard.img} loading="lazy" />
     <h2 className="car_name1">
-      {selectedCard.title[language]}
+      {selectedCard.title}
     </h2>
     
-    <ul className="icons_list_drivers">
+    {/* <ul className="icons_list_drivers">
       <li>
         <i className="fas fa-wifi fa-1x"></i> 
         {language === "en" ? "Free Wifi" :
@@ -39,7 +39,7 @@ const Tranferforward = () => {
          language === "du" ? "Gratis waterfles" :
          language === "fr" ? "Bouteille d'eau gratuite" : "Complementary Water Bottle"}
       </li>
-    </ul>
+    </ul> */}
   </div>
 
   <div className="passenger_icons_list">
@@ -55,13 +55,14 @@ const Tranferforward = () => {
       </li>
 
       <li className="box_small_card">
-        <h4>
-          <i className="fas fa-suitcase-rolling"></i> 
-          {language === "en" ? "6 Large Suitcases" :
-           language === "it" ? "6 valigie grandi" :
-           language === "du" ? "6 grote koffers" :
-           language === "fr" ? "6 grandes valises" : "6 Large Suitcases"}
-        </h4>
+      <h4>
+  <i className="fas fa-car"></i> 
+  {language === "en" ? "High-End Car" :
+   language === "it" ? "Auto di alta gamma" :
+   language === "du" ? "High-end auto's" :
+   language === "fr" ? "Voitures haut de gamme" : "High-End Cars"}
+</h4>
+
       </li>
 
       <li className="box_small_card">
@@ -75,19 +76,28 @@ const Tranferforward = () => {
       </li>
 
       <li className="box_small_card">
-        <h4>
-          <i className="fas fa-suitcase"></i> 
-          {language === "en" ? "4 Small Suitcases" :
-           language === "it" ? "4 valigie piccole" :
-           language === "du" ? "4 kleine koffers" :
-           language === "fr" ? "4 petites valises" : "4 Small Suitcases"}
-        </h4>
+      <h4>
+      <i className="fas fa-crown" style={{ color: "#e7ba48" }}></i>
+ 
+  {language === "en" ? "Luxury" :
+   language === "it" ? "Lusso" :
+   language === "du" ? "Luxe" :
+   language === "fr" ? "Luxe" : "Luxury"}
+</h4>
+
       </li>
     </ul>
   </div>
 
   <div className="car_selected_description">
     <div className="table_left">
+    <h5>
+    {language === "en" ? "Seating Capacity" :
+     language === "it" ? "Capacità di seduta" :
+     language === "du" ? "Zitplaatsen" :
+     language === "fr" ? "Capacité d'assise" : "Seating Capacity"}
+</h5>
+
       <h5>
         {language === "en" ? "Car Make" :
          language === "it" ? "Marca dell'auto" :
@@ -132,41 +142,35 @@ const Tranferforward = () => {
       </h5>
     </div>
     <div className="table_right">
+    <h5>
+    {selectedCard.seatingCapacity}
+  </h5>
   <h5>
-    {language === "en" ? "Mercedes-Benz" :
-     language === "it" ? "Mercedes-Benz" :
-     language === "du" ? "Mercedes-Benz" :
-     language === "fr" ? "Mercedes-Benz" : "Mercedes-Benz"}
+  {selectedCard.carMake}
   </h5>
   
   <h5>
-    {selectedCard.title[language]}
+    {selectedCard.title}
   </h5>
 
   <h5>
-    {selectedCard.horsepower2[language]}
+    {selectedCard.horsepower2}HP
   </h5>
 
   <h5>
-    {selectedCard.obsidianBlack[language]}
+    {selectedCard.obsidianBlack}
   </h5>
 
   <h5>
-    {selectedCard.mpg[language]}
+    {selectedCard.mpg} MPG
   </h5>
 
   <h5>
-    {language === "en" ? "144 mph" :
-     language === "it" ? "144 mph" :
-     language === "du" ? "144 mph" :
-     language === "fr" ? "144 mph" : "144 mph"}
+  {selectedCard.topSpeed} MPH
   </h5>
 
   <h5>
-    {language === "en" ? "Premium Gasoline" :
-     language === "it" ? "Benzina Premium" :
-     language === "du" ? "Premium Benzine" :
-     language === "fr" ? "Essence Premium" : "Premium Gasoline"}
+  {selectedCard.fuelType}
   </h5>
 </div>
 

@@ -11,7 +11,7 @@ import { useContext } from "react";
 const StepCard = ({ number, icon, description }) => (
   <div className="steps-card">
     <div className="steps-number">{number}</div>
-    <img className="steps-icon" src={icon} alt={`step ${number} icon`} />
+    <img className="steps-icon" src={icon} alt={`step ${number} icon`} loading="lazy" />
     <p className="steps-card-description">{description}</p>
   </div>
 );
@@ -73,6 +73,7 @@ const Steps = () => {
           className="steps-flow-vector"
           src={StepsFlowVector}
           alt="steps vector"
+          loading="lazy"
         />
         <div className="steps-cards">
         <StepCard

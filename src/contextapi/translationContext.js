@@ -1,10 +1,10 @@
-import React, { createContext, useState } from 'react';
-import i18n from '../i18n'; // 
+import React, { createContext, useState } from "react";
+import i18n from "../i18n"; //
 
 export const TranslationContext = createContext();
 
 const TranslationProvider = ({ children }) => {
-  const [language, setLanguage] = useState(i18n.language || 'en'); // Default to 'en'
+  const [language, setLanguage] = useState(i18n.language || "en"); // Default to 'en'
 
   // Change language function
   const changeLanguage = (lng) => {

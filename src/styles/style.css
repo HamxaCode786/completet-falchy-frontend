@@ -17,6 +17,15 @@ font-style: normal;
 
 }
 
+
+body {
+
+  padding-right: 0px !important;
+
+
+}
+
+
 /* CSS for fade-in animation */
 /* CSS for fade-in and scale-up animation */
 input::placeholder {
@@ -51,6 +60,7 @@ min-height: 280px;
   font-size: 32px;
   color: #1B1B1B;
   text-align: center;
+  padding-bottom: 15px;
 
 
 
@@ -339,6 +349,12 @@ width: 120px !important;
 
 
   }
+
+  .custom_hide_for_laptop {
+
+margin-top: 5px;
+
+  }
   
 
 
@@ -431,5 +447,707 @@ width: 120px !important;
 
 
 }
+
+
+/* CSS to mimic MDBInput */
+
+.autosuggest_drop {
+
+border-radius: 10px !important;
+
+
+}
+
+
+
+@media (max-width: 480px) {
+  .icon_formobile {
+    position: fixed;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: rgb(37, 211, 102);
+    border-radius: 50%;
+    padding: 25px !important;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 6px;
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+    transition: 0.3s;
+    mix-blend-mode: normal;
+    isolation: isolate;
+  }
+}
+
+
+
+.radio_payment {
+
+padding-top: 0px !important;
+padding-bottom: 0px !important;
+
+}
+
+
+
+
+/* In your stylesheet */
+
+
+/* Wrapper container for child seat input field */
+.child-seat-container {
+  opacity: 0; /* Start as invisible */
+  max-height: 0; /* Initially collapse the container */
+  overflow: hidden; /* Hide the overflowing content */
+  transition: opacity 0.5s ease, max-height 0.5s ease; /* Apply transition to opacity and max-height */
+}
+
+.child-seat-container.show {
+  opacity: 1; /* Make the container visible */
+  max-height: 200px; /* Set a max-height that accommodates the child seat input field */
+}
+
+/* Optional: Style the input for better visual appeal */
+
+
+/* Remove the default focus ring on the checkbox */
+.MDBCheckbox:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Optionally, you can add your own custom focus styling if needed */
+.MDBCheckbox:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.terms_conditions_cards {
+
+margin-bottom: 35px;
+margin-: 35px;
+
+}
+
+
+.card_background {
+
+  background-color: #f9f9f9 !important;
+border: 1px solid #eabf4a !important;
+
+}
+
+
+
+.button_custom_cars_hover_issue:hover {
+
+background-color: #05021f !important;
+
+
+}
+
+.flatpickr-input:focus {
+  box-shadow: inset 0px 0px 0px 1px #3b71ca !important;
+  border-color: #3b71ca !important;
+}
+
+
+.marker_origin {
+
+background-color: #3b71ca;
+
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .footer_mobile_responsive {
+    text-align: center !important;
+  }
+
+
+  .checkbox_margin_left {
+
+margin-left: 7px !important;
+
+  }
+
+  .pickup-date-label {
+    font-size: 12px!important;
+    left: 5px!important;
+    top: 32%!important;
+  }
+
+  .pickup-date-label-active {
+    font-size: 10px!important;
+    top: -8px!important;
+  }
+
+  /* .form-notch-middle {
+    width: 100px!important;
+  } */
+
+  .pickup-notch-leading {
+    width: 1.5rem!important;
+  }
+
+  .pickup-time-label {
+    font-size: 12px!important;
+    left: 5px!important;
+    top: 32%!important;
+  }
+
+  .pickup-time-label-active {
+    font-size: 10px!important;
+    top: -8px!important;
+  }
+
+
+
+
+
+}
+
+.check_123 {
+
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+gap: 20px;
+margin-bottom: 15px;
+
+
+}
+
+/* Define hover effect for dropdown items */
+.custom-dropdown-item:hover {
+  background-color: #e9ecef !important;  /* Change this color to green or any color you prefer */
+  color: black !important;  /* Optional: Change text color when hovered */
+  cursor: pointer !important;
+}
+
+
+.name_email_text {
+
+display: grid;
+grid-template-columns: 1fr 1fr;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+
+
+}
+
+.name_email_text2 {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  
+  
+  }
+  
+
+
+
+.content-transition {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.content-transition.open {
+  max-height: 500px; /* You can adjust this value based on your content */
+  opacity: 1;
+}
+
+
+.payment_checkbox_details {
+
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+gap: 20px;
+margin-bottom: 20px;
+
+
+
+}
+
+
+
+/* PaymentForm.module.css */
+
+
+
+.add-stop-button {
+  padding:10px 20px;
+  border: none;
+  font-size: 12px;
+  color: #ebebeb;
+  font-weight: 500;
+  background-color: #3bc065;
+  border: none;
+  border-radius:5px;
+}
+
+.remove-stop-button {
+  padding:10px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border:none;
+  background-color: #dd3a4b;
+  color:#ededed;
+  border-radius:5px;
+}
+
+.card-accept {
+  padding: 0 !important;
+  border: none !important;
+}
+
+
+.card {
+  box-shadow:none !important;
+}
+
+
+.final_check {
+
+margin-top: 15px !Important;
+
+}
+
+
+.terms_conditions_checkbox {
+
+display: flex !Important;
+
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .final_check {
+    /* Add your styles for screens below 480px */
+    
+margin-left: 7px;
+
+  }
+
+
+  .terms_conditions_cards {
+
+margin-top: 15px;
+margin-bottom: 15px;
+
+  }
+
+}
+ 
+.body_card_stripe {
+
+
+  border-radius: 10px; /* Set your desired border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+                0 -4px 8px rgba(0, 0, 0, 0.1), 
+                0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button_stripe_1 {
+
+background-color: #05021f !important;
+color: #e7ba48 !important;
+font-weight: 700 !important;
+
+}
+
+.main_container_stripe {
+  max-width: 100% !important;
+  height: 100vh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-top: 10% !important;
+  padding-bottom: 5% !important;
+  
+
+
+}
+.text_123 {
+
+color: #05021f !important;
+font-size: 45px !important;
+
+}
+.reset_filters_button {
+
+margin-left: 10px;
+padding: 10px !important;
+border-radius: 5px;
+border: none;
+background-color: #05021f;
+color: white;
+font-weight: 700;
+max-height: 57PX;
+
+
+}
+.reset_filters_button:hover {
+
+color:#e7ba48;
+
+
+}
+
+@media (max-width: 480px) {
+
+  .reset_filters_button {
+
+margin-top: 20px;
+margin-bottom: -2rem !important;
+
+
+  }
+.main_container_stripe {
+
+height: 500px !important;
+
+}
+
+.card_stripe {
+
+  width: 350px !important;
+ padding-top: 25px; 
+ margin-bottom: 35px; 
+
+  }
+  
+
+.mobile_1 {
+
+border-radius: 3px !important;
+
+}
+
+
+.hello_1234567 {
+
+display: flex !important;
+flex-direction: column;
+justify-content: space-between;
+
+
+}
+
+.sghdfjhs {
+
+width: 100%;
+display: flex;
+
+
+}
+
+
+.button1_error{
+  top: 88% !important;
+}
+
+
+
+
+
+
+}
+
+.card_stripe {
+
+width: 45rem;
+
+
+
+}
+
+
+#react-autowhatever-1 {
+
+z-index: 100000 !important;
+
+}
+
+
+
+
+
+
+
+
+.card_transfer122 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Normal cards */
+}
+
+.card_transfer122:hover {
+  transform: translateY(-10px) rotateY(5deg) rotateX(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensure the hovered card stays on top */
+}
+
+.card_transfer122.center-card {
+  transform: scale(1.1); /* Enlarge the center card */
+  z-index: 20; /* Bring the center card to the front */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Bigger shadow for emphasis */
+}
+
+.card_transfer1_img2 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.location_cards_selectable {
+  
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: -1rem !important;
+  padding-top: 5px;
+  
+}
+
+.last_rent_now_div {
+  
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  border-radius: 0 0 10px 10px;
+}
+
+
+.payment_radio_details {
+
+padding-bottom: 15px;
+
+
+}
+
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px); /* Increase the bounce height */
+  }
+}
+
+.floating-whatsapp-icon {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999999999;
+  
+  cursor: pointer !important;
+}
+
+
+.styles-module_floatingWhatsapp__yWF5K {
+  width: 340px !important;
+  height: 0% !important;
+  
+}
+/* Disable interaction for the hour and minute input fields */
+.flatpickr-hour,
+.flatpickr-minute {
+  pointer-events: none !important;  /* Prevent user interaction */
+    /* Change background to indicate it's disabled */
+    /* Change text color to indicate it's disabled */
+  cursor: not-allowed !important;  /* Change cursor to indicate it's disabled */
+}
+
+/* Optionally, you can also disable the arrows associated with the inputs */
+
+
+
+
+/* Increase the size of the up/down arrows */
+.flatpickr-time .flatpickr-hour .arrowUp,
+.flatpickr-time .flatpickr-hour .arrowDown {
+  font-size: 50px !important;  /* Adjust the size of the arrows */
+  height: 30px !important;     /* Increase the height */
+  width: 30px !important;      /* Increase the width */
+}
+
+/* Optional: Adjust the appearance of the input field to make it look better */
+.flatpickr-time .flatpickr-hour {
+  font-size: 16px; /* Adjust font size of the hour input field */
+  height: 40px;    /* Adjust the height of the input field */
+  line-height: 40px;  /* Center text vertically */
+}
+
+/* Optional: Make sure the arrow buttons align nicely */
+.flatpickr-time .flatpickr-hour .numInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Always show the arrows (even when not hovering) */
+.flatpickr-time .flatpickr-hour .arrowUp,
+.flatpickr-time .flatpickr-hour .arrowDown {
+  visibility: visible !important; /* Ensure the arrows are always visible */
+  opacity: 1 !important; /* Make sure the arrows are fully visible */
+}
+
+/* Remove hover-related visibility or opacity changes */
+.flatpickr-time .flatpickr-hour:hover .arrowUp,
+.flatpickr-time .flatpickr-hour:hover .arrowDown {
+  visibility: visible !important; /* Ensure the arrows stay visible even when hovered */
+  opacity: 1 !important; /* Make sure the arrows are fully visible */
+}
+
+
+/* Make the hour and minute fields scrollable on mobile devices */
+@media (max-width: 768px) {
+  .flatpickr-time {
+    max-height: 200px; /* Set a maximum height to the dropdown */
+    overflow-y: auto;  /* Enable vertical scrolling */
+  }
+
+  /* Adjust the height of the hour and minute input areas in the time picker */
+  .flatpickr-time .numInputWrapper {
+    max-height: 50px;  /* Set a maximum height for each input */
+    overflow-y: auto;  /* Allow scrolling for hour and minute inputs */
+  }
+
+  /* Style the input fields to appear scrollable */
+  .flatpickr-time .flatpickr-hour,
+  .flatpickr-time .flatpickr-minute {
+    height: 40px;     /* Adjust the height of the inputs */
+    overflow-y: scroll; /* Make input fields scrollable */
+    text-align: center; /* Center the text for a cleaner appearance */
+  }
+
+  /* Optional: Adjust the size of arrows */
+  .flatpickr-time .arrowUp,
+  .flatpickr-time .arrowDown {
+    font-size: 24px;
+    height: 30px;
+    width: 30px;
+  }
+
+
+  .input-container{
+
+width: 300% !important;
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+.hello_1234567 {
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-bottom: 15px;
+gap: 20px !important;
+
+
+}
+
+.width_100544 {
+
+width: 100%;
+
+
+}
+
+
+
+
+.input-container {
+   /* Hide the content when collapsed */
+
+  transition: opacity 0.8s ease, height 0.8s ease; /* Smooth transition for opacity and height */
+}
+
+.input-container.hide {
+  height: 0;
+  opacity: 0;
+  visibility: hidden; /* Ensures it's not interactive when hidden */
+}
+
+.input-container.show {
+  height: 45px; /* The height of the input field */
+  opacity: 1;
+  visibility: visible; /* Makes the input interactive */
+}
+
+
+
+/* Keyframe animation for text fade-in and slide-up */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at its normal position */
+  }
+}
+
+.hourly_text_with_animation {
+  text-align: center; /* Optional: Adjust margin if needed */
+  font-size: 16px; /* Optional: Adjust text size */
+  animation: fadeInSlideUp 0.8s ease-out;
+  font-style: italic; /* Apply the fade-in and slide-up animation */
+font-weight: 700;
+}
+
+/* Custom animation class for fade-in and slide effect */
+.fade123-in-slide {
+  animation: fadeInSlide 1s ease-out;
+}
+
+/* Keyframes for the fade-in and slide-up effect */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Slide from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 

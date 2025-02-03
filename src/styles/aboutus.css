@@ -209,27 +209,27 @@ width: 100%;
 
 
     .contact_card_1 {
-      min-height: 600px;
+      min-height: 40vh;
       background-image: url('../assets/images/newcontactcomponent/jonathan-tasman-DEGGHGwDuik-unsplash 4 (2)-min.png');
       background-size: cover; /* Ensures the image covers the entire area */
       background-repeat: no-repeat; /* Prevents the background from repeating */
       background-position: center; /* Centers the image */
-      padding-top: 6%;
-      padding-left: 5%;
+      padding-top: 4%;
+      padding-left: 4%;
       width: 100%; /* Ensures the width of the container is 100% */
     }
     
 
 .new_contact_heading_one {
 
-font-size: 85px;
+font-size: 65px;
 color: white;
 
 
 }
 .new_contact_heading_2 {
 
-  font-size: 52px;
+  font-size: 45px;
   color: white;
   font-weight: 250;
   
@@ -238,13 +238,13 @@ color: white;
 }
 
 .contact_card_1 {
-  min-height: 600px;
+  min-height: 40vh;
   background-image: url('../assets/images/newcontactcomponent/jonathan-tasman-DEGGHGwDuik-unsplash 4 (2)-min.png');
   background-size: cover; /* Ensures the image covers the entire area */
   background-repeat: no-repeat; /* Prevents the background from repeating */
   background-position: center; /* Centers the image */
-  padding-top: 6%;
-  padding-left: 5%;
+  padding-top: 4%;
+  padding-left: 4%;
   width: 100%; /* Ensures the width of the container is 100% */
 }
 
@@ -279,7 +279,7 @@ color: white;
   
   .contact_card_1{
   
-  min-height: 180px !important;
+  min-height: 210px !important;
   padding-top: 4%;
 
 

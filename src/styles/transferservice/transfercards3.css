@@ -1,0 +1,863 @@
+.transfer_service_heading1 {
+
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 10px;
+    font-size: 52px;
+    font-weight: 700;
+    color: rgba(0, 11, 29, 1);
+    display: none;
+  
+  }
+  
+  .transfer_service_heading2 {
+  
+  
+    font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+    color: rgba(0, 11, 29, 1);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 30px;
+  
+  }
+  
+  
+  
+  
+  
+  
+  .cards_div_transfer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    padding: 20px;
+    margin: 0 auto;
+    height: auto;
+    max-width: 1250px;
+    justify-items: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 60px;
+  }
+  
+  .card_transfer1223 {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    align-items: center;
+    height: 461px;
+    min-width: 350px;
+    max-width: 360px;
+    border-radius: 10px;
+    /* padding-top: 30px; */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+  background-color: #323232;
+  }
+  
+  .card_transfer12 {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 580px;
+    min-width: 350px;
+    max-width: 420px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+  
+  }
+  
+  
+  
+  .card_transfer1_img1 {
+  
+    width: 320px;
+    height: 180px;
+    padding-right: 10px;
+    padding-left: 10px;
+    
+  
+  }
+  
+  
+  .card_transfer1_img2 {
+    width: 100% !important;/* Make the width automatic to fill the parent container */
+    height: auto !important;  /* Adjust the height to maintain the aspect ratio */
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;  
+}
+
+  
+  
+  
+  .cards_grey_buttons {
+    display: flex;
+    flex-direction: rows;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12%;
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 100%;
+  }
+  
+  .grey_button_1_d {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    background-color: #f6f6f6;
+    width: 80%;
+    border-radius: 10px;
+    height: 80px;
+    vertical-align: middle;
+    color: #555555;
+    font-weight: 300;
+    height: 75px;
+  
+  
+  }
+  
+  .grey_button_1_d p {
+  
+    margin: 0;
+    color: Hourly Rate;
+    font-weight: 400;
+    font-size: 14px;
+  
+  
+  }
+  
+  .first_text1 {
+  
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: rgba(85, 85, 85, 1) !important;
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .card_specs_div {
+    display: flex;
+    flex-direction: row;
+    /* Corrected from 'rows' */
+    justify-content: space-between;
+    align-items: center;
+    gap: 15%;
+    width: 100%;
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: -1.5rem;
+    /* Needed for the pseudo-element to position correctly */
+  }
+  
+  .card_specs_div::before {
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    /* Position at the top of the div */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust for centering */
+    width: 80%;
+    /* Line width relative to the div */
+    height: 1px;
+    /* Line thickness */
+    background-color: rgba(237, 237, 237, 1);
+    /* Line color */
+  }
+  
+  .icon_specs_div {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  
+  
+  .last_rent_now_div3 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 22px;
+    
+    
+    
+  }
+  
+  .last_rent_now_div h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    padding-top: 35px;
+    text-align: center;
+    margin-top: -20px;
+  }
+  
+  .last_rent_now_div h5 {
+    font-size: 12px;
+    font-weight: 350;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  .card_specs_p1 {
+  
+  
+    margin: 0;
+    text-align: left !important;
+  
+  
+  }
+  
+  .testing_123 {
+  
+    display: flex !important;
+    justify-content: left !important;
+    align-items: center !important;
+    padding-left: 40px;
+  
+  
+  
+  }
+  
+  .last_rent_now_div:hover h4 {
+  
+    color: #e9bd49;
+  
+  }
+  
+  .last_rent_now_div:hover h5 {
+  
+    color: #e9bd49;
+  
+  }
+  
+  
+  
+  .last_rent_now_div:hover {
+  
+    color: #e9bd49;
+    cursor: pointer;
+  
+  }
+  
+  .eclipse_div {
+  
+  
+    width: 100%;
+    height: 50%;
+    background-color: #05021f;
+  
+  
+  }
+  
+  .location_cards_selectable3 {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: #323232;
+  
+  }
+  
+  
+  
+  .small_cards_13 {
+    text-align: center;
+    white-space: pre-line;
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90px;
+    border: none;
+    border-radius: 3px;
+    background-color: #1B1B1B;
+    color: #EDEDED;
+    width: 80%;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    /* animation: pulse 1.5s infinite; */
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  
+  .small_cards_13 {
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+  
+  
+  }
+  
+  .small_cards_2 {
+    text-align: center;
+    white-space: pre-line;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+    width: 80%;
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  .small_cards_3 {
+    text-align: center;
+    white-space: pre-line;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90px;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    animation: pulse 1.5s infinite;
+  }
+  .small_cards_5 {
+    text-align: center;
+    white-space: pre-line;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    width: 90px;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    color: #555;
+  
+    font-weight: 400;
+    padding: 0;
+    margin: 0%;
+    line-height: 14px;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    cursor: default !important;
+  }
+  
+  
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Initial size */
+    }
+    50% {
+      transform: scale(1.1); /* Slightly grow the button */
+    }
+    100% {
+      transform: scale(1); /* Return to original size */
+    }
+  }
+  
+  .small_cards_3 span {
+  
+  font-weight: 900;
+  font-size: 16px;
+  
+  }
+  .small_cards_2 span {
+  
+    font-weight: 900;
+    font-size: 16px;
+    
+    }
+  
+  
+    .small_cards_5 span {
+  
+      font-weight: 900;
+      font-size: 16px;
+      
+      }
+    
+  
+  
+  
+    .small_cards_13 span {
+  
+      font-weight: 600;
+      font-size: 16px;
+      color: #EDEDED;
+      }
+      
+  .small_cards_4 {
+  
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color:#1B1B1B;
+  color: #EDEDEDD9;
+  width: 140px;
+  height: 28px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+gap: 20px;  
+font-size: 14px;
+  
+  
+  }
+  .small_cards_4 span {
+  
+  
+    
+    color:#EDEDEDD9;
+    
+    
+    
+    font-weight: 600;
+    
+    
+    }
+    .small_cards_4:hover {
+      border: 2px solid #d9a35b;
+      transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+    }
+    
+  
+  
+  
+  
+  
+  
+  
+  .small_cards_2:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_2:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+  .small_cards_3:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_3:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+  .small_cards_13:hover {
+    transform: scale(1.05);
+    /* Enlarges the button by 10% */
+    transition: transform 0.5s ease, color 0.5s ease;
+    /* Smooth transition for scale and color */
+  }
+  
+  .small_cards_13:hover {
+    border: 2px solid #d9a35b;
+    transition: transform 0.5s ease, color 0.5s ease;  /* Change text color on hover */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .small_cards_1 span {
+    display: block;
+    /* Each word or element inside span will appear on a new line */
+  }
+  
+  
+  
+  
+  .line-container {
+    position: relative;
+    width: 90%;
+  }
+  
+  .line-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ebebeb; /* Change the color as needed */
+  }
+  
+  
+  
+  
+  .banner_animated {
+  
+  background-color: #05021f;
+  
+  }
+  
+  
+  
+  .container2 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .title2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #d9a35b;
+    font-size: 120px;
+    font-weight: 600;
+  }
+  
+  .title-large {
+    height: 130px;
+    margin-left: -5px;
+    opacity: 0.1;
+  }
+  
+  .img-container {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: -2.8px;
+    margin-right: -2.8px;
+    width: 170px;
+    vertical-align: top;
+    border-radius: 0px 0px 80px 80px;
+    animation-name: flow;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: -2s;
+    transition-timing-function: cubic-bezier(0,.57,1,.46);
+    box-shadow: 2px 2px 16px 2px rgba(0,0,0,0.5);
+    z-index: 999999;
+  }
+  
+  .second-animation {
+    animation-delay: -1.5s;
+  }
+  
+  .third-animation {
+    animation-delay: -1s; 
+  }
+  
+  .fourth-animation {
+    animation-delay: -0.5s; 
+  }
+  
+  .fifth-animation {
+    animation-delay: 0s; 
+  }
+  
+  .sixth-animation {
+    animation-delay: 0.5s; 
+  }
+    
+  .seventh-animation {
+    animation-delay: 1s;
+  }
+  
+  .img {
+    object-fit: cover;
+    width: 170px;
+    height: 100vh;
+    margin-top: -60px;
+  }
+  
+  .nba {
+    margin-top: -20px;
+  }
+  
+  @keyframes flow {
+    0% {height: 20%; border-radius: 0px 0px 30px 30px;}
+    50% {height: 90%; border-radius: 0px 0px 100px 100px;}
+    100% {height: 20%; border-radius: 0px 0px 30px 30px;}
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    #img-7 {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 1028px) {
+    #img-1 {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 860px) {
+    #img-6 {
+      display: none;
+    }
+  }
+  
+  
+  
+  .mercedes_names3 {
+  
+  margin: 0 !important;
+  color: #FFFFFF;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 24px;
+  border-bottom: 1px solid #D9D9D9;
+  width: 90%;
+  text-align: center;
+  letter-spacing: 2px;
+
+  
+  
+  }
+  
+  
+  .driver_car_transfer_banner  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 5%;
+  }
+  
+  
+  .png_imported {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30%;
+  
+  
+  }
+  
+  .png_icons_cards {
+    height: 25px;
+    width: 25px;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Change 2s for faster/slower animation */
+    animation-delay: 1s; /* Delay before the animation starts */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  .cards_price_hourly {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20%;
+  width: 100% !important;
+  
+  
+  }
+  
+  
+  
+  .png_icons_cards:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 30px; /* Position the tooltip below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 1;
+    animation: fadeInTooltip 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeInTooltip {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .background_button {
+
+padding: 5px;
+width: 100% !important;
+background-color: #E8BC71;
+color:#1E1E1E;
+border-radius: 10px;
+border: none;
+font-weight: 600;
+
+  }
+
+  .custom_location_name {
+    padding: 0;
+    margin: 0;
+    color: #E8BC71;
+    font-size: 9px;
+    font-family: 'Julius Sans One', sans-serif;
+    letter-spacing: 2px; /* Adjust the value to your preference */
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  
+
+  .custom_location_name2 {
+
+    padding: 0;
+    margin: -5px;
+    color: #E8BC71;
+    font-size: 9px;
+    font-family: 'Julius Sans One', sans-serif;
+    letter-spacing: 2px; /* Adjust the value to your preference */
+    font-style: italic;
+    text-transform: uppercase;
+
+  }
+
+
+
+  
