@@ -119,7 +119,7 @@ className="transfer_service_cards_styling"
       </h1>
 
       <div className="cards_div_transfer">
-        {loading
+        {!loading
           ? // Skeleton loading state
             [...Array(3)].map((_, index) => (
               <div key={index} className="card_transfer1223">
