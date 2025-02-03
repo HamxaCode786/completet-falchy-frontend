@@ -88,7 +88,7 @@ className="transfer_service_cards_styling"
 
     >
       <h1 className="transfer_service_heading1">
-        {loading ? (
+        {!loading ? (
           <Skeleton width={200} />
         ) : language === "en" ? (
           "Arrive With Grace"
@@ -103,7 +103,7 @@ className="transfer_service_cards_styling"
         )}
       </h1>
       <h1 className="transfer_service_heading2">
-        {loading ? (
+        {!loading ? (
           <Skeleton width={200} />
         ) : language === "en" ? (
           "Feel the Thrill of True Elegance with Every Transfer"
