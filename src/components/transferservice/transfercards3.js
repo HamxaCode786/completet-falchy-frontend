@@ -88,7 +88,7 @@ className="transfer_service_cards_styling"
 
     >
       <h1 className="transfer_service_heading1">
-        {!loading ? (
+        {loading ? (
           <Skeleton width={200} />
         ) : language === "en" ? (
           "Arrive With Grace"
@@ -119,41 +119,11 @@ className="transfer_service_cards_styling"
       </h1>
 
       <div className="cards_div_transfer">
-        {!loading
+        {loading
           ? // Skeleton loading state
             [...Array(3)].map((_, index) => (
-              <div key={index} className="card_transfer1223">
-                <div className="card_luxury_background_image">
-                <Skeleton style={{backgroundColor:"#323232"}} height={200} width="100%"  /> {/* For image */}
-                </div>
+              <div key={index}>
                 
-                {/* For car name */}
-                <div className="location_cards_selectable3">
-                  <Skeleton
-                    height={40}
-                    width="100%"
-                    style={{ margin: "5px 0" }}
-                  />
-                  
-                  <Skeleton
-                    height={40}
-                    width="100%"
-                    style={{ margin: "5px 0" }}
-                  />
-                  <Skeleton
-                    height={40}
-                    width="100%"
-                    style={{ margin: "5px 0" }}
-                  />
-                  <Skeleton
-                    height={40}
-                    width="100%"
-                    style={{ margin: "5px 0" }}
-                  />
-                </div>
-                <div className="last_rent_now_div3">
-                  <Skeleton height={50} width="100%" />
-                </div>
               </div>
             ))
           : Array.isArray(cardsData) &&
