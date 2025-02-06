@@ -15,7 +15,6 @@ const Homepage = () => {
       
       {/* <Landing /> */}
       <Landing2 />
-       <Tailored />
       <Steps />
       <Aboutus /> 
       {/* <AboutusCarousel /> */}

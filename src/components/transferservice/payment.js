@@ -23,6 +23,9 @@ import { Tooltip as ReactTooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 import { useLocation } from "react-router-dom";
 import CryptoJS from "crypto-js";
+import DiscountLogo from '../../assets/logo/Capturesdf-removebg-preview.png'
+import DiscountLogobr from '../../assets/logo/right-removebg-preview.png'
+import DiscountLogobl from '../../assets/logo/left-removebg-preview.png'
 
 <MapComponent />;
 const Payment = ({ selectedCard, initialState }) => {
@@ -34,6 +37,8 @@ const Payment = ({ selectedCard, initialState }) => {
   const [stopSuggestions, setStopSuggestions] = useState([[]]); //
   const location = useLocation();
   const { cardId, hourlyRate } = location.state || {};
+  const [suggestions, setSuggestions] = useState([]);
+  const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   
 
 const handleTimeCalendarOpen = () => {
@@ -144,6 +149,7 @@ const handleDateCalendarOpen = () => {
         premium: response.data.premium,
         default: response.data.default,
         airport: response.data.airport,
+        custom_ride: response.data.custom_ride
       };
 
       setDistanceInfo(info);
@@ -551,7 +557,7 @@ const checkTrainStation = (formData) => {
         number_of_persons: formData.numberOfPersons,
         luggage_quantity: formData.luggageQuantity,
         car: selectedCard.id,
-        pickup_date: new Date(formData.pickupDate).toISOString(), // Convert to ISO string
+        pickup_date: new Date(formData.pickupDate).toLocaleDateString("en-GB"),  // Convert to ISO string
   pickup_time: formData.pickupTime, // Convert to ISO string
         age_of_child: formData.ageOfChild || "none",
         number_of_childrens: formData.numberofchild || "none",
@@ -620,11 +626,44 @@ const checkTrainStation = (formData) => {
         });
       }
       // Conditionally navigate if payment is not to be made to the driver
-      if (!formData.paymentOption1) {
+      if (distanceInfo?.custom_ride === true) {
+        Swal.fire({
+          icon: "success",
+          title:
+            language === "en"
+              ? "Success!"
+              : language === "it"
+              ? "Successo!"
+              : language === "fr"
+              ? "Succès!"
+              : language === "du"
+              ? "Succes!"
+              : "Success!",
+          text:
+            language === "en"
+              ? "Thank You For Reaching Out, Our team will Get in touch with you Shortly!"
+              : language === "it"
+              ? "Grazie per averci contattato, il nostro team ti contatterà a breve!"
+              : language === "fr"
+              ? "Merci de nous avoir contacté, notre équipe vous contactera sous peu!"
+              : language === "du"
+              ? "Dank je voor het contact opnemen, ons team neemt binnenkort contact met je op!"
+              : "Thank You For Reaching Out, Our team will Get in touch with you Shortly!",
+          iconColor: "#05021f",
+          confirmButtonColor: "#05021f",
+          customClass: {
+            popup: "swal-popup-custom",
+            confirmButton: "swal-button-custom",
+          },
+        }).then(() => {
+          navigate("/"); // Navigate to '/' after the alert is dismissed
+        });
+      } else if (!formData.paymentOption1) {
         navigate("/stripePayment"); // Navigate to Stripe Payment page if no payment option is selected
       } else {
         navigate("/"); // Navigate to another page (e.g., confirmation page) if a payment option is selected
       }
+      
       
     } catch (error) {
       console.error("Error submitting payment:", error);
@@ -812,7 +851,7 @@ const fetchSuggestionspickup = async (value) => {
   if (!value) return [];
 
   const MILAN_COORDINATES = { latitude: 45.4642, longitude: 9.1900 }; // Milan's coordinates
-  const RADIUS_KM = 50; // 50km radius
+  const RADIUS_KM = 150; // 50km radius
   const EARTH_RADIUS_KM = 6371; // Earth's radius in km
 
   const haversineDistance = (lat1, lon1, lat2, lon2) => {
@@ -840,29 +879,34 @@ const fetchSuggestionspickup = async (value) => {
 
     const data = await response.json();
 
-    return (
-      data.predictions
-        ?.map((place) => ({
-          description: place.description,
-          latitude: place.latitude,
-          longitude: place.longitude,
-        }))
-        .filter(
-          (place) =>
-            haversineDistance(
-              MILAN_COORDINATES.latitude,
-              MILAN_COORDINATES.longitude,
-              place.latitude,
-              place.longitude
-            ) <= RADIUS_KM
-        ) || []
-    );
+    const suggestions = data.predictions?.map((place) => {
+      const latitude = place.coordinates?.lat;
+      const longitude = place.coordinates?.lng;
+      const distance = haversineDistance(
+        MILAN_COORDINATES.latitude,
+        MILAN_COORDINATES.longitude,
+        latitude,
+        longitude
+      );
+
+      return {
+        description: place.description,
+        latitude,
+        longitude,
+         // If outside 50km, mark as customRide
+      };
+    }) || [];
+    setSuggestions(suggestions);
+
+    // Log suggestions with `customRide` flag
+    console.log("Suggestions with customRide flag: ", suggestions);
+
+    return suggestions;
   } catch (error) {
     console.error("Error fetching suggestions:", error);
     return [];
   }
 };
-
 
 
 const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
@@ -930,6 +974,31 @@ const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
     }
   };
 
+
+  const handleSuggestionSelectedpickup = async (event, { suggestion }, field) => {
+    const { description } = suggestion;
+    setSelectedSuggestion(suggestion);
+  
+    // Update the formData based on distanceInfo.custom_Ride
+    const updatedFormData = {
+      ...formData,
+      [field]: description,
+        // Apply condition based on distanceInfo.custom_Ride
+    };
+  
+    setFormData(updatedFormData);
+  
+    // Calculate distance when both locations are set
+    if (updatedFormData.pickupLocation && updatedFormData.dropOffLocation) {
+      await calculateDistance(
+        updatedFormData.pickupLocation,
+        updatedFormData.dropOffLocation
+      );
+    }
+  };
+  
+
+
   const handleCalendarOpen = () => {
     setIsCalendarOpen(true); // Set state when the calendar is open
   };
@@ -965,9 +1034,17 @@ const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
   const calculatedPrice = isHourlyChecked
   ? (() => {
       // If 'isHourlyChecked' is true, calculate price based on hours
-      const price = (selectedCard.hourlyRate * (parseFloat(formData.numberOfhours) || 0)).toFixed(2);
+      const basePrice = selectedCard.hourlyRate * (parseFloat(formData.numberOfhours) || 0);
+      const price = basePrice.toFixed(2);
       
-      return `€${price}`; // Return hourly calculated price
+      // Ensure `premium` is treated as a boolean if needed
+      const isPremium = Boolean(distanceInfo?.premium);
+      
+      // If distanceInfo?.premium is true, add 100 to the final price
+      const finalPrice = isPremium ? (parseFloat(price) + 100).toFixed(2) : price;
+      
+      return `€${finalPrice}`;
+      
     })()
   : (() => {
       // Check if any of the three specific prices are applicable
@@ -1371,7 +1448,7 @@ const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
                 // disabled: !isPickupEditable,
               }}
               onSuggestionSelected={(e, data) =>
-                handleSuggestionSelected(e, data, "pickupLocation")
+                handleSuggestionSelectedpickup(e, data, "pickupLocation")
               }
               renderInputComponent={(inputProps) => (
                 <MDBInput
@@ -2093,21 +2170,46 @@ const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
 
         
         
+{!distanceInfo?.custom_ride === true && (
+  <Form.Group
+    className="mb-3"
+    controlId="formBasicEmail"
+    style={{ width: "100%" }}
+  >
+    {/* <MDBInput
+  type="number"
+  name="Amount"
+  placeholder={`Price: €${(Number(calculatedPrice.replace('€', '').trim()) || 0) * 1.2} Fashion week Discount 20%`}
+  value={calculatedPrice}
+  readOnly
+  
+  className="price-input"
+/> */}
+<div className="promo-card">
+  <div className="promo-card-content">
+    <h2 className="promo-heading">
+    Price!
+    </h2>
+    <div className="promo-prices">
+  <span className="original-price">
+    €{((Number(calculatedPrice.replace('€', '').trim()) || 0) * 1.2).toFixed(2)}
+  </span>
+  
+  {/* Arrow between prices */}
+  <span className="arrow-icon">→</span>
 
-        <Form.Group
-          className="mb-3"
-          controlId="formBasicEmail"
-          style={{ width: "100%" }}
-        >
-         <MDBInput
-    type="number"
-    name="Amount"
-    placeholder={`Price: ${calculatedPrice}`}
-    value={calculatedPrice}
-    readOnly
-  />
+  <span className="discount-price">
+    {calculatedPrice}
+  </span>
+</div>
+  </div>
+</div>
 
-        </Form.Group>
+
+
+
+  </Form.Group>
+)}
         <div className="">
           <MDBCard className="" alignment="center">
             {/* <MDBCardHeader
@@ -2288,25 +2390,27 @@ const handleSuggestionsFetchRequestedpickup = async ({ value }, field) => {
           </MDBCard>
         </div>
         <div className="payment_radio_details">
-        <MDBCheckbox
-    name="paymentOption1"
-    id="payNowCheckbox"
-    label={
-      language === "en"
-        ? "Pay to Driver"
-        : language === "it"
-        ? "Paga al Conducente"
-        : language === "fr"
-        ? "Payer au Conducteur"
-        : language === "du"
-        ? "Betaal aan de Chauffeur"
-        : "Pay to Driver"
-    }
-    
-    checked={formData.paymentOption1}  // This controls the checkbox state
-    onChange={handleInputChange}        // This updates the state when the checkbox is toggled
-    value="payNow"                      // This is the value that will be passed when the checkbox is selected
-  />
+         {distanceInfo?.custom_ride !== true && (
+    <MDBCheckbox
+      name="paymentOption1"
+      id="payNowCheckbox"
+      label={
+        language === "en"
+          ? "Pay to Driver"
+          : language === "it"
+          ? "Paga al Conducente"
+          : language === "fr"
+          ? "Payer au Conducteur"
+          : language === "du"
+          ? "Betaal aan de Chauffeur"
+          : "Pay to Driver"
+      }
+      checked={formData.paymentOption1}
+      disabled={distanceInfo?.custom_ride === true} // Disable if customRide is true
+      onChange={handleInputChange}
+      value="payNow"
+    />
+  )}
   
   {/* <MDBRadio
     name="paymentOption2"

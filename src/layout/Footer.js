@@ -37,7 +37,7 @@ const Footer = () => {
             <a href="#/contactus">
               <button>Contact Us</button>
             </a>
-            {/* <div className="icons_div1">
+            <div className="icons_div1">
               <ul
                 className="footer_social_icons"
                 style={{
@@ -112,7 +112,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div> */}
+            </div>
           </div>
           <div className="footer_div2">
             <div className="navigation_div">

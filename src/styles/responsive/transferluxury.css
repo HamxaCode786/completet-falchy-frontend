@@ -6,8 +6,6 @@
     gap: 30px;
     margin: 0 auto;
     height: auto;
-    padding-right: 10% !important;
-    padding-left: 10% !important;
     padding-bottom: 40px;
     justify-items: center !important;
     align-items: center !important;
@@ -23,6 +21,8 @@
     gap: 30px;
     margin: 0 auto;
     height: auto;
+    padding-right: 20% !important;
+    padding-left: 20% !important;
     padding-bottom: 40px;
     justify-items: center !important;
     align-items: center !important;

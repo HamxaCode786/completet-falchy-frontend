@@ -24,20 +24,22 @@ const Steps = () => {
 
   return (
     <div className="steps-section">
-      <p className="tagline">{
-  language === 'en' ? (
-    'Plan Your Journey Now'
-  ) : language === 'it' ? (
-    'Pianifica il tuo viaggio ora'
-  ) : language === 'du' ? (
-    'Plan je reis nu'
-  ) : language === 'fr' ? (
-    'Planifiez votre voyage maintenant'
-  ) : (
-    'Plan Your Journey Now'
-  )
-}
-</p>
+      <a href="/" className="tagline-link">
+  <p className="tagline">
+    {language === "en" ? (
+      "Plan Your Journey Now"
+    ) : language === "it" ? (
+      "Pianifica il tuo viaggio ora"
+    ) : language === "du" ? (
+      "Plan je reis nu"
+    ) : language === "fr" ? (
+      "Planifiez votre voyage maintenant"
+    ) : (
+      "Plan Your Journey Now"
+    )}
+  </p>
+</a>
+
 <h2 className="steps-heading">
   {language === 'en' ? (
     <>

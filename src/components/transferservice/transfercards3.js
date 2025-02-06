@@ -103,7 +103,7 @@ className="transfer_service_cards_styling"
         )}
       </h1>
       <h1 className="transfer_service_heading2">
-        {!loading ? (
+        {loading ? (
           <Skeleton width={200} />
         ) : language === "en" ? (
           "Feel the Thrill of True Elegance with Every Transfer"
@@ -118,12 +118,42 @@ className="transfer_service_cards_styling"
         )}
       </h1>
 
-      <div className="cards_div_transfer">
+      <div className="cards_div_transfer" id="cards_main_div_ID">
         {loading
           ? // Skeleton loading state
             [...Array(3)].map((_, index) => (
-              <div key={index}>
+              <div key={index} className="card_transfer1223">
+                <div className="card_luxury_background_image">
+                <Skeleton style={{backgroundColor:"#323232"}} height={200} width="100%"  /> {/* For image */}
+                </div>
                 
+                {/* For car name */}
+                <div className="location_cards_selectable3">
+                  <Skeleton
+                    height={40}
+                    width="100%"
+                    style={{ margin: "5px 0" }}
+                  />
+                  
+                  <Skeleton
+                    height={40}
+                    width="100%"
+                    style={{ margin: "5px 0" }}
+                  />
+                  <Skeleton
+                    height={40}
+                    width="100%"
+                    style={{ margin: "5px 0" }}
+                  />
+                  <Skeleton
+                    height={40}
+                    width="100%"
+                    style={{ margin: "5px 0" }}
+                  />
+                </div>
+                <div className="last_rent_now_div3">
+                  <Skeleton height={50} width="100%" />
+                </div>
               </div>
             ))
           : Array.isArray(cardsData) &&
@@ -191,7 +221,16 @@ className="transfer_service_cards_styling"
     ? "Per Hour"
     : "Milan to Malpensa"}
 
-  <span>€{car.hourly_rate}</span>
+  <span style={{ display: "flex", gap: "8px", alignItems: "center", fontSize:"15px" }}>
+  <del style={{ color: "white", opacity: 0.7, transition: "opacity 0.5s ease-in-out" }}>
+    €{(car.hourly_rate * 1.2) % 1 === 0 ? (car.hourly_rate * 1.2) : (car.hourly_rate * 1.2).toFixed(2)}
+</del>
+
+<strong style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+  €{car.hourly_rate % 1 === 0 ? car.hourly_rate.toFixed(0) : car.hourly_rate.toFixed(2)}  {/* Display the current hourly rate without .00 if whole number */}
+</strong>
+
+</span>
 </button>
 
 {/* <div className="png_imported">
@@ -226,14 +265,20 @@ className="transfer_service_cards_styling"
                       : language === "fr"
                       ? "Malpensa à Milan"
                       : "Malpensa to Milan"}
-                    <span>
-                      €
-                      {
-                        car.locations.find(
-                          (loc) => loc.location_name === "Malpensa to milan"
-                        )?.price
-                      }
-                    </span>
+                    <span style={{ display: "flex", gap: "8px", alignItems: "center", fontSize:"15px" }}>
+                    <del style={{ color: "white", opacity: 0.7, transition: "opacity 0.5s ease-in-out" }}>
+    €{(() => {
+        const price = car.locations.find((loc) => loc.location_name === "Malpensa to milan")?.price * 1.2;
+        return price % 1 === 0 ? price : price.toFixed(2);
+    })()}
+</del>
+
+  <strong style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+    €{car.locations.find((loc) => loc.location_name === "Malpensa to milan")?.price}
+  </strong>
+</span>
+
+
                   </button>
 
                   <button
@@ -259,14 +304,19 @@ className="transfer_service_cards_styling"
                       : language === "fr"
                       ? "Malpensa au lac de Côme"
                       : "Malpensa to Lake Como"}
-                    <span>
-                      €
-                      {
-                        car.locations.find(
-                          (loc) => loc.location_name === "malpenssa to como"
-                        )?.price
-                      }
-                    </span>
+                    <span style={{ display: "flex", gap: "5px", alignItems: "center", fontSize:"15px" }}>
+                    <del style={{ color: "white", opacity: 0.7, transition: "opacity 0.5s ease-in-out" }}>
+    €{(() => {
+        const price = car.locations.find((loc) => loc.location_name === "malpenssa to como")?.price * 1.2;
+        return price ? (price % 1 === 0 ? price : price.toFixed(2)) : "N/A";
+    })()}
+</del>
+
+  <strong style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+    €{car.locations.find((loc) => loc.location_name === "malpenssa to como")?.price}
+  </strong>
+</span>
+
                   </button>
                   <button
                     id="malpensa-bergamo-btn"
@@ -291,14 +341,15 @@ className="transfer_service_cards_styling"
                       : language === "fr"
                       ? "Malpensa à Bergame"
                       : "Malpensa to Bergamo"}
-                    <span>
-                      €
-                      {
-                        car.locations.find(
-                          (loc) => loc.location_name === "malpenssa to bergamo"
-                        )?.price
-                      }
-                    </span>
+                   <span style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+  <del style={{ color: "white", opacity: 0.7, transition: "opacity 0.5s ease-in-out", fontSize:"15px" }}>
+    €{(car.locations.find((loc) => loc.location_name === "malpenssa to bergamo")?.price * 1.2).toFixed(2)}
+  </del>
+  <strong style={{ fontSize: "1.2em", fontWeight: "bold" }}>
+    €{car.locations.find((loc) => loc.location_name === "malpenssa to bergamo")?.price}
+  </strong>
+</span>
+
                   </button>
                 </div>
                 <p className="custom_location_name">Custom Location</p>

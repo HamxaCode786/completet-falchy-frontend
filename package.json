@@ -25,6 +25,7 @@
     "react-autosuggest": "^10.1.0",
     "react-bootstrap": "^2.10.6",
     "react-clock": "^5.1.0",
+    "react-countdown": "^2.3.6",
     "react-datepicker": "^7.6.0",
     "react-datetime": "^3.3.1",
     "react-dom": "^18.3.1",
